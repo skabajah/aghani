@@ -44,7 +44,7 @@ html, body {
 .site-description {
     direction: rtl;
     text-align: right;
-    font-size: 1em;
+    font-size: 0.8em;
     float: right;
     color: #222;
 }
