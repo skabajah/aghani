@@ -86,6 +86,11 @@ h1, h2 {
     font-size: 26px;
     font-weight: 600;
     }
+
+h2 {
+    margin-top: -30px;
+}
+
 /*.topbar h1 {
   font-size: 14px;
   margin: 0;
