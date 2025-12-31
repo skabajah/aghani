@@ -20,6 +20,13 @@ html, body {
   min-height: 100vh;
 }
 
+.site-description {
+    direction: rtl;
+    text-align: center;
+    font-size: 1em;
+    float: right;
+}
+
 #bgBackdrop {
   position: fixed;
   inset: -10%;
