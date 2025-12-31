@@ -13,16 +13,36 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #020408;
-  color: var(--text);
+  /*background: #020408;*/
+  background: #fcfcfd;
+
+  /*color: var(--text);*/
   font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+  color: black;
 }
+.intro {
+  text-align: center;
+  margin: 24px auto 16px;
+  max-width: 900px;
+}
+
+.intro img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.intro p {
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
 
 .site-description {
     direction: rtl;
-    text-align: center;
+    text-align: right;
     font-size: 1em;
     float: right;
 }
@@ -194,10 +214,11 @@ html, body {
 }
 
 .main-footer {
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  border-top: 1px solid var(--glass-border);
-  padding: 60px 40px 40px;
-  margin-top: 40px;
+    background: linear-gradient(to top, rgb(162 162 162 / 56%), transparent);
+    border-top: 1px solid #d6cccc4d;
+    padding: 60px 40px 40px;
+    margin-top: 40px;
+    color: black;
 }
 
 .footer-content {
@@ -224,6 +245,7 @@ html, body {
 
 .footer-links a {
   color: var(--text);
+  color: #222;
   text-decoration: none;
   font-size: 14px;
   opacity: 0.6;
