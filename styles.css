@@ -173,9 +173,10 @@ html, body {
   background: rgb(237 237 237 / 84%); 
   background: white;
   border-color: var(--glass-border);
-  border-color: #2db8b69e;
+  /*border-color: #2db8b69e;*/
+  border-color: #8181819e;
   color: black;
-  font-size: 1.2em;
+  /*font-size: 1.2em;*/
 }
 
 .card img {
