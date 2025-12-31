@@ -17,7 +17,7 @@ html, body {
   background: #fcfcfd;
 
   /*color: var(--text);*/
-  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-family: "Fustat",  sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
   color: black;
@@ -45,6 +45,7 @@ html, body {
     text-align: right;
     font-size: 1em;
     float: right;
+    color: #222;
 }
 
 #bgBackdrop {
@@ -233,7 +234,7 @@ html, body {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: var(--muted);
+  /*color: var(--muted);*/
   margin-bottom: 20px;
 }
 
