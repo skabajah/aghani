@@ -163,6 +163,12 @@ html, body {
   .npTitle span { font-size: 40px; }
   .playerFrameWrap {
     height: 27vh;
+    width: 85vw;
+    margin: 0 auto;
+  }
+  .list {
+        width: 85vw;
+    margin: 0 auto;
   }
 }
 
