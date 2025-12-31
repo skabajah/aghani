@@ -4,6 +4,7 @@
   --glass-border: rgba(255, 255, 255, 0.1);
   --accent: #3b82f6;
   --text: #ffffff;
+  --cyan-sk: #2db8b6;
   --muted: rgba(255, 255, 255, 0.4);
   --radius: 28px;
 }
@@ -107,7 +108,7 @@ html, body {
   font-style: italic;
   font-family: serif;
   line-height: 1;
-  color: #ff0033;
+  color: var(--cyan-sk);
 }
 
 .npMeta {
