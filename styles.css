@@ -431,4 +431,10 @@ h2 {
   }
 
   .footer-content{ gap: 30px; }
+
+  h1,h2 {
+    text-align: right;
+    font-size: 15px;
+    width: 3em;
+  }
 } 
