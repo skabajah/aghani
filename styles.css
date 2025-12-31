@@ -1,7 +1,7 @@
 :root {
   --glass: rgba(255, 255, 255, 0.03);
   --glass-heavy: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-border: #ffffff9e;
   --accent: #3b82f6;
   --text: #ffffff;
   --cyan-sk: #2db8b6;
@@ -139,6 +139,7 @@ html, body {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--glass-border);
+  border-radius: solid 1px #ffffff9e;
   border-radius: var(--radius);
   padding: 20px;
 }
