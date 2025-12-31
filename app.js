@@ -23,7 +23,9 @@ function onYouTubeIframeAPIReady() {
       'autoplay': 1,
       'playsinline': 1,
       'modestbranding': 1,
-      'rel': 0
+      'rel': 0,
+      'controls': 0 
+
     },
     events: {
       'onStateChange': (e) => { 
