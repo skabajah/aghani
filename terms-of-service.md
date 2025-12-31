@@ -1,6 +1,3 @@
-Here is a **short, vague, bilingual Terms of Use**, matching your Privacy Policy tone.
-
-```markdown
 # Terms of Use | شروط الاستخدام
 
 ## English
@@ -15,8 +12,7 @@ aghani.org may link to or embed third-party services. We are not responsible for
 These terms may be updated at any time without prior notice.
 
 *Effective date: 2025*
-
----
+ 
 
 ## العربية
 
@@ -30,4 +26,4 @@ These terms may be updated at any time without prior notice.
 يجوز تعديل شروط الاستخدام هذه في أي وقت دون إشعار مسبق.
 
 *تاريخ السريان: 2025*
-```
+ 

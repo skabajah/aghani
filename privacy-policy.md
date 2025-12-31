@@ -12,8 +12,7 @@ This policy may be updated from time to time.
 
 *Effective date: 2025*
 
----
-
+ 
 ## العربية
 
 تحترم aghani.org خصوصيتكم.  
