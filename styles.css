@@ -161,6 +161,9 @@ html, body {
   .layout { padding: 0 15px 40px; }
   .npTitle { font-size: 20px; }
   .npTitle span { font-size: 40px; }
+  .playerFrameWrap {
+    height: 27vh;
+  }
 }
 
 .card {
@@ -222,7 +225,7 @@ html, body {
 
 .main-footer {
     background: linear-gradient(to top, rgb(162 162 162 / 56%), transparent);
-    border-top: 1px solid #d6cccc4d;
+    border-top: 1px solid  var(--glass-border);
     padding: 60px 40px 40px;
     margin-top: 40px;
     color: black;
