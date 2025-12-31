@@ -435,6 +435,9 @@ h2 {
   h1,h2 {
     text-align: right;
     font-size: 15px;
+  }
+  .logo {
     width: 3em;
+
   }
 } 
