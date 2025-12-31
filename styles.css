@@ -152,25 +152,6 @@ html, body {
   padding-bottom: 10px;
 }
 
-@media (max-width: 1024px) {
-  .grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 768px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-  .layout { padding: 0 15px 40px; }
-  .npTitle { font-size: 20px; }
-  .npTitle span { font-size: 40px; }
-  .playerFrameWrap {
-    height: 27vh;
-    width: 85vw;
-    margin: 0 auto;
-  }
-  .list {
-        width: 85vw;
-    margin: 0 auto;
-  }
-}
 
 .card {
   display: flex;
@@ -288,4 +269,31 @@ html, body {
   font-size: 11px;
   /*color: var(--muted);*/
   text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .layout { padding: 0 15px 40px; }
+  .npTitle { font-size: 20px; }
+  .npTitle span { font-size: 40px; }
+  .playerFrameWrap {
+    height: 27vh;
+    width: 85vw;
+    margin: 0 auto;
+  }
+  .list {
+        width: 85vw;
+    margin: 0 auto;
+  }
+  .npMeta {
+    font-size: 13px;
+    text-align: center;
+  }
+  .site-description {
+    float: none ;
+  }
 }
