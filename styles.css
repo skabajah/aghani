@@ -43,11 +43,12 @@ html, body {
 }
 
 .logo {
-  width: 72px;
-  height: auto;
-  margin: 0 auto 8px;
-  display: block;
-  opacity: 0.9;
+    width: 6em;
+    height: auto;
+    margin: 0;
+    display: block;
+    opacity: 0.9;
+    position: fixed;
 }
 
 
@@ -79,8 +80,12 @@ html, body {
 }
 
 h1, h2 {
-  text-align: center;
-}
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    }
 /*.topbar h1 {
   font-size: 14px;
   margin: 0;
