@@ -123,8 +123,8 @@ function playItem(item) {
   els.npTitle.innerHTML = `<span>${item.Rank}</span> ${escapeHtml(item.Title)}`;
   
   // EDITED LINES BELOW:
-  const views = item.Views ? `Views: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
-  const published = item.PublishDate ? `Published: ${item.PublishDate}` : "";
+  const views = item.Views ? `Views/المشاهدات: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
+  const published = item.PublishDate ? `Published/تاريخ النشر: ${item.PublishDate}` : "";
   els.npMeta.textContent = `${views} • ${published}`;
   
   document.querySelectorAll('.card').forEach(c => {
