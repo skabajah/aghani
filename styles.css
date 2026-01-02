@@ -442,9 +442,8 @@ h2 {
 }
 .docBody{
   height:100%;
-  overflow:auto;
   padding:22px;
-  direction:ltr; /* will flip to rtl automatically when Arabic detected */
+  background: white;
 }
 .docClose{
   position:absolute;
