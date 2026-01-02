@@ -26,7 +26,7 @@ html, body {
 .intro {
   text-align: center;
   margin: 24px auto 16px;
-  max-width: 900px;
+  /*max-width: 900px;*/
 }
 
 .intro img {
