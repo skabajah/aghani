@@ -434,10 +434,9 @@ h2 {
 }
 
 /*video */
-video.video-stream.html5-main-video {
-    overflow: hidden;
+.html5-main-video {
     width: 100% !important;
-    position: sticky;
+    position: sticky !important;
 }
 
 /* Mobile */
@@ -477,7 +476,7 @@ video.video-stream.html5-main-video {
     text-align: left !important;
   }
 
-  video.video-stream.html5-main-video {
+  .html5-main-video {
     position: unset;
   }
 
