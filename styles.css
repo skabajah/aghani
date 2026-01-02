@@ -467,6 +467,17 @@ h2 {
     font-size: 1em;
 }
 
+.md-en{
+  direction:ltr;
+  text-align:left;
+}
+.md-ar{
+  direction:rtl;
+  text-align:right;
+}
+
+
+
 /* Mobile */
 @media (max-width: 768px){
   .main-footer{ padding: 40px 15px 24px; }
