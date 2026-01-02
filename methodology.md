@@ -11,6 +11,8 @@ Each category follows a fixed update schedule (**monthly or annual**). Once a ra
 
 Metrics that require creator-only or private analytics access are not used. Methodology updates or corrections are applied prospectively and disclosed when relevant.
 
+Video playback on aghani.org uses the official YouTube embedded player. Video content is streamed directly from YouTube and is not hosted on aghani.org. View counts, advertisements, and playback behavior are governed by YouTube’s platform rules and policies.
+
 
 ## العربية
 
@@ -22,3 +24,5 @@ Metrics that require creator-only or private analytics access are not used. Meth
 تتبع كل فئة جدول تحديث ثابت (**شهري أو سنوي**). بعد إغلاق فترة التصنيف، تبقى النتائج دون تغيير حتى دورة التحديث التالية، بما يضمن الاستقرار وقابلية المقارنة عبر الزمن.
 
 لا يتم استخدام المؤشرات التي تتطلب وصولًا تحليليًا خاصًا بالمنشئين أو بيانات غير متاحة للعامة. يتم تطبيق أي تحديثات أو تصحيحات على المنهجية بشكل مستقبلي، **ويتم الإفصاح عنها عند الاقتضاء**.
+
+يعتمد تشغيل الفيديو في موقع aghani.org على مشغّل يوتيوب المضمّن الرسمي. يتم بث المحتوى مباشرة من يوتيوب ولا يتم استضافته على خوادم الموقع. تخضع المشاهدات والإعلانات وسلوك التشغيل لسياسات وقواعد منصة يوتيوب.
