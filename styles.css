@@ -434,12 +434,13 @@ h2 {
 }
 
 /*video */
+/*
 .html5-main-video {
     width: 100% !important;
     position: sticky !important;
     left:  0 !important;
 }
-
+*/
 /* Mobile */
 @media (max-width: 768px){
   .main-footer{ padding: 40px 15px 24px; }
@@ -476,9 +477,9 @@ h2 {
     margin-top: 0;
     text-align: left !important;
   }
-
+/*
   .html5-main-video {
     position: unset;
   }
-
+*/
 } 
