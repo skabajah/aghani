@@ -457,12 +457,13 @@ h2 {
     margin-top: -33px;
   }
   .docClose {
-    right: 30px;
+    right: 15px;
     width: 30px;
     height: 30px;
   } 
   #docBody h1 {
     margin-top: 10px;
+    text-align: left;
   }
 
 } 
