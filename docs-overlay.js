@@ -16,25 +16,30 @@ function closeDoc() {
 }
 
 function renderBilingual(md) {
-  const html = marked.parse(md);
+  // Keep headers as-is by splitting the raw Markdown (not the rendered HTML)
+  const parts = md.split(/(?=^##\s+English\b|^##\s+العربية\b)/m);
 
-  // expects these exact MD headers:
-  // ## English
-  // ## العربية
-  const parts = html.split(/<h2>English<\/h2>|<h2>العربية<\/h2>/);
+  let enMd = '';
+  let arMd = '';
 
-  const enPart = (parts[1] || '').trim();
-  const arPart = (parts[2] || '').trim();
+  for (const p of parts) {
+    const s = p.trimStart();
+    if (s.startsWith('## English')) enMd = p;
+    if (s.startsWith('## العربية')) arMd = p;
+  }
 
-  // fallback: if split fails, just render everything as-is
-  if (!enPart && !arPart) {
-    body.innerHTML = html;
+  // Fallback: if sections aren't found, just render everything normally
+  if (!enMd && !arMd) {
+    body.innerHTML = marked.parse(md);
     return;
   }
 
+  const enHtml = enMd ? marked.parse(enMd) : '';
+  const arHtml = arMd ? marked.parse(arMd) : '';
+
   body.innerHTML = `
-    <div class="md-en">${enPart}</div>
-    <div class="md-ar">${arPart}</div>
+    <div class="md-en">${enHtml}</div>
+    <div class="md-ar">${arHtml}</div>
   `;
 }
 
@@ -43,6 +48,7 @@ document.querySelectorAll('.docLink').forEach(a => {
     e.preventDefault();
 
     const file = a.dataset.md || a.getAttribute('href');
+
     try {
       const res = await fetch(file, { cache: 'no-cache' });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -50,7 +56,7 @@ document.querySelectorAll('.docLink').forEach(a => {
       const md = await res.text();
       renderBilingual(md);
       openDoc();
-    } catch (err) {
+    } catch {
       body.innerHTML = `<p>Failed to load: ${file}</p>`;
       openDoc();
     }
@@ -66,6 +72,8 @@ overlay.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeDoc();
 });
+
+
 
 
 // const overlay = document.getElementById('docOverlay');
