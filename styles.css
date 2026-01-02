@@ -50,6 +50,7 @@ html, body {
     opacity: 0.9;
     position: fixed;
     border-radius:  14px ;
+    left: 2em;
 }
 
 img.banner {
