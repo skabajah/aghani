@@ -467,6 +467,10 @@ h2 {
     font-size: 1em;
 }
 
+#docBody h1 {
+    text-align: center !important;
+}
+
 .md-en{
   direction:ltr;
   text-align:left;
