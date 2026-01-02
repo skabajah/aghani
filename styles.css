@@ -477,4 +477,8 @@ video.video-stream.html5-main-video {
     text-align: left !important;
   }
 
+  video.video-stream.html5-main-video {
+    position: unset;
+  }
+
 } 
