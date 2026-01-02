@@ -14,11 +14,11 @@ Metrics that require creator-only or private analytics access are not used. Meth
 
 ## العربية
 
-يعرض موقع aghani.org تصنيفات مجمّعة للمحتوى الرقمي العربي اعتمادًا على بيانات يتم جمعها عبر **YouTube Data API v3**  
-(https://developers.google.com/youtube/v3). تعكس التصنيفات **collective attention ضمن defined time windows**، ولا تعبّر عن individual preferences أو personalized recommendations.
+يعرض موقع aghani.org تصنيفات مجمّعة للمحتوى الرقمي العربي اعتمادًا على بيانات يتم جمعها عبر واجهة برمجة تطبيقات يوتيوب  
+(https://developers.google.com/youtube/v3). تعكس التصنيفات **الاهتمام الجماعي ضمن فترات زمنية محددة**، ولا تعبّر عن تفضيلات فردية أو توصيات شخصية.
 
-يتم تضمين المحتوى **Arabic-language** والمتاح للعامة فقط. تستبعد المنهجية duplicates، وre-uploads، وspam، و**artificial engagement**. التصنيفات **non-personalized**، ولا تخضع لـ editorial ordering، ولا تقبل paid inclusion.
+يتم تضمين المحتوى **الناطق بالعربية** والمتاح للعامة فقط. تستبعد المنهجية التكرار، وإعادة الرفع، والمحتوى غير المرغوب فيه، و**التفاعل المصطنع**. التصنيفات **غير مخصصة**، ولا تخضع لترتيب تحريري، ولا تقبل إدراجًا مدفوعًا.
 
-تتبع كل فئة جدول تحديث ثابت (**monthly أو annual**). بعد إغلاق ranking period، تبقى النتائج دون تغيير حتى next update cycle، بما يضمن stability وcomparability over time.
+تتبع كل فئة جدول تحديث ثابت (**شهري أو سنوي**). بعد إغلاق فترة التصنيف، تبقى النتائج دون تغيير حتى دورة التحديث التالية، بما يضمن الاستقرار وقابلية المقارنة عبر الزمن.
 
-لا يتم استخدام metrics التي تتطلب creator-only أو private analytics access. يتم تطبيق أي methodology updates أو corrections بشكل prospective، **ويتم الإفصاح عنها when relevant**.
+لا يتم استخدام المؤشرات التي تتطلب وصولًا تحليليًا خاصًا بالمنشئين أو بيانات غير متاحة للعامة. يتم تطبيق أي تحديثات أو تصحيحات على المنهجية بشكل مستقبلي، **ويتم الإفصاح عنها عند الاقتضاء**.
