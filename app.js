@@ -122,8 +122,12 @@ function playItem(item) {
     bgBackdrop.style.backgroundImage = `url(${item.Thumbnail})`;
   }
 
-  els.npTitle.innerHTML = `<span>${item.Rank}</span> ${escapeHtml(item.Title)}`;
-  
+  // els.npTitle.innerHTML = `<span>${item.Rank}</span> ${escapeHtml(item.Title)}`;
+  //  line break 
+  const npTitleHtml = escapeHtml(item.Title).replaceAll(" | ", "<br>");
+  els.npTitle.innerHTML = `<span>${item.Rank}</span> ${npTitleHtml}`;
+
+
   // EDITED LINES BELOW:
   const views = item.Views ? `Views المشاهدات: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
   const published = item.PublishDate ? `Published تاريخ النشر: ${item.PublishDate}` : "";
@@ -163,7 +167,7 @@ async function init() {
         <img src="${r.Thumbnail}" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
         <div class="cardBody">
           <div class="cardRank">#${r.Rank || (idx + 1)} <span>• ${viewCount}</span></div>
-          <div class="cardTitle">${escapeHtml(r.Title)}</div>
+          <div class="cardTitle">${escapeHtml(r.Title).replaceAll(" | ", "<br>")}</div>
         </div>`;
       els.grid.appendChild(card);
     });
