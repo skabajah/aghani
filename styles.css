@@ -26,7 +26,6 @@ html, body {
 .intro {
   text-align: center;
   margin: 24px auto 16px;
-  /*max-width: 900px;*/
 }
 
 .intro img {
@@ -161,6 +160,8 @@ h2 {
   overflow: hidden;
   border: 1px solid var(--glass-border);
   box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
+  width: 85vw;
+  margin: auto;
 }
 
 .playerFrameWrap iframe, 
@@ -178,6 +179,8 @@ h2 {
   border-radius: solid 1px #ffffff9e;
   border-radius: var(--radius);
   padding: 20px;
+  width: 85vw;
+  margin: auto;
 }
 
 .grid {
