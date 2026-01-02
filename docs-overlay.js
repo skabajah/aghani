@@ -15,32 +15,20 @@ function closeDoc() {
   body.innerHTML = '';
 }
 
-function renderBilingual(md) {
-  // Keep headers as-is by splitting the raw Markdown (not the rendered HTML)
-  const parts = md.split(/(?=^##\s+English\b|^##\s+العربية\b)/m);
+function applyBidi() {
+  let currentDir = 'ltr';
 
-  let enMd = '';
-  let arMd = '';
+  Array.from(body.children).forEach(el => {
+    // switch direction when hitting language headers
+    if (/^H\d$/.test(el.tagName)) {
+      const t = el.textContent.trim();
+      if (t === 'English') currentDir = 'ltr';
+      if (t === 'العربية') currentDir = 'rtl';
+    }
 
-  for (const p of parts) {
-    const s = p.trimStart();
-    if (s.startsWith('## English')) enMd = p;
-    if (s.startsWith('## العربية')) arMd = p;
-  }
-
-  // Fallback: if sections aren't found, just render everything normally
-  if (!enMd && !arMd) {
-    body.innerHTML = marked.parse(md);
-    return;
-  }
-
-  const enHtml = enMd ? marked.parse(enMd) : '';
-  const arHtml = arMd ? marked.parse(arMd) : '';
-
-  body.innerHTML = `
-    <div class="md-en">${enHtml}</div>
-    <div class="md-ar">${arHtml}</div>
-  `;
+    el.style.direction = currentDir;
+    el.style.textAlign = currentDir === 'rtl' ? 'right' : 'left';
+  });
 }
 
 document.querySelectorAll('.docLink').forEach(a => {
@@ -54,7 +42,13 @@ document.querySelectorAll('.docLink').forEach(a => {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
       const md = await res.text();
-      renderBilingual(md);
+
+      // render MD ONCE — no splitting
+      body.innerHTML = marked.parse(md);
+
+      // then fix direction per section
+      applyBidi();
+
       openDoc();
     } catch {
       body.innerHTML = `<p>Failed to load: ${file}</p>`;
@@ -72,7 +66,6 @@ overlay.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeDoc();
 });
-
 
 
 
