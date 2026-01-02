@@ -458,11 +458,11 @@ h2 {
   }
   .docClose {
     right: 15px;
-    width: 30px;
+    width: 30px !important;
     height: 30px;
   } 
   #docBody h1 {
-    margin-top: 10px;
+    margin-top: 0;
     text-align: left !important;
   }
 
