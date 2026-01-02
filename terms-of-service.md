@@ -1,4 +1,4 @@
-# Terms of Use | شروط الاستخدام
+# Terms of Service | شروط الخدمة
 
 ## English
 
