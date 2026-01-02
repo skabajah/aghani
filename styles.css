@@ -438,12 +438,13 @@ h2 {
   background:white;
   border:1px solid rgba(255,255,255,.12);
   border-radius:16px;
-  overflow:auto;
+  overflow:hidden;
 }
 .docBody{
   height:100%;
   padding:22px;
   background: white;
+  overflow: auto;
 }
 .docClose{
   position:absolute;
