@@ -433,7 +433,12 @@ h2 {
   text-align:right;
 }
 
-
+/*video */
+video.video-stream.html5-main-video {
+    overflow: hidden;
+    width: 100% !important;
+    position: sticky;
+}
 
 /* Mobile */
 @media (max-width: 768px){
