@@ -456,4 +456,9 @@ h2 {
   img.banner {
     margin-top: -33px;
   }
+  .docClose {
+    right: 30px;
+    width: 30px;
+    height: 30px;
+  } 
 } 
