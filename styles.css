@@ -242,67 +242,8 @@ h2 {
 .card.active .cardRank,
 .card.active .cardRank span {
   color: var(--cyan-sk);
-}
-/*
-.main-footer {
-    background: linear-gradient(to top, rgb(162 162 162 / 56%), transparent);
-    border-top: 1px solid  var(--glass-border);
-    padding: 60px 40px 40px;
-    margin-top: 40px;
-    color: black;
-}*/
+} 
 
-/*.footer-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-}
-*/
-
-/*.footer-section h3 {
-  font-size: 12px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-*/
-/*.footer-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links a {
-  color: var(--text);
-  color: #222;
-  text-decoration: none;
-  font-size: 14px;
-  opacity: 0.6;
-  transition: opacity 0.3s;
-}
-
-.footer-links a:hover { opacity: 1; }
-
-.status-badge {
-  display: inline-block;
-  padding: 6px 12px;
-  background: var(--glass);
-  border: 1px solid var(--glass-border);
-  border-radius: 8px;
-  font-size: 11px;
-  color: var(--accent);
-}
-
-.footer-bottom {
-  max-width: 1400px;
-  margin: 60px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.05);
-  font-size: 11px;
-  text-align: center;
-}
-*/
 @media (max-width: 1024px) {
   .grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -471,6 +412,10 @@ h2 {
 
 #docBody h1 {
     text-align: center !important;
+}
+
+#docBody p {
+    font-size: 13px;
 }
 
 .md-en{
