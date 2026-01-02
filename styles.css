@@ -421,6 +421,49 @@ h2 {
   opacity: 0.7;
 }
 
+/*overlay*/
+.docOverlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.docCard{
+  position:relative;
+  width:min(900px,92vw);
+  height:min(80vh,90vh);
+  background:#0a0c10;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:16px;
+  overflow:hidden;
+}
+.docBody{
+  height:100%;
+  overflow:auto;
+  padding:22px;
+  direction:ltr; /* will flip to rtl automatically when Arabic detected */
+}
+.docClose{
+  position:absolute;
+  top:10px;
+  right:12px;
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.15);
+  background:rgba(255,255,255,.06);
+  color:#fff;
+  font-size:24px;
+  line-height:1;
+  cursor:pointer;
+}
+.hidden{ display:none; }
+
+
+
 /* Mobile */
 @media (max-width: 768px){
   .main-footer{ padding: 40px 15px 24px; }

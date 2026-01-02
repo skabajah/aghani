@@ -138,11 +138,22 @@
 
       <section class="footer-section">
         <h3>Information</h3>
-        <nav class="footer-links">
+
+        <!-- <nav class="footer-links">
           <a href="methodology.md" target="_blank"  >Sources &amp; Methodology</a>
           <a href="privacy-policy.md" target="_blank"  >Privacy Policy</a>
           <a href="terms-of-service.md" target="_blank"  >Terms of Service</a>
         </nav>
+         -->
+        <nav class="footer-links">
+          <a href="#" class="docLink" data-md="methodology.md">Sources &amp; Methodology</a>
+          <a href="#" class="docLink" data-md="privacy-policy.md">Privacy Policy</a>
+          <a href="#" class="docLink" data-md="terms-of-service.md">Terms of Service</a>
+        </nav>
+
+      
+
+
       </section>
 
       <section class="footer-section">
@@ -156,9 +167,18 @@
   </div>
 </footer>
 
+<div id="docOverlay" class="docOverlay hidden" aria-hidden="true">
+  <div class="docCard" role="dialog" aria-modal="true">
+    <button id="docClose" class="docClose" aria-label="Close">×</button>
+    <div id="docBody" class="docBody"></div>
+  </div>
+</div>
 
   <script src="https://www.youtube.com/iframe_api"></script>
   <script src="app.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="docs-overlay.js"></script>
 
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-W2P14G8P2J"></script>
@@ -169,6 +189,8 @@
 
   gtag('config', 'G-W2P14G8P2J');
 </script>
+
+
 
 </body>
 </html>
