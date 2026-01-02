@@ -395,8 +395,8 @@ h2 {
   width:40px;
   height:40px;
   border-radius:12px;
-  border:1px solid rgb(192 192 192 / 16%);
-  background:rgb(192 192 192 / 16%);
+  border:none;
+  background:none; 
   color:black;
   font-size:24px;
   line-height:1;
