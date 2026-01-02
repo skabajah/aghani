@@ -49,6 +49,7 @@ html, body {
     display: block;
     opacity: 0.9;
     position: fixed;
+    border-radius:  14px ;
 }
 
 
