@@ -461,7 +461,11 @@ h2 {
 }
 .hidden{ display:none; }
 
-
+#docBody h2 {
+    color: gray;
+    margin: 0;
+    font-size: 1em;
+}
 
 /* Mobile */
 @media (max-width: 768px){
