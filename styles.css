@@ -404,6 +404,7 @@ h2 {
 
 #docBody h1 {
     text-align: center !important;
+    font-weight: 600;
 }
 
 #docBody h2 {
@@ -415,6 +416,7 @@ h2 {
 
 #docBody h3 {
     font-size: 15px;
+    font-weight: 400;
 }
 
 #docBody p {
