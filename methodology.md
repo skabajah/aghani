@@ -2,6 +2,8 @@
 
 ## English
 
+### Sources 
+
 aghani.org presents aggregated rankings of Arabic digital content based on data retrieved via the **YouTube Data API v3**  
 (https://developers.google.com/youtube/v3). Rankings reflect **collective attention within defined time windows**, not individual preferences or recommendations.
 
@@ -29,6 +31,8 @@ Video playback on aghani.org uses the official YouTube embedded player. Video co
 
 
 ## العربية
+
+### المصادر
 
 يعرض موقع aghani.org تصنيفات مجمّعة للمحتوى الرقمي العربي اعتمادًا على بيانات يتم جمعها عبر واجهة برمجة تطبيقات يوتيوب  
 (https://developers.google.com/youtube/v3). تعكس التصنيفات **الاهتمام الجماعي ضمن فترات زمنية محددة**، ولا تعبّر عن تفضيلات فردية أو توصيات شخصية.
