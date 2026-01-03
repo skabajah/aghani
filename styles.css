@@ -419,6 +419,9 @@ h2 {
 #docBody p {
     font-size: 13px;
 }
+#docBody li {
+    font-size: 13px;
+}
 
 .md-en{
   direction:ltr;
