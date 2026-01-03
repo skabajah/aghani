@@ -3,9 +3,8 @@
 ## English
 
 By accessing or using **aghani.org**, you agree to use the site for lawful purposes only.  
-All content is provided for informational purposes and is offered “as is” without warranties of any kind.
 
-aghani.org is a periodically updated music ranking platform that uses YouTube view counts to showcase the most-watched Arabic songs, based on verifiable data and a transparent, non-editorial methodology.
+All content is provided for informational purposes and is offered “as is” without warranties of any kind.
 
 You may reference or share excerpts of the content. Attribution with a link to the original source is appreciated.
 
@@ -21,9 +20,8 @@ These terms may be updated at any time without prior notice.
 ## العربية
 
 بدخولكم أو باستخدامكم موقع **aghani.org**، فإنكم توافقون على استخدامه لأغراض مشروعة فقط.  
-يتم توفير جميع المحتويات لأغراض معلوماتية فقط، وكما هي، دون أي ضمانات.
 
-أغاني (aghani.org) منصة تصنيف موسيقي تُحدَّث بشكل دوري، وتعتمد على عدد مشاهدات يوتيوب لعرض أكثر الأغاني العربية مشاهدةً، استنادًا إلى بيانات قابلة للتحقق ومنهجية شفافة دون أي تدخل تحريري.
+يتم توفير جميع المحتويات لأغراض معلوماتية فقط، وكما هي، دون أي ضمانات.
 
 يمكنكم مشاركة أو الإشارة إلى مقتطفات من المحتوى، ونُقدّر ذكر المصدر مع وضع رابط للمصدر الأصلي.
 
