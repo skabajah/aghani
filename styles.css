@@ -409,11 +409,11 @@ h2 {
 #docBody h2 {
     color: gray;
     margin: 0;
-    font-size: 1em;
+    font-size: 18px;
 }
 
 #docBody h3 {
-    font-size: 0.9em;
+    font-size: 15px;
 }
 
 #docBody p {
