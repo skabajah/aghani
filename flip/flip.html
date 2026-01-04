@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>aghani | flip</title>
+
+  <!-- root styles -->
+  <link rel="stylesheet" href="../styles.css">
+  <!-- flip-only styles -->
+  <link rel="stylesheet" href="./flip.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div id="bgBackdrop"></div>
+
+  <header class="topbar" id="tapArea" role="button">
+    <img src="../media/banner.svg" alt="aghani.org banner" class="banner">
+    <img src="../icons/icon-512.png" alt="aghani.org logo" class="logo">
+    <h1>Most Watched Arabic Songs 2025</h1>
+    <h2>الأغاني العربية الأكثر مشاهدة في 2025</h2>
+  </header>
+
+  <main class="layout">
+    <div class="flipStage">
+      <div class="flipCard" id="flipCard">
+
+        <!-- FRONT -->
+        <section class="flipFace flipFront">
+          <img class="swooshLogo" src="../icons/icon-512.png" alt="" aria-hidden="true">
+
+          <div class="oneSong">
+            <div class="topRow">
+              <div class="rankPill">
+                <div class="rankNum" id="rankNum">—</div>
+                <div class="rankLbl">Rank | الترتيب</div>
+              </div>
+
+              <p class="songTitle" id="songTitle">—</p>
+            </div>
+
+            <div class="playerFrameWrap">
+              <div id="player"></div>
+            </div>
+
+            <div class="bottomMeta">
+              <div class="metaCol">
+                <div class="metaLine">
+                  <span class="metaKey">Views المشاهدات ▪</span>
+                  <span class="metaVal" id="viewsVal">—</span>
+                </div>
+                <div class="metaLine">
+                  <span class="metaKey">Published تاريخ النشر ▪</span>
+                  <span class="metaVal" id="pubVal">—</span>
+                </div>
+              </div>
+              <div class="metaCol">
+                <div class="metaLine">
+                  <span class="metaKey">VideoID ▪</span>
+                  <span class="metaVal" id="idVal">—</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tapHint">Tap anywhere to flip</div>
+          </div>
+        </section>
+
+        <!-- BACK -->
+        <section class="flipFace flipBack">
+          <div class="backInner">
+            <p class="backTitle">aghani.org</p>
+            <p class="backText">Independent ranking • Top songs</p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script src="./flip.js"></script>
+</body>
+</html>
