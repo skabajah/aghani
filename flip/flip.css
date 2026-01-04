@@ -15,9 +15,7 @@
 }
 
 .flipCard.isFlipped{
-  /*transform: rotateY(180deg);*/
-  /*transform: rotate3d(0, 0, 1, 90deg);*/
-    transform: rotateY(360deg);
+  transform: rotateY(180deg); 
 
 }
 
