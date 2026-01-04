@@ -415,6 +415,7 @@ h2 {
     text-align: center !important;
     font-weight: 600;
     font-size: 1em;
+    display: none;
 }
 
 #docBody h2 {
