@@ -92,12 +92,47 @@ function parseCSV(text) {
   });
 }
 
-function formatMillions(val) {
-  if (!val) return "";
-  const num = Number(val.replace(/,/g, ''));
-  if (isNaN(num)) return "";
-  return (num / 1000000).toFixed(1) + "M";
+// function formatMillions(val) {
+//   if (!val) return "";
+//   const num = Number(val.replace(/,/g, ''));
+//   if (isNaN(num)) return "";
+//   return (num / 1000000).toFixed(1) + "M";
+// }
+
+function parseCount(val) {
+  if (val == null) return NaN;
+  const s = String(val).trim();
+  if (!s) return NaN;
+
+  // supports raw numbers, "123,456", and optional suffix like "1.2M", "900K", "3B"
+  const m = s.match(/^([\d.,]+)\s*([KMB])?$/i);
+  if (!m) return NaN;
+
+  const n = Number(m[1].replace(/,/g, ""));
+  if (Number.isNaN(n)) return NaN;
+
+  const suf = (m[2] || "").toUpperCase();
+  const mult = suf === "K" ? 1e3 : suf === "M" ? 1e6 : suf === "B" ? 1e9 : 1;
+  return n * mult;
 }
+
+function formatKMB(val) {
+  const n = parseCount(val);
+  if (!Number.isFinite(n)) return "";
+
+  const abs = Math.abs(n);
+  const fmt = (x) => {
+    const out = (Math.round(x * 10) / 10).toFixed(1);
+    return out.endsWith(".0") ? out.slice(0, -2) : out;
+  };
+
+  if (abs >= 1e9) return `${fmt(n / 1e9)}B`;
+  if (abs >= 1e6) return `${fmt(n / 1e6)}M`;
+  if (abs >= 1e3) return `${fmt(n / 1e3)}K`;
+  return `${Math.round(n)}`;
+}
+
+
 
 function extractVideoId(val) {
   if (!val) return null;
@@ -129,7 +164,11 @@ function playItem(item) {
 
 
   // EDITED LINES BELOW:
-  const views = item.Views ? `Views المشاهدات: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
+  // const views = item.Views ? `Views المشاهدات: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
+  const viewsShort = formatKMB(item.Views);
+  const views = viewsShort ? `Views المشاهدات: ${viewsShort}` : "";
+
+
   const published = item.PublishDate ? `Published تاريخ النشر: ${item.PublishDate}` : "";
   els.npMeta.textContent = `${views}    •    ${published}`;
   
@@ -157,7 +196,10 @@ async function init() {
 
     currentList.forEach((r, idx) => {
       const id = extractVideoId(r.VideoID);
-      const viewCount = formatMillions(r.Views);
+
+      // const viewCount = formatMillions(r.Views);
+      const viewCount = formatKMB(r.Views);
+
       const card = document.createElement("div");
       card.className = "card";
       card.setAttribute("data-id", id);
