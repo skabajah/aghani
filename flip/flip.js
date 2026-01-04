@@ -1,7 +1,7 @@
 // /flip/flip.js
 // Loads the same Top-20 CSV from root, shows ONE song, supports tap-to-flip and optional auto-advance.
 
-const CSV_URL = "../Top_Arabic_2025_All_Regions.csv"; // adjust if your CSV name differs
+const CSV_URL = "../Year2025.csv"; // adjust if your CSV name differs
 
 let songs = [];
 let index = 0;
