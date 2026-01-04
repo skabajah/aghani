@@ -97,11 +97,29 @@ function parseCSV(text) {
 }
 
 // ---------- flip ----------
+// function doFlip(){
+//   els.flipCard.classList.add("isAnimating");
+//   els.flipCard.classList.toggle("isFlipped");
+//   setTimeout(() => els.flipCard.classList.remove("isAnimating"), 750);
+// }
+// els.tapArea.addEventListener("click", doFlip);
+// els.flipCard.addEventListener("click", doFlip);
+// ---------- flip (animation + next song) ----------
 function doFlip(){
-  els.flipCard.classList.add("isAnimating");
-  els.flipCard.classList.toggle("isFlipped");
-  setTimeout(() => els.flipCard.classList.remove("isAnimating"), 750);
+  if (els.flipCard.classList.contains("isAnimating")) return;
+
+  els.flipCard.classList.add("isAnimating", "isFlipped");
+
+  // switch song at mid-flip
+  setTimeout(nextSong, 420);
+
+  // reset for next flip
+  setTimeout(() => {
+    els.flipCard.classList.remove("isFlipped");
+    els.flipCard.classList.remove("isAnimating");
+  }, 850);
 }
+
 els.tapArea.addEventListener("click", doFlip);
 els.flipCard.addEventListener("click", doFlip);
 
