@@ -381,10 +381,15 @@ h2 {
 #docBody p {
     font-size: 13px;
     line-height: 1.15;
+    font-weight: 100;
 }
 #docBody li {
     font-size: 13px;
     line-height: 1.25;
+    font-weight: 100;
+}
+#docBody strong { 
+    font-weight: 400;
 }
 .md-en {
     direction: ltr;
