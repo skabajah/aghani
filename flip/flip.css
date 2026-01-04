@@ -207,3 +207,13 @@
     z-index: 999 !important;
     object-fit: cover !important;
 }
+
+.flipCard.isAnimating::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #fff;
+  z-index: 5;
+  opacity: 1;
+  transition: opacity 120ms linear;
+}
