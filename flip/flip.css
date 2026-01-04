@@ -190,7 +190,9 @@
 }
 
 @media (max-width: 768px){
-  .playerFrameWrap{ height: 30vh; }
+  .playerFrameWrap{ 
+    height: 22vh; 
+  }
   /*.rankNum{ font-size: 28px; }*/
   .swooshLogo{ width: 44px; height: 44px; }
   .bottomMeta{ font-size: 13px; }
