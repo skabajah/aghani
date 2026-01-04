@@ -390,6 +390,7 @@ h2 {
   padding:22px;
   background: white;
   overflow: auto;
+  border-radius: 20px;
 }
 .docClose{
   position:absolute;
