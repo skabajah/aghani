@@ -41,7 +41,8 @@ html, body {
     margin: 0;
     display: none;
 }
-.topbar-hit {
+
+a.topbar-hit {
   display: contents;
 }
 
