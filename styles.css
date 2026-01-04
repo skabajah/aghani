@@ -428,6 +428,11 @@ h2 {
     font-weight: 500;
 }
 
+#docBody h4 {
+    font-size: 12px;
+    font-weight: 700;
+}
+
 #docBody p {
     font-size: 13px;
 }
