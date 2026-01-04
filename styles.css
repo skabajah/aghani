@@ -228,10 +228,10 @@ h2 {
 /* Description: bilingual-ready */
 
 .site-description {
-    max-width: 900px;
+    max-width: min(90%,900px);
     margin: 0 auto 40px;
-    font-size: 0.8em;
-    line-height: 1.6;
+    font-size: 113px;
+    line-height: 1.15;
     color: #222;
     text-align: center;
 }
