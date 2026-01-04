@@ -67,6 +67,10 @@ img.cover {
     box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
     width: 85vw;
 }
+a img:hover {
+    border: solid 1px var(--cyan-sk);
+}
+
 #bgBackdrop {
     position: fixed;
     inset: -10%;
