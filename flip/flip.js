@@ -1,7 +1,8 @@
 // /flip/flip.js
-// Loads the same Top-20 CSV from root, shows ONE song, supports tap-to-flip and optional auto-advance.
+// Reads Year2025.csv, shows ONE song, bilingual meta lines, no VideoID displayed.
+// Supports tap-to-flip + optional auto flip/advance via URL params.
 
-const CSV_URL = "../Year2025.csv"; // adjust if your CSV name differs
+const CSV_URL = "../Year2025.csv";
 
 let songs = [];
 let index = 0;
@@ -14,10 +15,86 @@ const els = {
   title: document.getElementById("songTitle"),
   views: document.getElementById("viewsVal"),
   pub: document.getElementById("pubVal"),
-  id: document.getElementById("idVal"),
 };
 
 let ytPlayer = null;
+let isPlayerReady = false;
+let pendingVideoId = null;
+
+// ---------- helpers (same behavior as app.js) ----------
+function escapeHtml(s) {
+  return String(s ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+}
+
+function parseCount(val) {
+  if (val == null) return NaN;
+  const s = String(val).trim();
+  if (!s) return NaN;
+  const m = s.match(/^([\d.,]+)\s*([KMB])?$/i);
+  if (!m) return NaN;
+
+  const n = Number(m[1].replace(/,/g, ""));
+  if (Number.isNaN(n)) return NaN;
+
+  const suf = (m[2] || "").toUpperCase();
+  const mult = suf === "K" ? 1e3 : suf === "M" ? 1e6 : suf === "B" ? 1e9 : 1;
+  return n * mult;
+}
+
+function formatKMB(val) {
+  const n = parseCount(val);
+  if (!Number.isFinite(n)) return "";
+
+  const abs = Math.abs(n);
+  const fmt = (x) => {
+    const out = (Math.round(x * 10) / 10).toFixed(1);
+    return out.endsWith(".0") ? out.slice(0, -2) : out;
+  };
+
+  if (abs >= 1e9) return `${fmt(n / 1e9)}B`;
+  if (abs >= 1e6) return `${fmt(n / 1e6)}M`;
+  if (abs >= 1e3) return `${fmt(n / 1e3)}K`;
+  return `${Math.round(n)}`;
+}
+
+function extractVideoId(val) {
+  if (!val) return null;
+  if (val.includes("v=")) return val.split("v=")[1].split("&")[0];
+  if (val.includes("youtu.be/")) return val.split("youtu.be/")[1].split("?")[0];
+  return val;
+}
+
+// robust CSV parser (same style as your app.js)
+function parseCSV(text) {
+  const lines = text.trim().split(/\r?\n/);
+  if (lines.length <= 1) return [];
+
+  const parseLine = (line) => {
+    const out = []; let cur = ""; let inQuotes = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (ch === '"') {
+        if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }
+        else inQuotes = !inQuotes;
+      } else if (ch === "," && !inQuotes) { out.push(cur); cur = ""; }
+      else cur += ch;
+    }
+    out.push(cur); return out;
+  };
+
+  const header = parseLine(lines[0]).map(h => h.trim());
+  return lines.slice(1).map(line => {
+    const vals = parseLine(line);
+    const o = {};
+    header.forEach((h, idx) => { o[h] = vals[idx] ? vals[idx].trim() : ""; });
+    return o;
+  });
+}
 
 // ---------- flip ----------
 function doFlip(){
@@ -25,67 +102,69 @@ function doFlip(){
   els.flipCard.classList.toggle("isFlipped");
   setTimeout(() => els.flipCard.classList.remove("isAnimating"), 750);
 }
-
 els.tapArea.addEventListener("click", doFlip);
 els.flipCard.addEventListener("click", doFlip);
 
-// ---------- CSV parsing ----------
-function splitCSVLine(line){
-  // split by commas but keep quoted commas
-  return line.split(/,(?=(?:[^"]*"[^"]*")*[^"]*$)/).map(v => v.trim());
-}
-
-function stripQuotes(s){
-  if (!s) return "";
-  return s.replace(/^"|"$/g, "");
-}
-
-function parseCSV(text){
-  const lines = text.replace(/\r\n/g, "\n").trim().split("\n");
-  if (lines.length < 2) return [];
-
-  const headers = splitCSVLine(lines[0]).map(stripQuotes);
-
-  return lines.slice(1).map(line => {
-    const cols = splitCSVLine(line).map(stripQuotes);
-    const obj = {};
-    headers.forEach((h, i) => obj[h] = cols[i] ?? "");
-    return obj;
-  });
-}
-
 // ---------- render ----------
-function setBackdrop(videoId){
-  els.bg.style.backgroundImage =
-    `url(https://i.ytimg.com/vi/${encodeURIComponent(videoId)}/maxresdefault.jpg)`;
+function setBackdrop(urlOrId, thumbUrl){
+  // prefer CSV thumbnail if present
+  if (els.bg) {
+    if (thumbUrl) els.bg.style.backgroundImage = `url(${thumbUrl})`;
+    else if (urlOrId) els.bg.style.backgroundImage = `url(https://i.ytimg.com/vi/${encodeURIComponent(urlOrId)}/maxresdefault.jpg)`;
+  }
+}
+
+function loadIntoPlayer(videoId){
+  if (!videoId) return;
+
+  if (!isPlayerReady || !ytPlayer) {
+    pendingVideoId = videoId;
+    return;
+  }
+
+  if (typeof ytPlayer.loadVideoById === "function") {
+    ytPlayer.loadVideoById(videoId);
+  } else if (typeof ytPlayer.cueVideoById === "function") {
+    ytPlayer.cueVideoById(videoId);
+    if (typeof ytPlayer.playVideo === "function") ytPlayer.playVideo();
+  } else {
+    pendingVideoId = videoId;
+  }
 }
 
 function showSong(i){
   if (!songs.length) return;
+  const item = songs[i];
 
-  const s = songs[i];
+  const rank = item.Rank || String(i + 1);
+  const id = extractVideoId(item.VideoID);
+  const titleHtml = escapeHtml(item.Title || "").replaceAll(" | ", "<br>");
 
-  // Expected column names:
-  // Rank, Views, Title, VideoID, PublishDate
-  const rank = s.Rank || String(i + 1);
-  const title = s.Title || "";
-  const views = s.Views || "";
-  const pub = s.PublishDate || "";
-  const id = s.VideoID || "";
+  const viewsShort = formatKMB(item.Views);
+  const viewsLine = viewsShort
+    ? `Views • <span dir="ltr">${viewsShort}</span> • المشاهدات`
+    : "";
+
+  const pubLine = item.PublishDate
+    ? `Published • <span dir="ltr">${escapeHtml(item.PublishDate)}</span> • تاريخ النشر`
+    : "";
 
   els.rank.textContent = rank;
-  els.title.textContent = title;
-  els.views.textContent = views;
-  els.pub.textContent = pub;
-  els.id.textContent = id;
 
-  if (id) setBackdrop(id);
-  if (ytPlayer && id) ytPlayer.loadVideoById(id);
+  // allow <br> like your app.js
+  els.title.innerHTML = titleHtml;
+
+  // bilingual meta lines (no VideoID displayed)
+  els.views.innerHTML = viewsLine;
+  els.pub.innerHTML = pubLine;
+
+  setBackdrop(id, item.Thumbnail);
+  loadIntoPlayer(id);
 }
 
 function nextSong(){
+  if (!songs.length) return;
   index = (index + 1) % songs.length;
-  // ensure front side before switching content (for clean recordings)
   els.flipCard.classList.remove("isFlipped");
   showSong(index);
 }
@@ -96,33 +175,24 @@ async function loadCSV(){
   if (!res.ok) throw new Error(`CSV fetch failed: ${res.status}`);
   const text = await res.text();
 
-  songs = parseCSV(text);
-
-  // If Rank exists, sort by Rank numeric (keeps top20 order stable)
-  if (songs.length && songs[0].Rank){
-    songs.sort((a,b) => Number(a.Rank) - Number(b.Rank));
-  }
+  songs = parseCSV(text)
+    .filter(r => r.VideoID && r.VideoID.length > 5)
+    .sort((a, b) => (parseInt(a.Rank) || 999) - (parseInt(b.Rank) || 999));
 
   showSong(0);
 }
 
-// ---------- optional auto mode for recording ----------
-function getQP(){
-  return new URLSearchParams(location.search);
-}
-
+// ---------- optional auto mode ----------
 function setupAuto(){
-  const qp = getQP();
+  const qp = new URLSearchParams(location.search);
   const autoflip = qp.get("autoflip") === "1";
   const autosong = qp.get("autosong") === "1";
   const interval = Math.max(900, Number(qp.get("interval") || 2500));
 
-  // Example:
-  // /flip/?autoflip=1&autosong=1&interval=2500
   if (autoflip && autosong){
     setInterval(() => {
       doFlip();
-      setTimeout(() => nextSong(), 900);
+      setTimeout(nextSong, 900);
     }, interval);
   } else if (autoflip){
     setInterval(doFlip, interval);
@@ -143,11 +213,19 @@ window.onYouTubeIframeAPIReady = function(){
       modestbranding: 1,
       rel: 0,
       controls: 0
+    },
+    events: {
+      onReady: () => {
+        isPlayerReady = true;
+        if (pendingVideoId) {
+          const vid = pendingVideoId;
+          pendingVideoId = null;
+          loadIntoPlayer(vid);
+        }
+      }
     }
   });
 };
 
 // init
-loadCSV().then(setupAuto).catch(err => {
-  console.error(err);
-});
+loadCSV().then(setupAuto).catch(err => console.error(err));
