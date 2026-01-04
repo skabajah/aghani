@@ -388,6 +388,9 @@ h2 {
     line-height: 1.25;
     font-weight: 100;
 }
+#docBody strong { 
+    font-weight: 400;
+}
 .md-en {
     direction: ltr;
     text-align: left;
