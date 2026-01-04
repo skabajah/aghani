@@ -282,18 +282,19 @@ h2 {
   font-size: 0.8em;
   line-height: 1.6;
   color: #222;
+  text-align: center;
 }
 
 /* Arabic + English blocks */
 .lang-ar{
   direction: rtl;
-  text-align: right;
+  /*text-align: right;*/
   display: block;
 }
 
 .lang-en{
   direction: ltr;
-  text-align: left;
+  /*text-align: left;*/
   display: block;
   margin-top: 16px;
   opacity: 0.85;
