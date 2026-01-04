@@ -453,8 +453,9 @@ hr {
         font-size: 40px;
     }
     .playerFrameWrap {
-        height: 24vh;
-        width: 85vw;
+        height: 25vh;
+        /*width: 85vw;*/
+        width: auto;
         margin: 0 auto;
     }
     .list {
