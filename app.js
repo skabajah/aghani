@@ -1,4 +1,4 @@
-const CSV_FILE = "Top_Arabic_2025_All_Regions.csv";
+const CSV_FILE = "Year2025.csv";
 
 const els = {
   grid: document.getElementById("grid"),
