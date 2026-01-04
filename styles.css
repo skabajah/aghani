@@ -493,4 +493,7 @@ hr {
     margin-top: 0;
     text-align: left !important;
   } 
+  .list {
+    width: 100%;
+  }
 } 
