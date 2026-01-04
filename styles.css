@@ -432,6 +432,9 @@ hr {
         margin-top: -33px;
         width: auto;
     }
+    img.cover {
+        width: auto;
+    }
     .docClose {
         right: 15px;
         width: 30px !important;
