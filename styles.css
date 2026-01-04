@@ -139,7 +139,8 @@ h2 {
 .npMeta {
     font-size: 1.1em;
     color: #131313;
-  padding: 1em 0 0 0;
+    padding: 1em 0 0 0;
+    text-align: center;
 }
 
 .playerFrameWrap {
