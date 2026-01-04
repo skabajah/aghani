@@ -428,6 +428,7 @@ h2 {
 #docBody h3 {
     font-size: 13px;
     font-weight: 500;
+    text-decoration: underline;
 }
 
 #docBody h4 {
