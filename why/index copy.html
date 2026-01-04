@@ -4,15 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Privacy Policy | سياسة الخصوصية — aghani.org</title>
-  <meta name="description" content="سياسة الخصوصية الخاصة بـ aghani.org. Privacy policy for aghani.org.">
+  <title>Why Aghani? | لماذا أغاني؟ — aghani.org</title>
+  <meta name="description" content="Why aghani.org exists and what problem it aims to solve. لماذا تم إنشاء موقع أغاني وما الهدف منه.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://aghani.org/privacy/">
+  <link rel="canonical" href="https://aghani.org/why/">
 
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Privacy Policy | سياسة الخصوصية — aghani.org">
-  <meta property="og:description" content="سياسة الخصوصية الخاصة بـ aghani.org.">
-  <meta property="og:url" content="https://aghani.org/privacy/">
+  <meta property="og:title" content="Why Aghani? | لماذا أغاني؟ — aghani.org">
+  <meta property="og:description" content="Why aghani.org exists and how it reflects collective attention without personalization.">
+  <meta property="og:url" content="https://aghani.org/why/">
   <meta property="og:site_name" content="aghani.org">
 
   <link rel="manifest" href="/manifest.webmanifest">
@@ -37,45 +38,15 @@
     <a class="logo" href="/" aria-label="Home">
       <img src="/icons/icon-512.png" alt="aghani.org logo" class="logo">
     </a>
-
-<!--     <h1>Privacy Policy</h1>
-    <h2>سياسة الخصوصية</h2> -->
     
+  <!--   <h1>Why Aghani?</h1>
+    <h2>لماذا أغاني؟</h2>
+   -->
   </header>
 
   <main class="layout">
     <section class="list">
-      <div id="docBody" class="docBody">
-
-<h1  >Privacy Policy | سياسة الخصوصية</h1>
-
-<hr>
-<div class="lang-en" >
-
-<h2>English</h2>
-<p>aghani.org values your privacy.<br>We do not require users to provide personal information. The site uses <strong>Google tags</strong> (e.g., Google Analytics via Google Tag) to understand general usage patterns and improve performance. This may involve cookies or similar technologies and results in aggregated, non-identifying data.</p>
-<p>aghani.org may link to or embed third-party services (such as YouTube or social platforms). Their privacy practices are governed by their own policies.</p>
-<p>We do not sell or share user data for commercial purposes.<br>This policy may be updated from time to time.</p>
-<p><em>Effective date: January 1, 2026</em></p>
-      </div>
-
-<hr>
-
-<div class="lang-ar" >
-
-<h2>العربية</h2>
-<p>تحترم aghani.org خصوصيتكم.<br>لا نطلب من المستخدمين تقديم أي معلومات شخصية. يستخدم الموقع <strong>Google tags</strong> (مثل Google Analytics عبر Google Tag) لفهم أنماط الاستخدام العامة وتحسين أداء الموقع، وقد يتضمن ذلك استخدام ملفات تعريف الارتباط أو تقنيات مشابهة، وينتج عنه بيانات مجمّعة وغير تعريفية.</p>
-<p>قد يتضمن الموقع روابط إلى خدمات خارجية أو محتوى مضمّن منها (مثل يوتيوب أو منصات التواصل الاجتماعي)، وتخضع ممارسات الخصوصية الخاصة بهذه الخدمات لسياساتها الخاصة.</p>
-<p>لا نقوم ببيع أو مشاركة بيانات المستخدمين لأغراض تجارية.<br>قد يتم تحديث هذه السياسة من وقت لآخر.</p>
-<p><em>تاريخ السريان: 1 يناير 2026</em></p>
-      </div>
-
-
-
-
-
-
-      </div>
+      <div id="docBody" class="docBody"></div>
     </section>
   </main>
 
@@ -121,6 +92,22 @@
   </div>
 </footer>
 
- 
+
+  <!-- Markdown renderer -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      const out = document.getElementById("docBody");
+      try {
+        const res = await fetch("/why-aghani.md", { cache: "no-cache" });
+        if (!res.ok) throw new Error(res.status);
+        const md = await res.text();
+        out.innerHTML = marked.parse(md);
+      } catch {
+        out.innerHTML = "<p>Failed to load Why Aghani content.</p>";
+      }
+    });
+  </script>
+
 </body>
 </html>
