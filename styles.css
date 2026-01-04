@@ -372,8 +372,8 @@ h2 {
 }
 .docCard{
   position:relative;
-  width:min(900px,92vw);
-  height:90vh;
+  width:95%;
+  height:95%;
   background:white;
   border:1px solid rgba(255,255,255,.12);
   border-radius:16px;
