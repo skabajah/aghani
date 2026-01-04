@@ -137,6 +137,7 @@
   text-align: center;
   padding-top: 8px;
   user-select: none;
+  display: none;
 }
 
 /* Logo swoosh overlay (does not move your header logo) */
