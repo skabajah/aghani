@@ -419,10 +419,6 @@ hr {
     .main-footer {
         padding: 40px 15px 24px;
     }
-    .site-description {
-        text-align: center;
-        margin-bottom: 30px;
-    }
     .footer-content {
         gap: 30px;
     }
@@ -458,20 +454,15 @@ hr {
     }
     .playerFrameWrap {
         height: 25vh;
-        /*width: 85vw;*/
         width: auto;
         margin: 0 auto;
     }
     .list {
-        /*width: 85vw;*/
         width: 100%;
         margin: 0 auto;
     }
     .npMeta {
         font-size: 13px;
         text-align: center;
-    }
-    .site-description {
-        float: none;
-    }
+    } 
 }
