@@ -2,8 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://aghani.org/</loc>
-    <lastmod>2026-01-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-01-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://aghani.org/methodology.md</loc>
+    <lastmod>2026-01-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://aghani.org/privacy-policy.md</loc>
+    <lastmod>2026-01-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://aghani.org/terms-of-service.md</loc>
+    <lastmod>2026-01-03</lastmod>
   </url>
 </urlset>
