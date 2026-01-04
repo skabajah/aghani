@@ -77,6 +77,7 @@
 .rankLbl{
   font-size: 13px;
   opacity: .65;
+  display: none;
 }
 
 .songTitle{
@@ -188,7 +189,7 @@
 
 @media (max-width: 768px){
   .playerFrameWrap{ height: 30vh; }
-  .rankNum{ font-size: 28px; }
+  /*.rankNum{ font-size: 28px; }*/
   .swooshLogo{ width: 44px; height: 44px; }
   .bottomMeta{ font-size: 13px; }
 }
