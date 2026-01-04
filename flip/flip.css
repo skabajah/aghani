@@ -14,8 +14,11 @@
   border-radius: var(--radius);
 }
 
-.flipCard.isFlipped{
-  transform: rotateY(180deg);
+/*.flipCard*/
+.isFlipped{
+  /*transform: rotateY(180deg);*/
+  transform: rotate3d(0, 0, 1, 90deg);
+}
 }
 
 .flipFace{
@@ -28,7 +31,7 @@
   border: 1px solid var(--glass-border);
   box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.35);
 }
-
+/*
 .flipBack{
   position: absolute;
   inset: 0;
@@ -38,7 +41,7 @@
   justify-content: center;
   padding: 24px;
   text-align: center;
-}
+}*/
 
 /* One-song layout */
 .oneSong{
