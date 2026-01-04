@@ -301,10 +301,11 @@ h2 {
 
 /* Footer base */
 .main-footer{
-  background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);
+  /*background: linear-gradient(to top, rgba(0,0,0,0.05), transparent);*/
   border-top: 1px solid var(--glass-border);
   padding: 50px 40px 30px;
   color: #000;
+  background: #dddddd80;
 }
 
 /* Columns */
@@ -320,7 +321,7 @@ h2 {
     font-weight: 700;
     text-transform: uppercase;
     margin: 0 0 16px;
-    color: black;
+    color: #139593;
 }
 
 .footer-links{
