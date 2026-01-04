@@ -205,5 +205,27 @@ These terms may be updated at any time without prior notice.
 
 *تاريخ السريان: 1 يناير 2026*
 </script>
+<div id="docBody" class="docBody"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", async () => {
+    const out = document.getElementById("docBody");
+    if (!out) return;
+
+    try {
+      if (!window.marked) throw new Error("marked not loaded");
+
+      const res = await fetch("/terms-of-service.md", { cache: "no-cache" });
+      if (!res.ok) throw new Error("fetch " + res.status);
+
+      const md = await res.text();
+      out.innerHTML = marked.parse(md);
+    } catch (e) {
+      out.innerHTML = "<p>Doc failed to load: " + String(e) + "</p>";
+    }
+  });
+</script>
+
 </body>
 </html>
