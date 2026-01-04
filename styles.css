@@ -41,6 +41,9 @@ html, body {
     margin: 0;
     display: none;
 }
+.topbar-hit {
+  display: contents;
+}
 
 .logo {
     width: 6em;
