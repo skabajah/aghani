@@ -489,11 +489,16 @@ hr {
     width: 30px !important;
     height: 30px;
   } 
+  /*  
   #docBody h1 {
-    margin-top: 0;
-    text-align: left !important;
-  } 
+      margin-top: 0;
+      text-align: left !important;
+    } 
+    */
   .list {
     width: 100%;
+  }
+  .docBody {
+    padding: 1em 2em;
   }
 } 
