@@ -239,16 +239,18 @@ h2 {
 
 .lang-ar {
     direction: rtl;
-    /*text-align: right;*/
-    display: block;
+    text-align: right;
+    /*display: block;*/
 }
 .lang-en {
     direction: ltr;
-    /*text-align: left;*/
-    display: block;
+    text-align: left;
+    /*display: block;
     margin-top: 16px;
     opacity: 0.85;
+    */
 }
+
 /* Footer base */
 
 .main-footer {
