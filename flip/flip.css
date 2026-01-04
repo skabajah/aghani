@@ -124,6 +124,7 @@
   opacity: .55;
   font-size: 12px;
   white-space: nowrap;
+  display: none;
 }
 
 .metaVal{
