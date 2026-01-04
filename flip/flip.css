@@ -15,7 +15,7 @@
 }
 
 .flipCard.isFlipped{
-  transform: rotateY(90deg);
+  transform: rotateY(180deg);
 }
 
 .flipFace{
@@ -191,4 +191,10 @@
   .rankNum{ font-size: 28px; }
   .swooshLogo{ width: 44px; height: 44px; }
   .bottomMeta{ font-size: 13px; }
+}
+
+/*cover */
+.html5-video-container {
+    z-index: 999 !important;
+    object-fit: cover !important;
 }
