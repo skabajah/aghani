@@ -1,5 +1,7 @@
 # Terms of Service | شروط الخدمة
 
+---
+
 ## English
 
 By accessing or using **aghani.org**, you agree to use the site for lawful purposes only.  
@@ -16,6 +18,8 @@ These terms may be updated at any time without prior notice.
 
 *Effective date: January 1, 2026*
 
+
+---
 
 ## العربية
 

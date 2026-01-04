@@ -1,5 +1,7 @@
 # Sources & Methodology | المصادر والمنهجية
 
+---
+
 ## English
 
 ### Sources 
@@ -29,6 +31,8 @@ Video playback on aghani.org uses the official YouTube embedded player. Video co
 - These releases are **rolled over and counted in the following year** to ensure fair exposure.
 - Annual ranking **snapshots are taken on January 1st** for the **previous year’s eligible window**.
 
+
+---
 
 ## العربية
 

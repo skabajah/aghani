@@ -1,5 +1,7 @@
 # Privacy Policy | سياسة الخصوصية
 
+---
+
 ## English
 
 aghani.org values your privacy.  
@@ -11,6 +13,8 @@ We do not sell or share user data for commercial purposes.
 This policy may be updated from time to time.
 
 *Effective date: January 1, 2026*
+
+---
 
 
 ## العربية
