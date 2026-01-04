@@ -60,7 +60,7 @@
   display: inline-flex;
   align-items: baseline;
   gap: 10px;
-  padding: 10px 14px;
+  padding-left: 10px;
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   background: #ffffffc7;
@@ -82,11 +82,12 @@
 }
 
 .songTitle{
-  font-size: clamp(18px, 2.3vw, 28px);
-  font-weight: 650;
-  line-height: 1.1;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1;
   margin: 0;
   word-break: break-word;
+  text-align: center;
 }
 
 .playerFrameWrap{
@@ -103,6 +104,7 @@
   padding: 10px 2px 0;
   font-size: 14px;
   line-height: 1.2;
+  margin-top: 1em;
 }
 
 .metaCol{
