@@ -291,7 +291,10 @@ h2 {
 }
 .footer-links a:hover {
     opacity: 1;
-    color: #44aaaa;
+    color: #ffffff;
+    background-color: var(--cyan-sk);
+    display: inline;
+    width: fit-content;
 }
 /* Status badge */
 
