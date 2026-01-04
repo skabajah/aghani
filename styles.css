@@ -387,7 +387,7 @@ h2 {
 }
 .docBody{
   height:100%;
-  padding:22px;
+  padding:2em 4em;
   background: white;
   overflow: auto;
   border-radius: 25px;
@@ -466,10 +466,10 @@ hr {
     margin-bottom: 30px;
   }
 
-  .lang-ar,
+  /*.lang-ar,
   .lang-en{
     text-align: center;
-  }
+  }*/
 
   .footer-content{ gap: 30px; }
 
@@ -492,10 +492,5 @@ hr {
   #docBody h1 {
     margin-top: 0;
     text-align: left !important;
-  }
-/*
-  .html5-main-video {
-    position: unset;
-  }
-*/
+  } 
 } 
