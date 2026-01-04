@@ -291,6 +291,7 @@ h2 {
 }
 .footer-links a:hover {
     opacity: 1;
+    color: #44aaaa;
 }
 /* Status badge */
 
