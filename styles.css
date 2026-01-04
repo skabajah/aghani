@@ -449,6 +449,12 @@ h2 {
   text-align:right;
 } 
 
+hr {
+    border: solid 1px var(--cyan-sk);
+    width: 40%;
+    margin: 2em auto 1em;
+}
+
 
 /* Mobile */
 @media (max-width: 768px){
