@@ -7,6 +7,12 @@ const CSV_URL = "../Year2025.csv";
 let songs = [];
 let index = 0;
 
+let stopTimer = null;
+
+const START_AT = 60;   // 1:00
+const PLAY_FOR = 5;   // seconds
+
+
 const els = {
   bg: document.getElementById("bgBackdrop"),
   flipCard: document.getElementById("flipCard"),
@@ -132,6 +138,7 @@ function setBackdrop(urlOrId, thumbUrl){
   }
 }
 
+
 function loadIntoPlayer(videoId){
   if (!videoId) return;
 
@@ -141,14 +148,27 @@ function loadIntoPlayer(videoId){
   }
 
   if (typeof ytPlayer.loadVideoById === "function") {
-    ytPlayer.loadVideoById(videoId);
-  } else if (typeof ytPlayer.cueVideoById === "function") {
-    ytPlayer.cueVideoById(videoId);
-    if (typeof ytPlayer.playVideo === "function") ytPlayer.playVideo();
+    ytPlayer.loadVideoById({
+      videoId,
+      startSeconds: START_AT
+    });
   } else {
-    pendingVideoId = videoId;
+    ytPlayer.cueVideoById({
+      videoId,
+      startSeconds: START_AT
+    });
+    ytPlayer.playVideo();
   }
+
+  // stop after 5 seconds
+  if (stopTimer) clearTimeout(stopTimer);
+  stopTimer = setTimeout(() => {
+    if (ytPlayer && typeof ytPlayer.pauseVideo === "function") {
+      ytPlayer.pauseVideo();
+    }
+  }, PLAY_FOR * 1000);
 }
+
 
 function showSong(i){
   if (!songs.length) return;
