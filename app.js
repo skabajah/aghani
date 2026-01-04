@@ -165,12 +165,17 @@ function playItem(item) {
 
   // EDITED LINES BELOW:
   // const views = item.Views ? `Views المشاهدات: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
+
+  // const viewsShort = formatKMB(item.Views);
+  // const views = viewsShort ? `Views المشاهدات: ${viewsShort}` : "";
+  // const published = item.PublishDate ? `Published تاريخ النشر: ${item.PublishDate}` : "";
+  // els.npMeta.textContent = `${views}    •    ${published}`;
+
   const viewsShort = formatKMB(item.Views);
-  const views = viewsShort ? `Views المشاهدات: ${viewsShort}` : "";
+  const viewsLine = viewsShort ? `Views • <span dir="ltr">${viewsShort}</span> • المشاهدات` : "";
+  const pubLine = item.PublishDate ? `Published • <span dir="ltr">${item.PublishDate}</span> • تاريخ النشر` : "";
+  els.npMeta.innerHTML = `${viewsLine}<br>${pubLine}`;
 
-
-  const published = item.PublishDate ? `Published تاريخ النشر: ${item.PublishDate}` : "";
-  els.npMeta.textContent = `${views}    •    ${published}`;
   
   document.querySelectorAll('.card').forEach(c => {
     c.classList.toggle('active', c.getAttribute('data-id') === id);
