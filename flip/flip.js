@@ -239,6 +239,19 @@ function setupAuto(){
   }
 }
 
+// keyboard trigger (space / enter / arrows)
+window.addEventListener("keydown", (e) => {
+  if (
+    e.key === " " ||        // Space
+    e.key === "Enter" ||    // Enter
+    e.key === "ArrowRight"  // Optional
+  ) {
+    e.preventDefault();
+    doFlip();
+  }
+});
+
+
 // ---------- YouTube ----------
 window.onYouTubeIframeAPIReady = function(){
   ytPlayer = new YT.Player("player", {
