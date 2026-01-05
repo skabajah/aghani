@@ -386,15 +386,13 @@ h2 {
     font-weight: 700;
     text-decoration: underline;
 }
-#docBody p {
-    font-size: 18px;
-    line-height: 1.15;
-    font-weight: 100;
+#docBody p li {
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 300;
 }
 #docBody li {
-    font-size: 18px;
-    line-height: 1.25;
-    font-weight: 100;
+    line-height: 1.3;
 }
 #docBody strong { 
     font-weight: 400;
