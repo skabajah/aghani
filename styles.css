@@ -420,7 +420,9 @@ hr {
     height: 800px;
     overflow: hidden;
 }
-
+.docBody.feedback {
+    padding: 0;
+}
 
 /* ipad  */
 
