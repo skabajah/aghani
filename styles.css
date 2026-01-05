@@ -391,11 +391,11 @@ h2 {
 }
 .docBody p,  .docBody li {
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 1.5;
     font-weight: 300;
 }
 .docBody li {
-    line-height: 1.3;
+    line-height: 1.6;
 }
 .docBody strong { 
     font-weight: 500;
