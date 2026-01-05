@@ -49,7 +49,7 @@
       <div class="docBody" id="docBody">
         <h1>Sources &amp; Methodology | المصادر والمنهجية</h1>
         <hr>
-        <div class="lang-en">
+        <!-- <div class="lang-en">
           <h2>English</h2>
           <h3>Sources</h3>
           <p>aghani.org presents aggregated rankings of Arabic digital content based on data retrieved via the <strong>YouTube Data API v3</strong><br>
@@ -73,7 +73,121 @@
             <li>Annual ranking <strong>snapshots are taken on January 1st</strong> for the <strong>previous year’s eligible window</strong>.</li>
           </ul>
         </div>
+        <hr> -->
+        <div class="lang-en">
+          <h2>English</h2>
+
+          <p>
+            Aghani (aghani.org) presents aggregated rankings of Arabic digital music content using publicly available data retrieved via the
+            <strong>YouTube Data API v3</strong><br>
+            (<a href="https://developers.google.com/youtube/v3">https://developers.google.com/youtube/v3</a>).
+            Rankings reflect <strong>collective attention within defined time windows</strong>, not individual preferences or recommendations.
+            Results are <strong>non-personalized</strong>, data-driven, and non-editorial.
+          </p>
+
+          <h3>1. Content Scope, Eligibility &amp; Validation</h3>
+          <p>Aghani ranks <strong>publicly accessible Arabic-language music content</strong> on YouTube.</p>
+          <p>To be included, content must meet <strong>all</strong> of the following at the time of data collection:</p>
+          <ul>
+            <li>Categorized on YouTube as <strong>Music</strong></li>
+            <li>Represents an official music release (official music video, official audio, or artist-approved upload)</li>
+            <li>Contains <strong>Arabic language</strong> in the title and/or audio</li>
+            <li>Has <strong>non-zero likes</strong></li>
+            <li>Has <strong>non-zero comments</strong></li>
+          </ul>
+
+          <p>Automated validation processes are applied to:</p>
+          <ul>
+            <li>Remove duplicates and re-uploads</li>
+            <li>Filter spam, compilations, and non-original content</li>
+            <li>Detect and exclude artificial or manipulated engagement</li>
+          </ul>
+
+          <p>Content failing any eligibility or validation rule is excluded.</p>
+
+          <h3>2. Data Sources &amp; Metrics</h3>
+          <p>
+            All rankings are derived exclusively from <strong>public YouTube metadata</strong> obtained via the YouTube Data API v3.
+          </p>
+          <p>Metrics used include:</p>
+          <ul>
+            <li>Views</li>
+            <li>Likes</li>
+            <li>Comments</li>
+            <li>Publish date</li>
+            <li>Category</li>
+            <li>Regional and language signals</li>
+          </ul>
+          <p>
+            Metrics requiring creator-only or private analytics access are <strong>not used</strong>.
+            Rankings do <strong>not</strong> accept paid inclusion.
+          </p>
+
+          <h3>3. Geographic Scope, Language Signals &amp; Regional Weighting (MENA)</h3>
+          <ul>
+            <li>Only views originating from <strong>Middle East and North Africa (MENA)</strong> countries are counted.</li>
+            <li>
+              Regional attribution is based on <strong>YouTube country signals</strong>, with <strong>Arabic language indicators</strong>
+              (titles, metadata, and audio context) used as supporting signals.
+            </li>
+            <li>Rankings favor songs that trend across <strong>multiple Arab countries</strong>.</li>
+            <li>
+              Songs viewed in a <strong>larger number of MENA countries</strong> score higher than songs with views concentrated in a single country.
+            </li>
+          </ul>
+          <p>
+            This approach prioritizes <strong>regional breadth and cross-country resonance</strong> over localized virality and measures Arabic music performance
+            <strong>within the Arab world</strong>, not global popularity alone.
+          </p>
+
+          <h3>4. Scoring &amp; Ranking Method</h3>
+          <ul>
+            <li>Each eligible entry receives a composite score calculated by <strong>combining views, likes, and comments</strong>.</li>
+            <li>Final rank is assigned after <strong>summing these engagement signals</strong> into a single score.</li>
+            <li>Rankings are ordered strictly by the computed score.</li>
+            <li>No editorial ordering, manual adjustment, personalization, or paid prioritization is applied.</li>
+          </ul>
+
+          <h3>5. Release Timing &amp; Ranking Windows</h3>
+
+          <h4>Monthly Rankings</h4>
+          <ul>
+            <li>Eligibility windows run from the <strong>1st through the 25th</strong> of each month.</li>
+            <li>Songs released after the 25th are excluded and rolled into the <strong>following month</strong>.</li>
+            <li>Ranking snapshots are taken on the <strong>1st day of each month</strong> for the previous month’s eligible window.</li>
+          </ul>
+
+          <h4>Annual Rankings</h4>
+          <ul>
+            <li>Annual rankings use fixed <strong>calendar-year</strong> windows.</li>
+            <li><strong>December releases</strong> are excluded from the current year and rolled into the <strong>following year</strong>.</li>
+            <li>Annual snapshots are taken on <strong>January 1st</strong> for the previous year’s eligible window.</li>
+          </ul>
+
+          <p>
+            Once a ranking period closes, results remain <strong>unchanged</strong> until the next update cycle to ensure stability and comparability.
+          </p>
+
+          <h3>6. Platform Use &amp; Playback</h3>
+          <ul>
+            <li>aghani.org uses the <strong>official YouTube embedded player</strong>.</li>
+            <li>Video content is streamed directly from YouTube and is <strong>not hosted</strong> on aghani.org.</li>
+            <li>View counts, advertisements, and playback behavior are governed entirely by <strong>YouTube’s platform rules and policies</strong>.</li>
+          </ul>
+
+          <h3>7. Governance &amp; Editorial Policy</h3>
+          <ul>
+            <li>Methodology updates or corrections are applied <strong>prospectively only</strong>.</li>
+            <li>Material changes are disclosed when relevant.</li>
+            <li>Historical rankings are not retroactively modified.</li>
+            <li>No manual promotion or suppression.</li>
+            <li>No paid inclusion.</li>
+            <li>Rankings reflect <strong>data only</strong>.</li>
+          </ul>
+        </div>
+
         <hr>
+        
         <div class="lang-ar">
           <h2>العربية</h2>
           <h3>المصادر</h3>
