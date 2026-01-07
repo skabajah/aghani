@@ -1,0 +1,18 @@
+[
+  {
+    "month": "2026-01",
+    "title": "[wip] January 2026",
+    "file": "2026-01.csv",
+    "banner": "/archive/banners/2026-01.png",
+    "playlist_url": "https://www.youtube.com/playlist?list=REPLACE_ME",
+    "ranking_video_url": "https://www.youtube.com/watch?v=REPLACE_ME"
+  },
+  {
+    "month": "2025-12",
+    "title": "Year 2025",
+    "file": "Year2025.csv",
+    "banner": "/archive/banners/2025-12.png",
+    "playlist_url": "https://www.youtube.com/playlist?list=REPLACE_ME",
+    "ranking_video_url": "https://www.youtube.com/watch?v=REPLACE_ME"
+  }
+]
