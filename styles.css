@@ -425,10 +425,17 @@ hr {
     padding: 0;
 }
 /* archiev page */ 
-
+table { 
+    font-size: 14px;
+ }
+table img {
+    width: auto;
+    max-width: 70px 
+}
 th, td {
-    border-bottom: solid 1px gray;
-    border-right: 1px solid gray;
+    border-bottom: solid 1px white;
+    border-right: 1px solid white;
+    background: #eeeeee94;
 }
 
 /* ipad  */
