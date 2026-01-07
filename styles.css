@@ -424,6 +424,12 @@ hr {
 .docBody.feedback {
     padding: 0;
 }
+/* archiev page */ 
+
+th, td {
+    border-bottom: solid 1px gray;
+    border-right: 1px solid gray;
+}
 
 /* ipad  */
 
