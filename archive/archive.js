@@ -2,28 +2,45 @@
   const root = document.getElementById("archiveRoot");
   if (!root) return;
 
-  const esc = s => String(s ?? "").replace(/[&<>"']/g, c =>
-    ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c])
-  );
+  const esc = s =>
+    String(s ?? "").replace(/[&<>"']/g, c =>
+      ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c])
+    );
 
   const splitCSV = (line) => {
-    const out = []; let cur="", q=false;
-    for (let i=0;i<line.length;i++){
-      const ch=line[i];
-      if (ch === '"' && line[i+1] === '"'){ cur+='"'; i++; continue; }
-      if (ch === '"'){ q=!q; continue; }
-      if (ch === "," && !q){ out.push(cur); cur=""; continue; }
+    const out = [];
+    let cur = "";
+    let q = false;
+
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+
+      if (ch === '"' && line[i + 1] === '"') {
+        cur += '"';
+        i++;
+        continue;
+      }
+      if (ch === '"') {
+        q = !q;
+        continue;
+      }
+      if (ch === "," && !q) {
+        out.push(cur);
+        cur = "";
+        continue;
+      }
       cur += ch;
     }
+
     out.push(cur);
-    return out.map(s=>s.trim());
+    return out.map(s => s.trim());
   };
 
   const parseCSV = (text) => {
-    const lines = text.replace(/\r/g,"").trim().split("\n").filter(Boolean);
+    const lines = text.replace(/\r/g, "").trim().split("\n").filter(Boolean);
     return {
       headers: splitCSV(lines[0] || ""),
-      rows: lines.slice(1).map(splitCSV)
+      rows: lines.slice(1).map(splitCSV),
     };
   };
 
@@ -43,11 +60,11 @@
 
       <table>
         <thead>
-          <tr>${headers.map(h=>`<th>${esc(h)}</th>`).join("")}</tr>
+          <tr>${headers.map(h => `<th>${esc(h)}</th>`).join("")}</tr>
         </thead>
         <tbody>
-          ${rows.map(r=>`
-            <tr>${headers.map((_,i)=>`<td>${esc(r[i] ?? "")}</td>`).join("")}</tr>
+          ${rows.map(r => `
+            <tr>${headers.map((_, i) => `<td>${esc(r[i] ?? "")}</td>`).join("")}</tr>
           `).join("")}
         </tbody>
       </table>
@@ -57,15 +74,19 @@
   };
 
   const load = async () => {
-    const manifest = await fetch("/archive/manifest.json", { cache:"no-store" })
+    const manifest = await fetch("/archive/manifest.json", { cache: "no-store" })
       .then(r => r.json());
 
-    manifest.sort((a,b)=> (b.month || "").localeCompare(a.month || ""));
+    manifest.sort((a, b) => (b.month || "").localeCompare(a.month || ""));
 
-    for (const item of manifest){
-      const csv = await fetch(`/archive/${item.file}`, { cache:"no-store" })
-        .then(r => r.text());
+    for (const item of manifest) {
+      // Only render "ready" snapshots
+      if (item.status !== "ready") continue;
 
+      const res = await fetch(`/archive/${item.file}`, { cache: "no-store" });
+      if (!res.ok) continue; // missing csv -> skip
+
+      const csv = await res.text();
       const { headers, rows } = parseCSV(csv);
       renderSnapshot(item, headers, rows);
     }
