@@ -51,7 +51,6 @@
     const cols = SHOW_COLS.filter(c => headers.includes(c));
 
     const section = document.createElement("section");
-    section.style.marginBottom = "40px";
 
     const links = [
       item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>` : "",
@@ -59,9 +58,9 @@
     ].filter(Boolean).join(" · ");
 
     section.innerHTML = `
-      ${item.banner ? `<img src="${esc(item.banner)}" style="width:100%;border-radius:12px;margin-bottom:12px">` : ""}
-      <h2>${esc(item.title)}</h2>
-      ${links ? `<div style="margin-bottom:10px">${links}</div>` : ""}
+      ${item.banner ? `<img class="cover" src="${esc(item.banner)}" >` : ""}
+      <h3>${esc(item.title)}</h3>
+      ${links ? `<div class="archive-links">${links}</div>` : ""}
 
       <table>
         <thead>
@@ -80,7 +79,7 @@
                   return `
                     <td>
                       <a href="${esc(href)}" target="_blank" rel="noopener">
-                        <img src="${esc(val)}" style="width:120px;border-radius:6px;display:block">
+                        <img src="${esc(val)}" style="width:70px;border-radius:6px;display:block">
                       </a>
                     </td>
                   `;
