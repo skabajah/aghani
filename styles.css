@@ -9,7 +9,7 @@
     --cyan-sk: #2db8b6;
     --sk-white: #fbfbfc ;
     --player-shadow:  0 50px 100px -20px rgba(0, 0, 0, 0.8) ;
-
+    --sk-linear:  linear-gradient(to bottom, #eeeeee59 0%, #ffffff6b 70%, #ffffff59 100%);
 }
 * {
     box-sizing: border-box;
@@ -422,7 +422,9 @@ table {
     border-radius: 25px;
     width: 100%;
     padding: 1em;
-    background: #eeeeeed6;
+    /*background: #eeeeeed6;*/
+    border:  var(--glass-border);
+    background: var(--sk-linear);
 }
 table img {
     width: auto;
