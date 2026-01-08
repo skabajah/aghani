@@ -538,13 +538,13 @@ th {
     }
 
     td.song-title {
-        grid-row: 1; /* appear in the first grid row */
-        grid-column: 1 / -1; /* span all columns */
+        grid-row: 2; /* appear in the first grid row */
+        grid-column: 2 / -4; /* span all columns */
         display: block;
     }
 
     td:not(.song-title) {
-        grid-row: 2; /* appear in the second grid row */
+        grid-row: 1; /* appear in the second grid row */
         display: block;
     }
 
