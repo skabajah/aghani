@@ -52,6 +52,7 @@ a.topbar-hit {
     border-radius: 14px;
     left: 2em;
     box-shadow: var(--sk-shadow);
+    z-index: 9;
 }
 img.banner {
     height: 7em;
