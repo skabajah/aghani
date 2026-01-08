@@ -418,7 +418,7 @@ hr {
  }
 table {
     font-size: 14px;
-    box-shadow: 8px 13px 20px 0px rgb(0 0 0 / 15%);
+    box-shadow: var(--sk-shadow);
     border-radius: 25px;
     width: 100%;
     padding: 1em;
