@@ -524,7 +524,15 @@ th {
     table {
         border-collapse: collapse;
     }
+    tr {
+    display: flex;
+    flex-direction: column;
+    }
     td.song-title {
-        order: -1;   
-    } 
+    order: -1;          /*move to top */ 
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    line-height: 1.3;
+    }
+
 }
