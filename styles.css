@@ -452,7 +452,8 @@ td:last-child {
 th {
     background: var(--cyan-sk);
     border-radius: 15px;
-    color: white
+    color: white;
+    display: none ;
 }
 
 /* ipad  */
