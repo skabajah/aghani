@@ -4,10 +4,12 @@
     --glass-border: #ffffff9e;
     --accent: #3b82f6;
     --text: #ffffff;
-    --cyan-sk: #2db8b6;
     --muted: rgba(255, 255, 255, 0.4);
     --radius: 28px;
     --sk-shadow: 0px 20px 20px 0px rgb(0 0 0 / 15%);
+    --cyan-sk: #2db8b6;
+    --sk-white: #fbfbfc ;
+
 }
 * {
     box-sizing: border-box;
