@@ -530,6 +530,9 @@ th {
     table {
         font-size: 12px;
     }
+    table img {
+        max-width: 60px;
+    }
     thead {
         display: none; /* hide header */
     }
