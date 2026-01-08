@@ -484,14 +484,7 @@ th {
     img.cover {
         width: auto;
     }
-    .docClose {
-        right: 15px;
-        width: 30px !important;
-        height: 30px;
-    } 
-    .docBody {
-        padding: 0em 1em;
-    }
+    
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -518,6 +511,14 @@ th {
         font-size: 13px;
         text-align: center;
     } 
+    .docClose {
+        right: 15px;
+        width: 30px !important;
+        height: 30px;
+    } 
+    .docBody {
+        padding: 0em 1em;
+    }
     .docBody p,  .docBody li {
     font-size: 15px;
     line-height: 1.5;
