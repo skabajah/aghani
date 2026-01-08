@@ -428,6 +428,9 @@ hr {
 .docBody.feedback {
     padding: 0;
 }
+.Dq4amc {
+    visibility: collapse !important; 
+}
 /* archiev page */ 
 #archiveRoot .cover
  {
