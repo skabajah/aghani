@@ -441,18 +441,11 @@ table {
 table img {
     width: auto;
     max-width: 70px 
-}
-tr {
-    border-top: solid 1px white;
-    /*border-right: 1px solid white; */
-}
+} 
 td {
-    /*border-top: solid 1px white;*/
+    border-top: solid 1px white;
     border-right: 1px solid white; 
-}
-tr:first-child {
-  border-top: none;
-}
+} 
 td:last-child {
   border-right: none;
 }
