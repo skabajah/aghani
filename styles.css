@@ -165,6 +165,7 @@ h2 {
     padding: 20px;
     width: var(--list-width);
     margin: auto;
+    overflow: hidden;
 }
 .grid {
     display: grid;
@@ -421,11 +422,8 @@ hr {
 
 /*feedback*/
 .formEmbed {
-    width: 100%;
-    margin: 0 auto;
     height: 745px;
-    overflow: clip;
-    border-radius: var(--radius);
+    background: #f6f6f6;
 }
 .docBody.feedback {
     padding: 0;
