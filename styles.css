@@ -70,7 +70,7 @@ img.cover {
     border:  var(--glass-border);
     border-radius: var(--radius);
     opacity: .9;
-    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--player-shadow);
     width: var(--list-width);
 } 
 
