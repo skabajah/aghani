@@ -551,6 +551,7 @@ th {
     td:not(.song-title) {
         grid-row: 1; /* appear in the second grid row */
         display: block;
+        border-right: none;
     }
 
 }
