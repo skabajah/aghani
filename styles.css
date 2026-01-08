@@ -349,7 +349,7 @@ h2 {
     background: var(--sk-white);
     overflow: auto;
     border-radius: 25px;
-    box-shadow: 1px -5px 20px 0px #9c9c9c4f;
+    box-shadow: var(--sk-shadow);
 }
 .docClose {
     position: absolute;
