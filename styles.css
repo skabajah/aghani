@@ -451,6 +451,10 @@ td:last-child,
 th:last-child {
   border-right: none;
 }
+th {
+    background: var(--cyan-sk);
+    border-radius: 15px;
+}
 
 /* ipad  */
 
