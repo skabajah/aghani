@@ -524,6 +524,9 @@ th {
     } 
 
     /*archive table*/
+    .archive.docBody {
+        padding: 10px;
+    }
     thead {
         display: none; /* hide header */
     }
