@@ -549,12 +549,14 @@ th {
         display: block;
         border:  none;
         border-bottom: 1px solid white;
+        padding: 0 0 8px 0;
     }
 
     td:not(.song-title) {
-        grid-row: 1; /* appear in the second grid row */
+        padding: 8px 0 0 0;
+        grid-row: 1;
         display: block;
-        border-right: none;
+        border: none;
     }
 
 }
