@@ -55,12 +55,12 @@
     const links = [
       item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>` : "",
       item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>` : "",
-    ].filter(Boolean).join(" · ");
+    ].filter(Boolean).join(" | ");
 
     section.innerHTML = `
       ${item.banner ? `<img class="cover" src="${esc(item.banner)}" >` : ""}
       <h3>${esc(item.title)}</h3>
-      ${links ? `<div class="archive-links">${links}</div>` : ""}
+      ${links ? `<h5 class="archive-links">${links}</h5>` : ""}
 
       <table>
         <thead>
