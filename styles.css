@@ -424,7 +424,7 @@ hr {
     width: 100%;
     margin: 0 auto;
     height: 585px;
-    overflow: hidden;
+    overflow: clip;
     border-radius: var(--radius);
 }
 .docBody.feedback {
