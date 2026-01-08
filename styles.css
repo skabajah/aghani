@@ -401,6 +401,11 @@ hr {
     margin: 2em auto 1em;
 }
 
+/* about pages */ 
+.about.list { 
+    background: var(--sk-linear);
+    box-shadow: var(--sk-shadow); 
+} 
 /*feedback*/
 .formEmbed {
     width: 100%;
