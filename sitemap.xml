@@ -3,27 +3,37 @@
 
   <url>
     <loc>https://aghani.org/</loc>
-    <lastmod>2026-01-04</lastmod>
+    <lastmod>2026-01-08</lastmod>
   </url>
 
   <url>
-    <loc>https://aghani.org/methodology</loc>
-    <lastmod>2026-01-04</lastmod>
+    <loc>https://aghani.org/archive/</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
 
   <url>
-    <loc>https://aghani.org/privacy</loc>
-    <lastmod>2026-01-04</lastmod>
+    <loc>https://aghani.org/feedback/</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
 
   <url>
-    <loc>https://aghani.org/terms</loc>
-    <lastmod>2026-01-04</lastmod>
+    <loc>https://aghani.org/methodology/</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
 
   <url>
-    <loc>https://aghani.org/why</loc>
-    <lastmod>2026-01-04</lastmod>
+    <loc>https://aghani.org/privacy/</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://aghani.org/terms/</loc>
+    <lastmod>2026-01-08</lastmod>
+  </url>
+
+  <url>
+    <loc>https://aghani.org/why/</loc>
+    <lastmod>2026-01-08</lastmod>
   </url>
 
 </urlset>
