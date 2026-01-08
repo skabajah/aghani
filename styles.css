@@ -544,6 +544,8 @@ th {
         grid-row: 2; /* appear in the first grid row */
         grid-column: 2 / -4; /* span all columns */
         display: block;
+        border:  none;
+        border-bottom: 1px solid white;
     }
 
     td:not(.song-title) {
