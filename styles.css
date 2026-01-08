@@ -1,7 +1,7 @@
 :root {
     --glass: rgba(255, 255, 255, 0.03);
     --glass-heavy: rgba(255, 255, 255, 0.08);
-    --glass-border: #ffffff9e;
+    --glass-border: 1px solid #ffffff9e;
     --accent: #3b82f6;
     --text: #ffffff;
     --muted: rgba(255, 255, 255, 0.4);
@@ -63,7 +63,7 @@ img.cover {
     background: var(--glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    border:  var(--glass-border);
     border-radius: solid 1px #ffffff9e;
     border-radius: var(--radius);
     opacity: .9;
@@ -144,7 +144,7 @@ h2 {
     background: #000;
     border-radius: var(--radius);
     overflow: hidden;
-    border: 1px solid var(--glass-border);
+    border: var(--glass-border);
     box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8);
     width: 85vw;
     margin: auto;
@@ -158,7 +158,7 @@ h2 {
     background: var(--glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border);
+    border: var(--glass-border);
     border-radius: var(--radius);
     padding: 20px;
     width: 85vw;
@@ -185,13 +185,8 @@ h2 {
     background: rgba(255, 255, 255, 0.04);
 }
 .card.active {
-    /*background: rgb(237 237 237 / 84%); */
-    background: white;
-    /*border-color: var(--glass-border);*/
-    /*border-color: #2db8b69e;*/
-    /*border-color: #8181819e;*/
+    background: white; 
     color: black;
-    /*font-size: 1.2em;*/
     box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
 }
 .card img {
