@@ -333,6 +333,7 @@ h2 {
 .about.list { 
     background: var(--sk-linear);
     box-shadow: var(--sk-shadow); 
+    margin: 1em auto;
 } 
 
 
