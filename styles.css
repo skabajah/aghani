@@ -389,7 +389,8 @@ h2 {
 .docBody h4 {
     font-size: 14px;
     font-weight: 700;
-    text-decoration: underline;
+    background: #c9c9c97c;
+    width: fit-content; 
 }
 .docBody p,  .docBody li {
     font-size: 16px;
