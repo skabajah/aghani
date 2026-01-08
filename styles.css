@@ -1,6 +1,5 @@
 :root {
     --glass: rgba(255, 255, 255, 0.03);
-    --glass-heavy: rgba(255, 255, 255, 0.08);
     --glass-border: 1px solid #ffffff9e;
     --accent: #3b82f6;
     --text: #ffffff;
