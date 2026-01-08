@@ -47,12 +47,16 @@ a.topbar-hit {
     height: auto;
     margin: 0;
     display: block;
-    opacity: 0.9;
+    opacity: 0.8;
     position: fixed;
     border-radius: 14px;
     left: 2em;
     box-shadow: var(--sk-shadow);
     z-index: 9;
+}
+.logo:hover {
+    opacity: 1;
+    box-shadow: var(--player-shadow);
 }
 img.banner {
     height: 7em;
