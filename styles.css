@@ -442,15 +442,12 @@ table img {
     width: auto;
     max-width: 70px 
 }
-th, td {
-    border-bottom: solid 1px white;
-    border-right: 1px solid white;
-    /*background: #eeeeee94;*/
+td {
+    border-top: solid 1px white;
+    border-right: 1px solid white; 
 }
-td:last-child,
-th:last-child {
+td:last-child {
   border-right: none;
-  border-bottom: none;
 }
 th {
     background: var(--cyan-sk);
