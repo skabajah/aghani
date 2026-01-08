@@ -89,8 +89,10 @@
                   const linkIdx = headers.indexOf(LINK_COL);
                   const href = linkIdx > -1 ? (r[linkIdx] ?? "") : "";
                   return href
-                    ? `<td><a href="${esc(href)}" target="_blank" rel="noopener">${esc(val)}</a></td>`
-                    : `<td>${esc(val)}</td>`;
+                    // ? `<td><a href="${esc(href)}" target="_blank" rel="noopener">${esc(val)}</a></td>`
+                    // : `<td>${esc(val)}</td>`;
+                    ? `<td class="song-title"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(val)}</a></td>`
+                    : `<td class="song-title">${esc(val)}</td>`;
                 }
 
                 if (c === "Views") {

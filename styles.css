@@ -524,4 +524,7 @@ th {
     table {
         border-collapse: collapse;
     }
+    td.song-title {
+        order: -1;   
+    } 
 }
