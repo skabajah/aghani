@@ -10,6 +10,7 @@
     --sk-white: #fbfbfc ;
     --player-shadow:  0 50px 100px -20px rgba(0, 0, 0, 0.8) ;
     --sk-linear:  linear-gradient(to bottom, #eeeeee59 0%, #ffffff6b 70%, #ffffff59 100%);
+    --list-width: min(85vw,1200px);
 }
 * {
     box-sizing: border-box;
@@ -70,7 +71,7 @@ img.cover {
     border-radius: var(--radius);
     opacity: .9;
     box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
-    width: 85vw;
+    width: var(--list-width);
 } 
 
 #bgBackdrop {
@@ -147,7 +148,7 @@ h2 {
     overflow: hidden;
     border: var(--glass-border);
     box-shadow: var(--player-shadow);
-    width: 85vw;
+    width: var(--list-width);
     margin: auto;
 }
 .playerFrameWrap iframe, #player {
@@ -162,7 +163,7 @@ h2 {
     border: var(--glass-border);
     border-radius: var(--radius);
     padding: 20px;
-    width: 85vw;
+    width: var(--list-width);
     margin: auto;
 }
 .grid {
