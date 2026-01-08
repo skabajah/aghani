@@ -327,13 +327,21 @@ h2 {
     overflow: hidden;
     line-height: 1.5;
 }
+
+/* about pages */ 
+.about.list { 
+    background: var(--sk-linear);
+    box-shadow: var(--sk-shadow); 
+} 
+
+
 .docBody {
-    height: 100%;
+    /*height: 100%;*/
     padding: 2em 4em;
-    background: var(--sk-white);
-    overflow: auto;
-    border-radius: 25px;
-    box-shadow: var(--sk-shadow);
+    /*background: var(--sk-white);*/
+    /*overflow: auto;*/
+    /*border-radius: 25px;*/
+    /*box-shadow: var(--sk-shadow);*/
 }
 .docClose {
     position: absolute;
@@ -401,11 +409,7 @@ hr {
     margin: 2em auto 1em;
 }
 
-/* about pages */ 
-.about.list { 
-    background: var(--sk-linear);
-    box-shadow: var(--sk-shadow); 
-} 
+
 /*feedback*/
 .formEmbed {
     width: 100%;
