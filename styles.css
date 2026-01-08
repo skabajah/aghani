@@ -512,6 +512,9 @@ th {
         font-size: 13px;
         text-align: center;
     } 
+    .footer-links a:hover {
+        width: auto;
+    }
     .docClose {
         right: 15px;
         width: 30px !important;
