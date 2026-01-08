@@ -522,18 +522,26 @@ th {
     font-size: 15px;
     line-height: 1.5;
     } 
-    table {
-        border-collapse: collapse;
+
+    /*archive table*/
+    thead {
+        display: none; /* hide header */
     }
+
     tr {
-    display: flex;
-    flex-direction: column;
+        display: grid;
+        grid-template-rows: auto 1fr; /* two “rows”: title + rest */
+        gap: 0.2rem;                  /* space between pseudo-rows */
     }
+
     td.song-title {
-    order: -1;          /*move to top */ 
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    line-height: 1.3;
+        grid-row: 1; /* appear in the first grid row */
+        display: block;
+    }
+
+    td:not(.song-title) {
+        grid-row: 2; /* appear in the second grid row */
+        display: block;
     }
 
 }
