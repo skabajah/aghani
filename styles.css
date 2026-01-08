@@ -490,7 +490,7 @@ th {
         height: 30px;
     } 
     .docBody {
-        padding: 1em 2em;
+        padding: 0em 1em;
     }
     .grid {
         grid-template-columns: repeat(2, 1fr);
