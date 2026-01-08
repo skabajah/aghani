@@ -434,6 +434,7 @@ table {
     font-size: 14px;
     box-shadow: var(--sk-shadow);
     border-radius: var(--glass-border);
+    width: 100%;
  }
 table img {
     width: auto;
