@@ -51,6 +51,7 @@ a.topbar-hit {
     position: fixed;
     border-radius: 14px;
     left: 2em;
+    box-shadow: var(--sk-shadow);
 }
 img.banner {
     height: 7em;
@@ -233,16 +234,11 @@ h2 {
 
 .lang-ar {
     direction: rtl;
-    text-align: right;
-    /*display: block;*/
+    text-align: right; 
 }
 .lang-en {
     direction: ltr;
-    text-align: left;
-    /*display: block;
-    margin-top: 16px;
-    opacity: 0.85;
-    */
+    text-align: left; 
 }
 
 /* Footer base */
