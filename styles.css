@@ -184,7 +184,7 @@ h2 {
 .card.active {
     background: white; 
     color: black;
-    box-shadow: 0 20px 50px -20px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--player-shadow);
 }
 .card img {
     width: 100%;
