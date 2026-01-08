@@ -539,6 +539,7 @@ th {
 
     td.song-title {
         grid-row: 1; /* appear in the first grid row */
+        grid-column: 1 / -1; /* span all columns */
         display: block;
     }
 
