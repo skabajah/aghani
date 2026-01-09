@@ -472,6 +472,9 @@ th {
     .footer-wrap { 
         width: 90vw; 
     }
+    .footer-content {
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 /* Mobile */
 
