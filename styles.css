@@ -440,7 +440,7 @@ hr {
     font-weight: 300;
     text-align: center;
     letter-spacing: 4px;
-    color: var(--sk-cyan); !important;
+    color: var(--sk-cyan) !important;
 }
 table {
     font-size: 14px;
