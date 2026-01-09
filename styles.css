@@ -433,6 +433,7 @@ hr {
 #archiveRoot .cover
  {
     width: 100%;
+    box-shadow: var(--sk-shadow);
  }
 table {
     font-size: 14px;
