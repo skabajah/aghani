@@ -5,10 +5,10 @@
     --text: #ffffff;
     --muted: rgba(255, 255, 255, 0.4);
     --radius: 28px;
-    --sk-shadow: -2px -6px 20px 0px rgb(0 0 0 / 15%); 
-    --cyan-sk: #2db8b6;
-    --sk-white: #fbfbfc ;
     --player-shadow:  0 50px 100px -20px rgba(0, 0, 0, 0.8) ;
+    --sk-shadow: -2px -6px 20px 0px rgb(0 0 0 / 15%); 
+    --sk-cyan: #2db8b6;
+    --sk-white: #fbfbfc ;
     --sk-linear:  linear-gradient(to bottom, #eeeeee59 0%, #ffffff6b 70%, #ffffff59 100%);
     --list-width: min(85vw,1200px);
 }
@@ -131,7 +131,7 @@ h2 {
     margin-right: 20px;
     font-style: italic;
     line-height: 1;
-    color: var(--cyan-sk);
+    color: var(--sk-cyan);
 }
 .npMeta {
     font-size: 1.1em;
@@ -218,7 +218,7 @@ h2 {
     margin-left: 4px;
 }
 .card.active .cardRank, .card.active .cardRank span {
-    color: var(--cyan-sk);
+    color: var(--sk-cyan);
 }
 /* Footer layout wrapper */
 
@@ -288,7 +288,7 @@ h2 {
 .footer-links a:hover {
     opacity: 1;
     color: #ffffff;
-    background-color: var(--cyan-sk);
+    background-color: var(--sk-cyan);
     display: inline;
     width: fit-content;
 }
@@ -386,7 +386,7 @@ h2 {
 .docBody h3 {
     font-size: 16px;
     font-weight: 500;
-    color: var(--cyan-sk);
+    color: var(--sk-cyan);
 }
 .docBody h4 {
     font-size: 14px;
@@ -414,7 +414,7 @@ h2 {
     text-align: right;
 }
 hr {
-    border: solid 1px var(--cyan-sk);
+    border: solid 1px var(--sk-cyan);
     width: 40%;
     margin: 2em auto 1em;
 }
@@ -435,6 +435,13 @@ hr {
     width: 100%;
     box-shadow: var(--sk-shadow);
  }
+ h5.archive-links {
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 4px;
+    color: var(--sk-cyan); !important;
+}
 table {
     font-size: 14px;
     box-shadow: var(--sk-shadow);
@@ -457,7 +464,7 @@ td:last-child {
   border-right: none;
 }
 th {
-    background: var(--cyan-sk);
+    background: var(--sk-cyan);
     border-radius: 15px;
     color: white;
     display: none ;
