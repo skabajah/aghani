@@ -448,7 +448,6 @@ table {
     border-radius: 25px;
     width: 100%;
     padding: 1em;
-    /*background: #eeeeeed6;*/
     border:  var(--glass-border);
     background: var(--sk-linear);
 }
