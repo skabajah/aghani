@@ -223,7 +223,7 @@ h2 {
 /* Footer layout wrapper */
 
 .footer-wrap {
-    max-width: 800px;
+    max-width:  70vw ;
     margin: 0 auto;
 }
 /* Description: bilingual-ready */
