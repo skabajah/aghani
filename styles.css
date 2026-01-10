@@ -409,6 +409,7 @@ h2 {
     font-size: 16px;
     font-weight: 500;
     color: var(--sk-cyan);
+    border-top: solid;
 }
 .docBody h4 {
     font-size: 14px;
