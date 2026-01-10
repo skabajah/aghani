@@ -456,6 +456,7 @@ hr {
 #archiveRoot 
  {
     width: var(--list-width);
+    margin: 0 auto;
  }
  #archiveRoot .cover
  {
