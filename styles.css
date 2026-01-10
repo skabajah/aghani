@@ -409,8 +409,7 @@ h2 {
     font-size: 16px;
     font-weight: 500;
     color: var(--sk-cyan);
-    border-top: solid;
-}
+} 
 .docBody h4 {
     font-size: 14px;
     font-weight: 700;
@@ -458,6 +457,11 @@ hr {
     width: var(--list-width);
     margin: 0 auto;
  }
+ #archiveRoot section {
+    border-top: solid var(--sk-cyan);
+    margin-top: 2%;
+}
+
  #archiveRoot .cover
  {
     width: 100%;
