@@ -35,7 +35,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  font-size: 0.9rem;
+  font-size: 12px;
 }
 #archive-bar button {
   background: none;
