@@ -461,7 +461,8 @@ hr {
  #archiveRoot .cover
  {
     width: 100%;
-    box-shadow: 20px -20px 20px 0px rgb(0 0 0 / 15%);
+    /*box-shadow: 20px -20px 20px 0px rgb(0 0 0 / 15%);*/
+    box-shadow: 0px -10px 15px -10px rgb(0 0 0 / 15%);
     border: none;
  }
  h5.archive-links {
@@ -475,11 +476,12 @@ hr {
 table {
     font-size: 14px;
     /*box-shadow: var(--sk-shadow);*/
-    box-shadow: 0px 10px 15px -10px rgb(0 0 0 / 15%);
+    box-shadow: 0px 10px 15px -10px rgb(0 0 0 / 15%); 
     border-radius:var(--radius) ; 
     width: 100%;
     padding: 1em;
-    border:  var(--glass-border);
+    /*border:  var(--glass-border);*/
+    border: none ;
     background: var(--sk-linear);
     /*background: ;*/
 }
