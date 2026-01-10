@@ -236,3 +236,16 @@ window.addEventListener("keydown", (e) => {
 });
 
 init();
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const closeBtn = document.getElementById('archive-close');
+  const bar = document.getElementById('archive-bar');
+
+  if (closeBtn && bar) {
+    closeBtn.onclick = () => {
+      bar.style.display = 'none';
+    };
+  }
+});
+
