@@ -453,7 +453,11 @@ hr {
 }
 
 /* archiev page */ 
-#archiveRoot .cover
+#archiveRoot 
+ {
+    width: var(--list-width);
+ }
+ #archiveRoot .cover
  {
     width: 100%;
     box-shadow: var(--sk-shadow);
