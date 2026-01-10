@@ -58,7 +58,7 @@
     ].filter(Boolean).join(" | ");
 
     section.innerHTML = `
-      <hr><h3>${esc(item.title)}</h3>
+      <h3>${esc(item.title)}</h3>
       ${item.banner ? `<img class="cover" src="${esc(item.banner)}" >` : ""}
       ${links ? `<h5 class="archive-links">${links}</h5>` : ""}
 
