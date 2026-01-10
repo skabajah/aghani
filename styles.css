@@ -458,7 +458,7 @@ hr {
     margin: 0 auto;
  }
  #archiveRoot section {
-    border-top: solid var(--sk-cyan);
+    /*border-top: solid var(--sk-cyan);*/
     margin-top: 2%;
 }
 
