@@ -470,6 +470,7 @@ hr {
     text-align: center;
     letter-spacing: 4px;
     color: var(--sk-cyan) !important;
+    margin: 0 0 1em;
 }
 table {
     font-size: 14px;
