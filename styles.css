@@ -474,7 +474,7 @@ hr {
     font-weight: 300;
     text-align: center;
     letter-spacing: 4px;
-    color: var(--sk-cyan) !important;
+    color: black; 
     margin: 0 0 1em;
 }
 table {
