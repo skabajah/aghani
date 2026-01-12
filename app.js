@@ -153,9 +153,9 @@ function playItem(item) {
     ytPlayer.loadVideoById(id);
   }
   
-  if (bgBackdrop && item.Thumbnail) {
-    bgBackdrop.style.backgroundImage = `url(${item.Thumbnail})`;
-  }
+  // if (bgBackdrop && item.Thumbnail) {
+  //   bgBackdrop.style.backgroundImage = `url(${item.Thumbnail})`;
+  // }
 
   // els.npTitle.innerHTML = `<span>${item.Rank}</span> ${escapeHtml(item.Title)}`;
   //  line break 
