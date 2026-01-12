@@ -98,12 +98,16 @@ img.cover {
 
 #bgBackdrop {
     position: fixed;
-    inset: -10%;
+    background-color: var(--sk-white);
     z-index: -1;
+
+/*
+    inset: -10%;
     background-size: cover;
     background-position: center;
     filter: blur(100px) brightness(0.25);
     transition: background-image 1.5s ease-in-out;
+    */
 }
 .topbar {
     display: flex;
