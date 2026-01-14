@@ -115,7 +115,10 @@ button.period-btn.active {
     background: var(--sk-cyan);
     color: white;
 }
-
+button.period-btn:hover {
+    background: var(--sk-cyan);
+    opacity: .5;
+}
 
 #bgBackdrop {
     position: fixed;
