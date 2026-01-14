@@ -105,6 +105,11 @@ div#period-switcher {
 button.period-btn {
     display: inline-flex;
     border: none;
+    color: #555;
+    font-family: unset;
+    font-size: 0.8em;
+    border-radius: 15px;
+    overflow: hidden;
 }
 button.period-btn.active {
     background: var(--sk-cyan);
