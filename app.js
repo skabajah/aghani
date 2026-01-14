@@ -283,11 +283,9 @@ async function initFromManifestDefault() {
 
     if (!item) throw new Error("No ready items in manifest.");
 
-    // update the home banner
-    const cover = document.querySelector(".intro .cover");
-    if (cover && item.banner) cover.src = item.banner;
+    renderSwitcher(manifest, item);
+    await applyPeriod(item);
 
-    await initFromCsv(CSV_BASE + item.file);
   } catch (err) {
     console.error("Manifest init error:", err);
     setStatus("Load Error");
@@ -295,6 +293,7 @@ async function initFromManifestDefault() {
 }
 
 initFromManifestDefault();
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
