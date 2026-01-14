@@ -105,12 +105,13 @@ div#period-switcher {
 }
 button.period-btn {
     display: inline-flex;
-    border: none;
+    border: var(--glass-border);
     color: #555;
     font-family: unset;
     font-size: 0.8em;
-    border-radius: 15px;
+    border-radius: var(--radius);
     overflow: hidden;
+    padding: 8px;
 }
 button.period-btn.active {
     background: var(--sk-cyan);
@@ -120,6 +121,7 @@ button.period-btn:hover {
     background: var(--sk-cyan);
     opacity: .5;
     cursor: pointer;
+    box-shadow: 5px 7px 10px 2px rgb(0 0 0 / 60%);
 }
 
 #bgBackdrop {
