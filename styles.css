@@ -96,6 +96,17 @@ img.cover {
     width: var(--list-width);
 } 
 
+/*switcher */
+button.period-btn {
+    display: inline-flex;
+    border: none;
+}
+button.period-btn.active {
+    background: var(--sk-cyan);
+    color: white;
+}
+
+
 #bgBackdrop {
     position: fixed;
     background-color: var(--sk-white);
