@@ -499,12 +499,14 @@ table img {
     max-width: 70px 
 } 
 td {
-    border-top: solid 1px white;
-    border-right: 1px solid white; 
-} 
+    border-top: solid 2px #fff;
+    padding: 4px 0px;
+}
+/*
 td:last-child {
   border-right: none;
 }
+*/
 th {
     background: var(--sk-cyan);
     border-radius: 15px;
