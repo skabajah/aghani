@@ -7,7 +7,9 @@ const els = {
   npTitle: document.getElementById("npTitle"),
   npMeta: document.getElementById("npMeta"),
   status: document.getElementById("status"),
+  switcher: document.getElementById("period-switcher"),
 };
+
 
 let bgBackdrop = document.getElementById("bgBackdrop");
 let activeVideoId = null;
