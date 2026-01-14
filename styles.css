@@ -97,6 +97,10 @@ img.cover {
 } 
 
 /*switcher */
+div#period-switcher {
+    display: flex;
+    justify-content: center;
+}
 button.period-btn {
     display: inline-flex;
     border: none;
