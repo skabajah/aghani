@@ -100,6 +100,7 @@ img.cover {
 div#period-switcher {
     display: flex;
     justify-content: center;
+    gap:  1em;
 }
 button.period-btn {
     display: inline-flex;
