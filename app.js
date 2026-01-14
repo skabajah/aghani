@@ -10,7 +10,6 @@ const els = {
   switcher: document.getElementById("period-switcher"),
 };
 
-
 let bgBackdrop = document.getElementById("bgBackdrop");
 let activeVideoId = null;
 let currentIndex = 0;
@@ -231,11 +230,45 @@ async function initFromCsv(csvUrl) {
   }
 }
 
-
 window.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") playNext();
   if (e.key === "ArrowLeft") playPrev();
 });
+
+async function applyPeriod(item) {
+  if (!item) return;
+
+  const cover = document.querySelector(".intro .cover");
+  if (cover && item.banner) cover.src = item.banner;
+
+  await initFromCsv(CSV_BASE + item.file);
+}
+
+function renderSwitcher(manifest, activeItem) {
+  if (!els.switcher) return;
+
+  els.switcher.innerHTML = "";
+
+  manifest
+    .filter(x => x.status === "ready")
+    .forEach(item => {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "period-btn";
+      btn.textContent = item.title || "";
+      if (item === activeItem) btn.classList.add("active");
+      btn.onclick = async () => {
+        // update active state
+        els.switcher.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        await applyPeriod(item);
+      };
+      els.switcher.appendChild(btn);
+    });
+}
+
+
 async function initFromManifestDefault() {
   setStatus("Loading...");
   try {
@@ -260,7 +293,6 @@ async function initFromManifestDefault() {
     setStatus("Load Error");
   }
 }
-
 
 initFromManifestDefault();
 
