@@ -118,6 +118,7 @@ button.period-btn.active {
 button.period-btn:hover {
     background: var(--sk-cyan);
     opacity: .5;
+    cursor: pointer;
 }
 
 #bgBackdrop {
