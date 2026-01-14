@@ -114,21 +114,7 @@
     const manifest = await fetch("/archive/manifest.json", { cache: "no-store" })
       .then(r => r.json());
 
-    // manifest.sort((a, b) => (b.month || "").localeCompare(a.month || ""));
-    manifest.sort((a, b) => {
-      // newest year first
-      if ((a.year ?? 0) !== (b.year ?? 0)) return (b.year ?? 0) - (a.year ?? 0);
-
-      // year summary before months
-      if (a.period !== b.period) return a.period === "year" ? -1 : 1;
-
-      // months newest → oldest
-      if (a.period === "month") {
-        return (b.month || "").localeCompare(a.month || "");
-      }
-
-      return 0;
-    });
+    manifest.sort((a, b) => (b.month || "").localeCompare(a.month || ""));
 
     for (const item of manifest) {
       // Only render snapshots explicitly marked ready
