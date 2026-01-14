@@ -1,6 +1,4 @@
-// const CSV_FILE = "Year2025.csv";
-const MANIFEST_URL = "/archive/manifest.json";
-const CSV_BASE = "/archive/";
+const CSV_FILE = "Year2025.csv";
 
 const els = {
   grid: document.getElementById("grid"),
@@ -184,30 +182,34 @@ function playItem(item) {
   });
 }
 
-async function initFromCsv(csvUrl) {
+async function init() {
   setStatus("Loading Data...");
   try {
-    const res = await fetch(csvUrl, { cache: "no-store" });
+    const res = await fetch(CSV_FILE);
     if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
     const text = await res.text();
-
+    
     currentList = parseCSV(text)
       .filter(r => r.VideoID && r.VideoID.length > 5)
       .sort((a, b) => (parseInt(a.Rank) || 999) - (parseInt(b.Rank) || 999));
 
-    if (currentList.length === 0) throw new Error("No videos found.");
+    if (currentList.length === 0) {
+      throw new Error("No videos found.");
+    }
 
     els.grid.innerHTML = "";
 
     currentList.forEach((r, idx) => {
       const id = extractVideoId(r.VideoID);
+
+      // const viewCount = formatMillions(r.Views);
       const viewCount = formatKMB(r.Views);
 
       const card = document.createElement("div");
       card.className = "card";
       card.setAttribute("data-id", id);
       card.onclick = () => playItem(r);
-
+      
       card.innerHTML = `
         <img src="${r.Thumbnail}" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
         <div class="cardBody">
@@ -217,11 +219,10 @@ async function initFromCsv(csvUrl) {
       els.grid.appendChild(card);
     });
 
-    activeVideoId = null;
-    currentIndex = 0;
-
-    if (isPlayerReady) playItem(currentList[0]);
-
+    if (isPlayerReady) {
+      playItem(currentList[0]);
+    }
+    
   } catch (err) {
     console.error("Init Error:", err);
     setStatus("Load Error");
@@ -229,38 +230,12 @@ async function initFromCsv(csvUrl) {
   }
 }
 
-
 window.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") playNext();
   if (e.key === "ArrowLeft") playPrev();
 });
-async function initFromManifestDefault() {
-  setStatus("Loading...");
-  try {
-    const res = await fetch(MANIFEST_URL, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Manifest fetch failed: ${res.status}`);
-    const manifest = await res.json();
 
-    const item =
-      manifest.find(x => x.status === "ready" && x.default === true) ||
-      manifest.find(x => x.status === "ready") ||
-      null;
-
-    if (!item) throw new Error("No ready items in manifest.");
-
-    // update the home banner
-    const cover = document.querySelector(".intro .cover");
-    if (cover && item.banner) cover.src = item.banner;
-
-    await initFromCsv(CSV_BASE + item.file);
-  } catch (err) {
-    console.error("Manifest init error:", err);
-    setStatus("Load Error");
-  }
-}
-
-
-initFromManifestDefault();
+init();
 
 
 document.addEventListener('DOMContentLoaded', () => {
