@@ -293,6 +293,11 @@ h2 {
     text-align: center !important;
     font-weight: 300;
 }
+.site-description .lang-ar,
+.site-description .lang-en {
+    text-align: center !important;
+
+}
 /* Arabic + English blocks */
 
 .lang-ar {
