@@ -290,7 +290,7 @@ h2 {
     font-size: 13px;
     line-height: 1.15;
     color: #222;
-    text-align: center;
+    text-align: center !important;
     font-weight: 300;
 }
 /* Arabic + English blocks */
