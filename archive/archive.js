@@ -52,12 +52,18 @@
 
     const section = document.createElement("section");
 
-    const links = [
-      item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>` : "",
-      item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>` : "",
-      item.snapshot_date ? `Snapshot: ${esc(item.snapshot_date)}` : ""
+    // const links = [
+    //   item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>` : "",
+    //   item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>` : "",
+    //   item.snapshot_date ? `Snapshot: ${esc(item.snapshot_date)}` : ""
+    // ].filter(Boolean).join(" | ");
 
+    const links = [
+      item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist • قائمة يوتيوب</a>` : "",
+      item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video • فيديو الترتيب</a>` : "",
+      item.snapshot_date ? `Snapshot • لقطة: ${esc(item.snapshot_date)}` : ""
     ].filter(Boolean).join(" | ");
+
 
     section.innerHTML = `
       <br><hr><h3>${esc(item.title)}</h3>
@@ -91,8 +97,6 @@
                   const linkIdx = headers.indexOf(LINK_COL);
                   const href = linkIdx > -1 ? (r[linkIdx] ?? "") : "";
                   return href
-                    // ? `<td><a href="${esc(href)}" target="_blank" rel="noopener">${esc(val)}</a></td>`
-                    // : `<td>${esc(val)}</td>`;
                     ? `<td class="song-title"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(val)}</a></td>`
                     : `<td class="song-title">${esc(val)}</td>`;
                 }
