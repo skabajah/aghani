@@ -250,7 +250,7 @@ function renderSwitcher(manifest, activeItem) {
   els.switcher.innerHTML = "";
 
   manifest
-    .filter(x => x.status === "ready")
+    .filter(x => x.status === "ready" && x.featured)
     .forEach(item => {
       const btn = document.createElement("button");
       btn.type = "button";
