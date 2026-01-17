@@ -633,6 +633,9 @@ th {
     .archive.docBody {
         padding: 10px;
     }
+    h5.archive-links { 
+        font-size: 12px;
+    }
     table {
         font-size: 12px;
     }
