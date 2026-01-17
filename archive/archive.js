@@ -52,17 +52,11 @@
 
     const section = document.createElement("section");
 
-    // const links = [
-    //   item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>` : "",
-    //   item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>` : "",
-    //   item.snapshot_date ? `Snapshot: ${esc(item.snapshot_date)}` : ""
-    // ].filter(Boolean).join(" | ");
 
     const links = [
       item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a> قائمة يوتيوب` : "",
       item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a> فيديو الترتيب` : "",
-      // item.snapshot_date ? `Release نسخة: ${esc(item.snapshot_date)}` : ""
-      item.snapshot_date ? `Released نسخة: ${item.snapshot_date}` : ""
+      item.snapshot_date ? `Released نسخة: ${String(item.snapshot_date)}` : ""
 
     ].filter(Boolean).join(" | ");
 
