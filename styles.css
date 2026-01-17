@@ -512,7 +512,7 @@ hr {
     font-size: 15px;
     font-weight: 300;
     text-align: center;
-    letter-spacing: 4px;
+    /*letter-spacing: 4px;*/
     color: black; 
     margin: 0 0 1em;
 }
