@@ -53,9 +53,9 @@
     const section = document.createElement("section");
 
     const snapshotDate = String(item.snapshot_date);  
-    console.log("snapshotDate: ", snapshotDate)
+    console.log("snapshotDate: ", snapshotDate);
     const h5Date = `Released ${snapshotDate} نسخة`; // customize placement of “نسخة” or dashes
-    console.log("h5Date: ", h5Date)
+    console.log("h5Date: ", h5Date);
 
 
     const links = [
