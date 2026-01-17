@@ -58,11 +58,19 @@
     // console.log("h5Date: ", h5Date);
 
 
-    const links = [
+    // const links = [
+    //   item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a> قائمة يوتيوب` : "",
+    //   item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a> فيديو الترتيب` : "",
+    //   h5Date
+    // ].filter(Boolean).join(" | ");
+
+    const yt_links = [
       item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a> قائمة يوتيوب` : "",
-      item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a> فيديو الترتيب` : "",
-      h5Date
+      item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a> فيديو الترتيب` : ""
     ].filter(Boolean).join(" | ");
+
+    const links = h5Date ? `${yt_links}<br>${h5Date}` : yt_links;
+
 
 
     section.innerHTML = `
