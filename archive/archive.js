@@ -55,6 +55,8 @@
     const links = [
       item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>` : "",
       item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>` : "",
+      item.snapshot_date ? `Snapshot: ${esc(item.snapshot_date)}` : ""
+
     ].filter(Boolean).join(" | ");
 
     section.innerHTML = `
