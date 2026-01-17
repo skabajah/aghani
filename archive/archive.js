@@ -52,8 +52,10 @@
 
     const section = document.createElement("section");
 
-    const snapshotDate = String(item.snapshot_date); // manifest date as string
+    const snapshotDate = String(item.snapshot_date);  
+    console.log("snapshotDate: ", snapshotDate)
     const snapshotDateISO = new Date(snapshot_date).toISOString().slice(0, 10);
+    console.log("snapshotDateISO: ", snapshotDateISO)
 
 
     const links = [
