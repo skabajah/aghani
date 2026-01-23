@@ -1,4 +1,18 @@
 [
+   {
+    "period": "month",
+    "year": 2026,
+    "month": "2026-01",
+    "status": "wip",
+    "default": false,
+    "title": "January 2026 | Top 10",
+    "file": "2026-01.csv",
+    "banner": "/media/banner_2026_01.png",
+    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZSrP6jjBrZYC2-NtZuFmf7X&si=0suuJgiaotzWmqj3",
+    "ranking_video_url": "https://youtu.be/pcEjJn8Oo5c",
+    "featured": false,
+    "snapshot_date": "2026-01-23"
+  },
   {
     "period": "year",
     "year": 2025,
