@@ -108,7 +108,7 @@ div#period-switcher {
     margin: 1em auto;
 }
 button.period-btn {
-    display: inline-flex;
+    /*display: inline-flex;*/
     border: var(--glass-border);
     color: #555;
     font-family: unset;
@@ -116,6 +116,9 @@ button.period-btn {
     border-radius: var(--radius);
     overflow: hidden;
     padding: 8px;
+
+    display: grid;
+    width: 155px;
 }
 button.period-btn.active {
     background: var(--sk-cyan);
