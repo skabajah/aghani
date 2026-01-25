@@ -416,6 +416,7 @@ h2 {
     /*overflow: auto;*/
     /*border-radius: 25px;*/
     /*box-shadow: var(--sk-shadow);*/
+    margin-bottom: 2em ;
 }
 .docClose {
     position: absolute;
@@ -512,9 +513,8 @@ hr {
     /*box-shadow: 0px -10px 15px -10px rgb(0 0 0 / 15%);*/
     border: none;
  }
- .archive.docBody {
-    margin-bottom: 2em ;
- }
+
+
  h5.archive-links {
     font-size: 15px;
     font-weight: 300;
