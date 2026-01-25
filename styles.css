@@ -405,7 +405,7 @@ h2 {
 .about.list { 
     background: var(--sk-linear);
     box-shadow: var(--sk-shadow); 
-    margin: 2em auto 0em;
+    margin: 2em auto;
     padding: 0;
 } 
 
