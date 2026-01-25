@@ -86,15 +86,16 @@ img.banner {
     margin-top: -10px;
 }
 img.cover {
-    background: var(--glass);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /*background: var(--glass);*/
+    /*backdrop-filter: blur(20px);*/
+    /*-webkit-backdrop-filter: blur(20px);*/
     /*border:  var(--glass-border);*/
     border: none;
-    border-radius: var(--radius);
+    /*border-radius: var(--radius);*/
     opacity: .9;
-    box-shadow: var(--player-shadow);
-    width: var(--list-width);
+    /*box-shadow: var(--player-shadow);*/
+    /*width: var(--list-width);*/
+    width: 100vw;
 } 
 
 /*switcher */
@@ -162,7 +163,7 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    padding: 0 40px 60px;
+    /*padding: 0 40px 60px;*/
     /*max-width: 1400px;*/
     margin: 0 auto;
 }
