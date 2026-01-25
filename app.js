@@ -177,7 +177,8 @@ function playItem(item) {
   const viewsShort = formatKMB(item.Views);
   const viewsLine = viewsShort ? `Views • <span dir="ltr">${viewsShort}</span> • المشاهدات` : "";
   const pubLine = item.PublishDate ? `Published • <span dir="ltr">${item.PublishDate}</span> • تاريخ النشر` : "";
-  els.npMeta.innerHTML = `${viewsLine}<br>${pubLine}`;
+  // els.npMeta.innerHTML = `${viewsLine}<br>${pubLine}`;
+  els.npMeta.innerHTML = `${viewsLine}`;
 
   
   document.querySelectorAll('.card').forEach(c => {
