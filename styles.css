@@ -484,6 +484,7 @@ hr {
     border: solid 1px var(--sk-cyan);
     width: 40%;
     margin: 2em auto 1em;
+    display: none;
 }
 
 
