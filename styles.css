@@ -361,8 +361,8 @@ h2 {
 }
 .footer-links a:hover {
     opacity: 1;
-    color: #ffffff;
-    background-color: var(--sk-cyan);
+    color: black;
+    background-color: var(--sk-yellow);
     display: inline;
     width: fit-content;
 }
