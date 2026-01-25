@@ -48,7 +48,7 @@ html, body {
 
 .intro {
     text-align: center;
-    margin: 24px auto 16px;
+    /*margin: 24px auto 16px;*/
 }
 .intro img {
     max-width: 100%;
@@ -96,6 +96,8 @@ img.cover {
     /*box-shadow: var(--player-shadow);*/
     /*width: var(--list-width);*/
     width: 100vw;
+    margin: 0;
+    padding: 0;
 } 
 
 /*switcher */
