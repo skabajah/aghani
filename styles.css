@@ -583,6 +583,9 @@ th {
     .footer-content {
         grid-template-columns: repeat(1, 1fr);
     }
+    .footer-links a {
+        font-size: 13px;
+    }
 }
 /* Mobile */
 
