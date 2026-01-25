@@ -89,7 +89,8 @@ img.cover {
     background: var(--glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border:  var(--glass-border);
+    /*border:  var(--glass-border);*/
+    border: none;
     border-radius: var(--radius);
     opacity: .9;
     box-shadow: var(--player-shadow);
