@@ -445,13 +445,15 @@ h2 {
     display: none;
 }
 .docBody h2 {
-    color: gray;
-    margin: 0;
+    color: #ffffff;
     font-size: 15px;
-    font-weight: 300;
+    font-weight: 500;
     text-transform: uppercase;
     line-height: 2;
-    margin: 1em auto;
+    margin: 2em auto 1em;
+    background: #5e5e5ebf;
+    width: fit-content;
+    padding: 2px 22px;
 }
 .docBody h3 {
     font-size: 16px;
