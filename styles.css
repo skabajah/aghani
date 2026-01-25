@@ -455,8 +455,9 @@ h2 {
     line-height: 2;
     margin: 2em auto 1em;
     background: #5e5e5ebf;
-    width: fit-content;
-    padding: 2px 22px;
+    width: 250px;
+    padding: 2px 25px;
+    border-radius: var(--radius);
 }
 .docBody h3 {
     font-size: 16px;
