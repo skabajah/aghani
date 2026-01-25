@@ -74,7 +74,7 @@
 
 
     section.innerHTML = `
-      <br><hr><h3>${esc(item.title)}</h3>
+      <br><hr><h2>${esc(item.title)}</h2>
       ${item.banner ? `<img class="cover" src="${esc(item.banner)}" >` : ""}
       ${links ? `<h5 class="archive-links">${links}</h5>` : ""}
 
