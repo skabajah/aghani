@@ -335,11 +335,16 @@ h2 {
 /* Headings + links */
 
 .footer-section h3 {
-    font-size: 10px;
-    font-weight: 700;
+    /*margin: 0 0 16px;*/
+    font-size: 11px;
+    font-weight: 600;
     text-transform: uppercase;
     margin: 0 0 16px;
-    color: #139593;
+    color: #ffffff;
+    background: #6d6c6ca8;
+    width: fit-content;
+    padding: 1px 10px;
+
 }
 .footer-links {
     display: flex;
