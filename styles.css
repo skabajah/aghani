@@ -126,7 +126,7 @@ button.period-btn.active {
     color: white;
 }
 button.period-btn:hover {
-    background: #2db8b680;
+    background: var(--sk-yellow);
     color:  black;
     /*opacity: .5;*/
     cursor: pointer;
