@@ -639,6 +639,9 @@ th {
     .footer-links a:hover {
         width: auto;
     }
+    .footer-section h3 {
+        margin: 4px auto;
+    }
     .docClose {
         right: 15px;
         width: 30px !important;
