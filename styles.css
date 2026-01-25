@@ -102,7 +102,7 @@ div#period-switcher {
     display: flex;
     justify-content: center;
     gap:  1em;
-    margin: 2em auto 0;
+    margin: 2em auto 2em;
 }
 button.period-btn {
     display: inline-flex;
