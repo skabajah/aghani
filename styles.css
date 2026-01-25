@@ -449,6 +449,9 @@ h2 {
     margin: 0;
     font-size: 15px;
     font-weight: 300;
+    text-transform: uppercase;
+    line-height: 2;
+    margin: 1em auto;
 }
 .docBody h3 {
     font-size: 16px;
