@@ -518,6 +518,13 @@ hr {
   color: #444;
 }
 
+.feedback-form label {
+    display: grid;
+    font-size: 13px;
+    font-family: 'Cairo';
+}
+
+
 /* archiev page */ 
 #archiveRoot 
  {
