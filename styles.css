@@ -531,9 +531,11 @@ hr {
     line-height: 1.5;
     border: 1px solid #8080803d;
     border-radius: 10px;
+    min-height: 2em;
 }
 textarea{ 
     min-height: 7em;
+    border-radius: 20px;
 }
  
 .feedback-form button  {
