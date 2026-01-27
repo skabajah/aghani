@@ -7,6 +7,7 @@
     --radius: 28px;
     --player-shadow:  0 50px 100px -20px rgba(0, 0, 0, 0.8) ;
     --sk-shadow: -2px -6px 20px 0px rgb(0 0 0 / 15%); 
+    --sk-border-shadow : 0 0 10px 0px rgb(0 0 0 / 15%);
     --sk-cyan: #2db8b6;
     --sk-yellow: #f2c846;
     --sk-white: #fbfbfc ;
@@ -75,7 +76,7 @@ a.topbar-hit {
     position: fixed;
     border-radius: 50%;
     left: 2em;
-    box-shadow: var(--sk-shadow);
+    box-shadow: var(--sk-border-shadow);
     z-index: 9;
 }
 .logo:hover {
