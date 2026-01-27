@@ -522,6 +522,8 @@ hr {
     display: grid;
     font-size: 13px;
     font-family: 'Cairo';
+    text-align: center;
+
 }
  
 .feedback-form input , textarea {
