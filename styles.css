@@ -537,7 +537,7 @@ hr {
 }
 textarea{ 
     min-height: 7em;
-    border-radius: 20px;
+    /*border-radius: 20px;*/
 }
  
 .feedback-form button  {
