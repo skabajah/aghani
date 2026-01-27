@@ -497,14 +497,16 @@ hr {
 
 
 /*feedback*/
-.formEmbed {
-    height: 745px;
-    background: #f6f6f6;
-}
+
 .docBody.feedback {
     padding: 0;
 }
 
+.feedback-form {
+    max-width: 70vw;
+    margin: 2em auto;
+}
+ 
 /* Intro text under header */
 .feedback .form-intro {
   max-width: 700px;
