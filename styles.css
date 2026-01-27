@@ -524,8 +524,13 @@ hr {
     font-family: 'Cairo';
 }
 
+.feedback-form input , textarea {
+    line-height: 1.5;
+    border: 1px solid #8080803d;
+}
+
 .feedback-form button  {
-    
+    margin: 1em auto;
 }
 
 
