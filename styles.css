@@ -139,13 +139,7 @@ button.period-btn:hover {
     z-index: -1;
     display: none;
 
-/*
-    inset: -10%;
-    background-size: cover;
-    background-position: center;
-    filter: blur(100px) brightness(0.25);
-    transition: background-image 1.5s ease-in-out;
-    */
+ 
 }
 .topbar {
     display: flex;
@@ -509,6 +503,17 @@ hr {
 }
 .docBody.feedback {
     padding: 0;
+}
+
+/* Intro text under header */
+.feedback .form-intro {
+  max-width: 700px;
+  margin: 0 auto 2em;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.6;
+  text-align: center;
+  color: #444;
 }
 
 /* archiev page */ 
