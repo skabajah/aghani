@@ -51,24 +51,10 @@
   <main class="layout">
     <section class="list about">
       <div class="docBody feedback"  id="docBody">
-    <!--         
-        <h1>Contact | تواصل</h1>
-        <hr>
-
-        <div class="lang-en">
-          <h2>English</h2>
-          <p>Use the form below to send feedback, corrections, or suggestions.</p>
-        </div>
-
-        <div class="lang-ar">
-          <h2>العربية</h2>
-          <p>استخدموا النموذج أدناه لإرسال ملاحظاتكم أو التصحيحات أو الاقتراحات.</p>
-        </div>
-
-        <hr> 
-    -->
+   
  
         <!-- Google Form Embed -->
+        <!-- 
         <div class="formEmbed">
           <iframe
             title="aghani.org contact form"
@@ -82,6 +68,28 @@
             Loading…
           </iframe>
         </div>
+       -->
+
+
+
+        <!-- modify this form HTML and place wherever you want your form -->
+        <div>
+          <form
+          action="https://formspree.io/f/mgokdbzv"
+          method="POST">
+          <label>
+            Your email:
+            <input type="email" name="email">
+          </label>
+          <label>
+            Your message:
+            <textarea name="message"></textarea>
+          </label>
+          <!-- your other form fields go here -->
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
 
       </div>
     </section>
