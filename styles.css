@@ -503,7 +503,7 @@ hr {
 }
 
 .feedback-form {
-    max-width: max(500px, 40vw);
+    max-width: max(500px, 50vw);
     margin: 2em auto;
     padding: 1em 3em;
 }
