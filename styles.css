@@ -538,7 +538,7 @@ textarea{
 }
 .feedback-form label span.lang-en,
 .feedback-form label span.lang-ar {
-  display: inline;
+  display: contents;
 }
 
 
