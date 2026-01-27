@@ -524,6 +524,10 @@ hr {
     font-family: 'Cairo';
 }
 
+.feedback-form button  {
+    margin: 1em auto;
+}
+
 
 /* archiev page */ 
 #archiveRoot 
