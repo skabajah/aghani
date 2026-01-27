@@ -79,9 +79,10 @@ a.topbar-hit {
     box-shadow: var(--sk-border-shadow);
     z-index: 9;
 }
-.logo:hover {
+.logo-click:hover {
     opacity: 1;
     box-shadow: 5px 7px 10px 2px rgb(0 0 0 / 30%);
+    cursor: pointer;
 }
 img.banner {
     height: 6em;
