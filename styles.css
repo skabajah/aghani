@@ -546,9 +546,14 @@ textarea{
 }
 .feedback-form label span.lang-en,
 .feedback-form label span.lang-ar {
-  display: contents;
+      display: contents;
 }
 
+input:focus,
+textarea:focus {
+    outline: none;         
+    border: 1px solid var(--sk-cyan);
+}
 
 /* archiev page */ 
 #archiveRoot 
