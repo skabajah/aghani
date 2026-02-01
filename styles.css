@@ -662,6 +662,9 @@ th {
     h1, h2 {
         font-size: 15px;
     }
+    .topbar {
+        height: 4em;
+    }
 /*    .logo {
         width: 4em;
     }
