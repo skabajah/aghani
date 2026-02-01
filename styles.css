@@ -442,10 +442,6 @@ h2 {
     cursor: pointer;
 }
 
-.hidden {
-    display: none;
-}
-
 .docBody h1 {
     text-align: center !important;
     font-weight: 600;
