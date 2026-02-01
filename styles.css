@@ -208,11 +208,15 @@ h1, h2 {
     box-shadow: var(--player-shadow);
     width: var(--list-width);
     margin: auto;
+    /*
+    position: relative;
+    overflow: hidden;*/
 }
 .playerFrameWrap iframe, #player {
-    width: 100% !important;
-    height: 100% !important;
-    display: block;
+    width: 200% !important;
+    height: 200% !important;
+    position: relative;
+    transform: translate(-25%, -25%);
 }
 .list {
     background: var(--glass);
