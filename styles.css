@@ -137,11 +137,9 @@ button.period-btn.active {
     color: white;
 }
 button.period-btn:hover {
-    background: var(--sk-cyan);
-    color:  black;
-    /*opacity: .5;*/
     cursor: pointer;
     box-shadow: 5px 7px 10px 2px rgb(0 0 0 / 30%);
+    color: black;
 }
 
 #bgBackdrop {
