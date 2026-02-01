@@ -67,18 +67,23 @@ html, body {
 a.topbar-hit {
     display: contents;
 }
+.topbar {
+    display: flex;
+    flex-direction: row;
+    padding:  0 40px;
+    gap: 15px;
+    align-items: center;
+    height: 6em;
+}
 .logo {
-    width: 6em;
-    height: auto;
-    margin: 0;
-    display: block;
-    opacity: 0.8;
-    position: fixed;
+    width: auto;
+    height: 100%;
     border-radius: 50%;
-    left: 2em;
+    opacity: 0.8;
+    display: block;
     box-shadow: var(--sk-border-shadow);
-    z-index: 9;
-    top: 1em;
+    margin: 0;
+    flex:  0 0 auto; 
 }
 .logo-click:hover {
     opacity: 1;
@@ -86,8 +91,10 @@ a.topbar-hit {
     cursor: pointer;
 }
 img.banner {
-    height: 6em;
-    margin-top: -10px;
+    height: 100%;    /* fills the topbar height */
+    width: auto;     /* scales proportionally */
+    flex: 1;         /* takes remaining width */
+    object-fit: contain;
 }
 img.cover {
     /*background: var(--glass);*/
@@ -144,12 +151,7 @@ button.period-btn:hover {
 
  
 }
-.topbar {
-    display: flex;
-    flex-direction: column;
-    padding: 30px 40px 0;
-    gap: 15px;
-}
+
 h1, h2 {
     text-align: center;
     padding: 0;
@@ -660,18 +662,14 @@ th {
     h1, h2 {
         font-size: 15px;
     }
-    .logo {
+/*    .logo {
         width: 4em;
     }
     img.banner {
         margin-top: -33px;
         width: auto;
     }
-    /*
-    img.cover {
-        width: auto;
-    }
-    */
+ */
     .layout {
         padding: 0 15px 40px;
     }
