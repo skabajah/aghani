@@ -133,11 +133,11 @@ button.period-btn {
     background: #efefef;
 }
 button.period-btn.active {
-    background: var(--sk-cyan);
+    background: var(--sk-yellow);
     color: white;
 }
 button.period-btn:hover {
-    background: var(--sk-yellow);
+    background: var(--sk-cyan);
     color:  black;
     /*opacity: .5;*/
     cursor: pointer;
