@@ -127,9 +127,9 @@ button.period-btn {
     border-radius: var(--radius);
     overflow: hidden;
     padding: 8px;
-
     display: grid;
     width: 155px;
+    background: #efefef;
 }
 button.period-btn.active {
     background: var(--sk-cyan);
