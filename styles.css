@@ -134,7 +134,7 @@ button.period-btn {
 }
 button.period-btn.active {
     background: var(--sk-yellow);
-    color: white;
+    /*color: white;*/
 }
 button.period-btn:hover {
     cursor: pointer;
