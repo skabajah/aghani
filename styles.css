@@ -149,10 +149,7 @@ button.period-btn:hover {
     background-color: var(--sk-white);
     z-index: -1;
     display: none;
-
- 
 }
-
 h1, h2 {
     text-align: center;
     padding: 0;
@@ -161,12 +158,7 @@ h1, h2 {
     font-weight: 600;
     line-height: 1.25;
     color: #434343;
-}
-/*
-h2 {
-    margin-top: -10px;
-}
-*/
+} 
 .layout {
     display: flex;
     flex-direction: column;
@@ -665,7 +657,9 @@ th {
     }
     h1, h2 {
         font-size: 18px;
-        margin-top: 8px; 
+    }
+    .titlebar {
+        margin-top: 2em; 
     }
     .topbar {
         height: 4em;
