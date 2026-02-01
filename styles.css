@@ -74,6 +74,7 @@ a.topbar-hit {
     gap: 15px;
     align-items: center;
     height: 6em;
+    margin-top: 1em;
 }
 .logo {
     width: auto;
