@@ -268,6 +268,7 @@ h1, h2 {
     -webkit-box-orient: vertical;
     overflow: hidden;
     opacity: 0.7;
+    height: 6em;
 }
 .cardRank {
     font-size: 1.2em;
