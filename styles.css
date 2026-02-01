@@ -547,6 +547,7 @@ textarea{
 .feedback-form button  {
     margin: 1em auto;
     display: block;
+    text-align: center !important;
 }
 .feedback-form label span.lang-en,
 .feedback-form label span.lang-ar {
