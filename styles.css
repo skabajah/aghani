@@ -542,6 +542,7 @@ textarea{
     margin: 1em auto;
     display: block;
     text-align: center !important;
+    background: var(--sk-yellow);
 }
 .feedback-form label span.lang-en,
 .feedback-form label span.lang-ar {
