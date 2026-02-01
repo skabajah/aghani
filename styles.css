@@ -70,7 +70,7 @@ a.topbar-hit {
 .topbar {
     display: flex;
     flex-direction: row;
-    padding:  0 40px;
+    padding:  10px 40px 0 ;
     gap: 15px;
     align-items: center;
     height: 6em;
@@ -664,7 +664,7 @@ th {
     }
     .topbar {
         height: 4em;
-        padding: 4px 18px;
+        /*padding: 4px 18px;*/
     }
 /*    .logo {
         width: 4em;
@@ -673,7 +673,10 @@ th {
         margin-top: -33px;
         width: auto;
     }
- */
+ */ 
+    img.cover {
+        margin: 16px 0 0;
+    }
     .layout {
         padding: 0 15px 40px;
     }
