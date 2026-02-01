@@ -644,6 +644,9 @@ th {
 /* Mobile */
 
 @media (max-width: 768px) {
+    #period-switcher {
+        display: inline-grid;
+    }   
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }

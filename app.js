@@ -306,5 +306,13 @@ document.addEventListener('DOMContentLoaded', () => {
       bar.style.display = 'none';
     };
   }
+
+
+  if (window.innerWidth < 500) {
+      document.querySelector('.logo')?.addEventListener('click', () => {
+        document.getElementById('period-switcher')?.scrollIntoView({ behavior: 'smooth' });
+      });
+    }
+    
 });
 
