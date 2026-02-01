@@ -776,4 +776,7 @@ th {
         padding: 8px;
         justify-items: start; 
     }
+    .button.period-btn { 
+    text-align: left; 
+    }
 }     
