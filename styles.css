@@ -761,8 +761,8 @@ th {
 
     .period-switcher {
         display: inline-grid;
-        border-left: 8px solid var(--sk-yellow);
-        padding: 0 8px;
+        border-left: 8px solid var(--sk-cyan);
+        padding: 0 12px;
         justify-items: start; 
         margin-left: 3em;
     }
