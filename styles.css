@@ -158,13 +158,14 @@ h1, h2 {
     margin: 0;
     font-size: 26px;
     font-weight: 600;
-    line-height: 1.5;
+    line-height: 1.1;
     color: #434343;
 }
+/*
 h2 {
-    /*margin-top: -25px;*/
     margin-top: -10px;
 }
+*/
 .layout {
     display: flex;
     flex-direction: column;
@@ -662,20 +663,13 @@ th {
         grid-template-columns: repeat(1, 1fr);
     }
     h1, h2 {
-        font-size: 15px;
+        font-size: 18px;
+        margin-top: 8px; 
     }
     .topbar {
         height: 4em;
-        /*padding: 4px 18px;*/
-    }
-/*    .logo {
-        width: 4em;
-    }
-    img.banner {
-        margin-top: -33px;
-        width: auto;
-    }
- */ 
+      
+    } 
     img.cover {
         margin: 16px 0 0;
     }
