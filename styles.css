@@ -646,7 +646,6 @@ th {
 /* Mobile */
 
 @media (max-width: 768px) {
-   
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -773,7 +772,7 @@ th {
         justify-items: start; 
         margin-left: 3em;
     }
-    .button.period-btn { 
-    text-align: left; 
+    button.period-btn { 
+        text-align: left; 
     }
 }     
