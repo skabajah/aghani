@@ -666,7 +666,7 @@ th {
         font-size: 15px;
     }
     .logo {
-        width: 3em;
+        width: 4em;
     }
     img.banner {
         margin-top: -33px;
@@ -773,8 +773,9 @@ th {
     .period-switcher {
         display: inline-grid;
         border-left: 8px solid var(--sk-yellow);
-        padding: 8px;
+        padding: 0 8px;
         justify-items: start; 
+        margin-left: 3em;
     }
     .button.period-btn { 
     text-align: left; 
