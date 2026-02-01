@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 const switcher = document.getElementById('period-switcher');
-const logo = document.querySelector('.logo');
+const logo = document.getElementById('logo');
 let isSwitcherVisible = window.innerWidth >= 600; // initial state
 
 function updateSwitcherVisibility() {
