@@ -78,6 +78,7 @@ a.topbar-hit {
     left: 2em;
     box-shadow: var(--sk-border-shadow);
     z-index: 9;
+    top: 1em;
 }
 .logo-click:hover {
     opacity: 1;
