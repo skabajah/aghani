@@ -329,9 +329,14 @@ updateSwitcherVisibility();
 window.addEventListener('resize', updateSwitcherVisibility);
 
 logo?.addEventListener('click', () => {
-  if (window.innerWidth < 600 && !isSwitcherVisible) {
-    switcher?.classList.remove('hidden');
-    isSwitcherVisible = true;
+  if (window.innerWidth < 600) {
+    if (isSwitcherVisible) {
+      switcher?.classList.add('hidden');
+      isSwitcherVisible = false;
+    } else {
+      switcher?.classList.remove('hidden');
+      isSwitcherVisible = true;
+    }
   }
 });
 
