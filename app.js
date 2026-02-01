@@ -271,7 +271,7 @@ function renderSwitcher(manifest, activeItem) {
     // ADD THIS
   const archiveBtn = document.createElement("a");
   archiveBtn.href = "/archive/";
-  archiveBtn.className = "period-btn archive-btn";
+  archiveBtn.className = "period-btn";
   archiveBtn.textContent = "More Rankings";
   els.switcher.appendChild(archiveBtn);
 }
