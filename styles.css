@@ -129,6 +129,7 @@ button.period-btn {
     padding: 8px;
     display: grid;
     width: 155px;
+    -webkit-appearance: none;
     background: #efefef;
 }
 button.period-btn.active {
@@ -777,3 +778,4 @@ th {
         text-align: left; 
     }
 }     
+
