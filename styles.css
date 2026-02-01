@@ -104,7 +104,7 @@ img.cover {
 } 
 
 /*switcher */
-div#period-switcher {
+.period-switcher {
     display: flex;
     justify-content: center;
     gap:  1em;
@@ -625,6 +625,11 @@ th {
     display: none ;
 }
 
+.hidden { 
+    display: none !important; 
+} 
+
+/******* RESPONSIVE ELEMENTS **********/ 
 /* ipad  */
 
 @media (max-width: 1200px) {
@@ -644,9 +649,9 @@ th {
 /* Mobile */
 
 @media (max-width: 768px) {
-    #period-switcher {
+    .period-switcher {
         display: inline-grid;
-    }   
+    }    
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }

@@ -306,13 +306,29 @@ document.addEventListener('DOMContentLoaded', () => {
       bar.style.display = 'none';
     };
   }
-
-
-  if (window.innerWidth < 500) {
-      document.querySelector('.logo')?.addEventListener('click', () => {
-        document.getElementById('period-switcher')?.scrollIntoView({ behavior: 'smooth' });
-      });
-    }
-    
 });
+
+
+const switcher = document.getElementById('period-switcher');
+const logo = document.querySelector('.logo');
+
+function updateSwitcherVisibility() {
+  if (!switcher) return;
+
+  if (window.innerWidth < 600) {
+    switcher.classList.add('hidden');
+  } else {
+    switcher.classList.remove('hidden');
+  }
+}
+
+updateSwitcherVisibility();
+window.addEventListener('resize', updateSwitcherVisibility);
+
+logo?.addEventListener('click', () => {
+  if (window.innerWidth < 600) {
+    switcher?.classList.remove('hidden');
+  }
+});
+
 
