@@ -664,6 +664,7 @@ th {
     }
     .topbar {
         height: 4em;
+        padding: 4px 18px;
     }
 /*    .logo {
         width: 4em;
