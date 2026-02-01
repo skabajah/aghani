@@ -766,7 +766,14 @@ th {
 
 /* switcher button  */
 @media (max-width: 600px) {
+    .intro { 
+        text-align: unset; 
+    }
+
     .period-switcher {
         display: inline-grid;
+        border-left: 8px solid var(--sk-yellow);
+        padding: 8px;
+        justify-items: start; 
     }
 }     
