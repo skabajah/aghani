@@ -267,6 +267,13 @@ function renderSwitcher(manifest, activeItem) {
       };
       els.switcher.appendChild(btn);
     });
+
+    // ADD THIS
+  const archiveBtn = document.createElement("a");
+  archiveBtn.href = "/archive/";
+  archiveBtn.className = "period-btn archive-btn";
+  archiveBtn.textContent = "More Rankings";
+  els.switcher.appendChild(archiveBtn);
 }
 
 
