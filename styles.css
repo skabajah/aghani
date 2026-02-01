@@ -1,7 +1,7 @@
 :root {
     --glass: rgba(255, 255, 255, 0.03);
     --glass-border: 1px solid #ffffff9e;
-    --accent: #3b82f6;
+    /*--accent: #3b82f6;*/
     --text: #ffffff;
     --muted: rgba(255, 255, 255, 0.4);
     --radius: 28px;
@@ -370,7 +370,7 @@ h2 {
 }
 /* Status badge */
 
-.status-badge {
+/*.status-badge {
     display: inline-block;
     padding: 6px 12px;
     background: var(--glass);
@@ -378,7 +378,7 @@ h2 {
     border-radius: 8px;
     font-size: 11px;
     color: var(--accent);
-}
+}*/
 /* Bottom line */
 
 .footer-bottom {
