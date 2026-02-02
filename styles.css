@@ -805,9 +805,9 @@ th {
         grid-template-columns: 1.2fr 1fr;
         grid-template-areas: 
             "nav nav"
-            "intro list"
-            "nowPlaying list"
-            "player list";
+            "intro list-main"
+            "nowPlaying list-main"
+            "player list-main";
         gap: 40px;
         max-width: 1750px;
         margin: 0 auto;
@@ -846,7 +846,7 @@ th {
     }
 
     /* Resets width/margins for wide-screen grid containment */
-    .list, 
+    .list-main, 
     .playerFrameWrap, 
     .intro .cover {
         width: 100% !important;
