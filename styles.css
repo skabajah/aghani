@@ -790,36 +790,68 @@ th {
 
 
 /*# big screens */
+/* --- Default (Mobile & Desktop < 1800px) --- */
+.layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.period-row, .visual-header, .nowPlaying, .player, .list {
+    width: 100%;
+    max-width: var(--list-width); /* Uses your existing variable */
+}
+
+/* --- Extra Wide Screens (>= 1800px) --- */
 @media (min-width: 1800px) {
     .layout {
         display: grid;
+        /* Splits screen: Left column 1.2 units, Right column 1 unit */
         grid-template-columns: 1.2fr 1fr;
-        /* "intro intro" makes the intro section span both columns on top */
         grid-template-areas: 
-            "intro intro"
-            "nowPlaying list"
-            "player list";
+            "nav nav"           /* Switcher spans both columns */
+            "cover list"        /* Cover image on left, List on right */
+            "nowPlaying list"   /* Song info on left, List continues */
+            "player list";      /* Video player on left, List continues */
         gap: 40px;
         max-width: 1750px;
         margin: 0 auto;
+        padding: 40px;
         align-items: start;
     }
 
-    /* Mapping elements to areas based on index.html structure */
-    .intro { grid-area: intro; }
+    /* Assigning sections to the Grid Areas */
+    .period-row { grid-area: nav; }
+    .visual-header { grid-area: cover; }
     .nowPlaying { grid-area: nowPlaying; }
     .player { grid-area: player; }
     .list { grid-area: list; }
 
-    /* Ensure widths adapt to the grid columns */
-    .list, .playerFrameWrap, .intro img.cover {
+    /* Layout Adjustments */
+    .list, .playerFrameWrap, .visual-header .cover {
         width: 100% !important;
-        max-width: 100%;
+        max-width: 100% !important;
+        margin: 0;
     }
 
-    /* Keeps the list fixed on the right while you scroll the left side */
+    /* Sticky Sidebar: List follows as you scroll the left side */
     .list {
         position: sticky;
         top: 20px;
+        height: fit-content;
+    }
+
+    /* Visual cleanup for the cover in the sidebar layout */
+    .visual-header .cover {
+        border-radius: var(--radius);
+        object-fit: cover;
+        height: 300px; /* Adjusted height for side-by-side view */
+    }
+
+    .period-switcher {
+        justify-content: center;
+        margin-bottom: 10px;
     }
 }
