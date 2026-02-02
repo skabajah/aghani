@@ -806,6 +806,12 @@ th {
 
 /* --- Extra Wide Screens (>= 1800px) --- */
 @media (min-width: 1800px) {
+    .grid { 
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /*gap: 15px;*/
+        /*padding-bottom: 10px;*/
+     }
     .layout {
         display: grid;
         /* Left column is 1.2x wider than the list column */
