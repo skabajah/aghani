@@ -634,7 +634,7 @@ th {
 /******* RESPONSIVE ELEMENTS **********/ 
 /* ipad  */
 /** Medium: 768px – 1200px */
-@media (min-width: 768px) and (max-width: 1200px) {
+@media (min-width: 600px) and (max-width: 1200px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -651,7 +651,12 @@ th {
 
 /* phone */ 
 /* Small: 600px – 767px */
-@media (min-width: 600px) and (max-width: 767px) {
+/*@media (min-width: 600px) and (max-width: 767px) {
+    }*/
+
+
+/* X-Small: under 600px */
+@media (max-width: 599px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -766,11 +771,7 @@ th {
         border: none;
         width: max-content;
     }
-}
 
-
-/* X-Small: under 600px */
-@media (max-width: 599px) {
     .intro { 
         text-align: unset; 
     }
