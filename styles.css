@@ -788,3 +788,38 @@ th {
     }
 }     
 
+
+/*# big screens */
+@media (min-width: 1800px) {
+    .layout {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        /* "intro intro" makes the intro section span both columns on top */
+        grid-template-areas: 
+            "intro intro"
+            "nowPlaying list"
+            "player list";
+        gap: 40px;
+        max-width: 1750px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    /* Mapping elements to areas based on index.html structure */
+    .intro { grid-area: intro; }
+    .nowPlaying { grid-area: nowPlaying; }
+    .player { grid-area: player; }
+    .list { grid-area: list; }
+
+    /* Ensure widths adapt to the grid columns */
+    .list, .playerFrameWrap, .intro img.cover {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* Keeps the list fixed on the right while you scroll the left side */
+    .list {
+        position: sticky;
+        top: 20px;
+    }
+}
