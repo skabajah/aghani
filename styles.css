@@ -216,7 +216,7 @@ h1, h2 {
     width: 200% !important;
     height: 200% !important;
     position: relative;
-    transform: translate(-25%, -25%);
+    transform: translate(-25%, -15%);
 }
 .list {
     background: var(--glass);
@@ -688,6 +688,12 @@ th {
         width: auto;
         margin: 0 auto;
     }
+    .playerFrameWrap iframe, #player {
+        width: 150% !important;
+        height: 150% !important;
+        position: relative;
+        transform: translate(-15%, -15%);
+    }   
     .list {
         width: 100%;
         margin: 0 auto;
