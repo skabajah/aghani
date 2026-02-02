@@ -790,20 +790,7 @@ th {
 
 
 /*# big screens */
-/* --- Default (Mobile & Desktop < 1800px) --- */
-.layout {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 10px;
-}
-
-.period-row, .visual-header, .nowPlaying, .player, .list {
-    width: 100%;
-    max-width: var(--list-width); /* Uses your existing variable */
-}
-
+ 
 /* --- Extra Wide Screens (>= 1800px) --- */
 @media (min-width: 1800px) {
     .grid { 
