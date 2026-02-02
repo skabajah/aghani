@@ -824,9 +824,9 @@ th {
     .intro .cover {
         width: 100% !important;
         max-width: 100% !important;
-        height: 220px;
-        object-fit: cover;
-        border-radius: var(--radius);
+        /*height: 220px;*/
+        /*object-fit: cover;*/
+        /*border-radius: var(--radius);*/
         margin-bottom: 0;
     }
 
