@@ -869,4 +869,7 @@ th {
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 15px;
     }
+    .layout.about {
+        display: block;
+    }
 } 
