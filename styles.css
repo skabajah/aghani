@@ -133,6 +133,7 @@ img.cover {
     -webkit-appearance: none;
     background: #efefef;
     text-decoration: none;
+    text-align: center;
 }
 .period-btn.active {
     background: var(--sk-yellow);
