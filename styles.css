@@ -839,7 +839,7 @@ th {
  
 /* --- Extra Wide Screens (>= 1800px) --- */
 
-@media (min-width: 1800px) {
+/*@media (min-width: 1800px) {
     .docBody {
         display: flex;
         gap:  2em; 
@@ -848,4 +848,4 @@ th {
         flex : 1; 
         max-width: 50vw;
           }
-} 
+} */
