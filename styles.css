@@ -796,6 +796,7 @@ th {
 @media (min-width: 1800px) {
     .docBody {
         display: flex;
+        gap:  2em; 
     }  
     .side {
         flex : 1; 
