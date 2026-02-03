@@ -632,6 +632,37 @@ th {
     display: none !important; 
 } 
 
+
+
+/*language lang-switcher*/
+.lang-switcher {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin: 1em 2em;
+}
+
+.lang-switcher button {
+    flex: 1;                /* make buttons equal width */
+    max-width: 80px;        /* optional, set a max width */
+    padding: 8px 0;
+    border-radius: var(--radius);
+    border: none;
+    background: #efefef;    /* inactive gray */
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.lang-switcher button.active {
+    background: var(--sk-yellow);
+    color: black;
+}
+
+
+
 /******* RESPONSIVE ELEMENTS **********/ 
 /* ipad  */
 /** Medium: 768px – 1200px */
