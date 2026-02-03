@@ -792,82 +792,13 @@ th {
 
  
 /* --- Extra Wide Screens (>= 1800px) --- */
-/*
+
 @media (min-width: 1800px) {
-    .layout {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        grid-template-areas: 
-            "nav nav"
-            "intro list"
-            "nowPlaying list"
-            "player list";
-        gap: 20px 40px; 
-        max-width: 1700px;
-        margin: 0 auto;
-        padding: 20px;
-        align-items: start;
-    }
-
-    .period-switcher {
-        grid-area: nav;
+    .docBody {
         display: flex;
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-
-    .intro { 
-        grid-area: intro; 
-        margin: 0; 
-    }
-
-    .intro .cover {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin-bottom: 0;
-    }
-
-    .nowPlaying { 
-        grid-area: nowPlaying; 
-        margin: 0; 
-        padding-top: 10px; 
-    }
-
-    .player { 
-        grid-area: player; 
-        margin: 0; 
-    }
-
-    .playerFrameWrap {
-        width: 100% !important;
-        height: 400px;
-        margin: 0;
-    }
-
-    .list-main {
-        grid-area: list;
-        position: sticky;
-        top: 20px;
-        height: fit-content;
-        width: 100% !important;
-        margin: 0;
-        /* Preserving your original list appearance */
-        background: var(--glass);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border: var(--glass-border);
-        border-radius: var(--radius);
-        padding: 20px;
-    }
-
-    /* Sets the grid inside list-main to 3 columns */
-    .list-main .grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 15px;
-    }
-    .layout.about {
-        display: block;
-    }
-} */
+    }  
+    .side {
+        flex : 1; 
+        max-width: 50vw;
+          }
+} 
