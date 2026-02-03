@@ -350,7 +350,10 @@ h1, h2 {
     background: #6d6c6ca8;
     width: fit-content;
     padding: 2px 6px;
-
+}
+h3.lang-ar, a.lang-ar  {
+    margin-right: 0;
+    margin-left: auto;
 }
 .footer-links {
     display: flex;
