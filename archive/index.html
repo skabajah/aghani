@@ -23,6 +23,7 @@
   <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
 
   <link rel="stylesheet" href="/styles.css">
+  <script src="/lang.js" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -47,25 +48,18 @@
 </header>
 
 
+        <div class="lang-switcher">
+            <button data-lang="en">En</button>
+            <button data-lang="ar">ع</button>
+          </div>
+
+
+
   <main class="layout about">
     <section class="  about">
     <!-- <section class="list about"> -->
       <div class="archive docBody">
-
-        <!-- <h1>Archive | الأرشيف</h1> -->
-        <!-- <hr> -->
-
-     <!--   
-      <div class="lang-en">
-          <p>Monthly snapshots of aghani.org rankings.</p>
-        </div>
-
-        <div class="lang-ar">
-          <p>لقطات شهرية لتصنيفات موقع aghani.org.</p>
-        </div>
-
-        <hr> 
-      -->
+ 
 
         <!-- Archive content injected by JS -->
         <div id="archiveRoot"></div>
@@ -86,38 +80,52 @@
         </p>
       </div>
 
-      <div class="footer-content">
-        <section class="footer-section">
-          <h3>Connect | تواصل</h3>
-          <nav class="footer-links">
-            <a href="https://www.youtube.com/@aghani-org" target="_blank" rel="noopener">
-              YouTube | يوتيوب
-            </a>
-            <a href="/feedback/">Feedback | ملاحظات</a>
-          </nav>
-        </section>
-
-        <section class="footer-section">
-          <h3>About &amp; Legal | عن المشروع</h3>
-          <nav class="footer-links">
-            <a href="/why/">Why Aghani? | لماذا أغاني؟</a>
-            <a href="/methodology/">Sources &amp; Methodology | المصادر والمنهجية</a>
-            <a href="/privacy/">Privacy Policy | سياسة الخصوصية</a>
-            <a href="/terms/">Terms of Service | شروط الخدمة</a>
-          </nav>
-        </section>
-
-        <section class="footer-section">
-          <h3>Archive | الأرشيف</h3>
-          <nav class="footer-links">
-            <a href="/archive/">Previous Rankings | الترتيبات السابقة</a>
-          </nav>
-        </section>
 
 
-      </div>
+<div class="footer-content">
 
-      <div class="footer-bottom">© 2026 aghani.org</div>
+  <section class="footer-section">
+    <h3 class="lang-en">Connect</h3>
+    <h3 class="lang-ar">تواصل</h3>
+    <nav class="footer-links">
+      <a href="/" class="lang-en">Home</a>
+      <a href="/" class="lang-ar">الرئيسية</a>
+      <a href="https://www.youtube.com/@aghani-org" target="_blank" rel="noopener" class="lang-en">YouTube</a>
+      <a href="https://www.youtube.com/@aghani-org" target="_blank" rel="noopener" class="lang-ar">يوتيوب</a>
+      <a href="/feedback/" class="lang-en">Feedback</a>
+      <a href="/feedback/" class="lang-ar">ملاحظات</a>
+    </nav>
+  </section>
+
+  <section class="footer-section">
+    <h3 class="lang-en">About & Legal</h3>
+    <h3 class="lang-ar">عن المشروع</h3>
+    <nav class="footer-links">
+      <a href="/why/" class="lang-en">Why Aghani?</a>
+      <a href="/why/" class="lang-ar">لماذا أغاني؟</a>
+      <a href="/methodology/" class="lang-en">Sources & Methodology</a>
+      <a href="/methodology/" class="lang-ar">المصادر والمنهجية</a>
+      <a href="/privacy/" class="lang-en">Privacy Policy</a>
+      <a href="/privacy/" class="lang-ar">سياسة الخصوصية</a>
+      <a href="/terms/" class="lang-en">Terms of Service</a>
+      <a href="/terms/" class="lang-ar">شروط الخدمة</a>
+    </nav>
+  </section>
+
+  <section class="footer-section">
+    <h3 class="lang-en">Archive</h3>
+    <h3 class="lang-ar">الأرشيف</h3>
+    <nav class="footer-links">
+      <a href="/archive/" class="lang-en">Previous Rankings</a>
+      <a href="/archive/" class="lang-ar">الترتيبات السابقة</a>
+    </nav>
+  </section>
+
+</div>
+
+<div class="footer-bottom">© 2026 aghani.org</div>
+
+
     </div>
   </footer>
 

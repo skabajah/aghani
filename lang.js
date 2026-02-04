@@ -8,11 +8,24 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
     document.documentElement.lang = lang;
 
-    // Update buttons' active state
+    // const footer = document.querySelector('.footer-content');
+    const footer = document.querySelector('.footer-content');
     const enBtn = document.querySelector('.lang-switcher button[data-lang="en"]');
     const arBtn = document.querySelector('.lang-switcher button[data-lang="ar"]');
-    enBtn.classList.toggle('active', lang === 'en');
-    arBtn.classList.toggle('active', lang === 'ar');
+
+    if (lang === 'en') {
+      enBtn.classList.add('active');
+      arBtn.classList.remove('active');
+      footer.classList.remove('flip');
+    } else {
+      console.log("ar detected")
+      arBtn.classList.add('active');
+      enBtn.classList.remove('active');
+      footer.classList.add('flip');
+    }
+
+
+
   }
 
   showLang(currentLang);

@@ -676,7 +676,9 @@ th {
 .lang-switcher button:hover { 
     box-shadow: var(--button-hover);
  }
-
+.flip { 
+    background: red ;
+ }
 
 /******* RESPONSIVE ELEMENTS **********/ 
 /* ipad  */
