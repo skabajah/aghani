@@ -835,6 +835,10 @@ th {
     .period-btn { 
         text-align: left; 
     }
+    .footer-links a ,  a.lang-ar {
+        text-align: center;
+        margin: 0 ;
+    }
 }     
 
 
