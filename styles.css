@@ -677,7 +677,7 @@ th {
     box-shadow: var(--button-hover);
  }
 .flip { 
-    background: red ;
+    direction: rtl ;
  }
 
 /******* RESPONSIVE ELEMENTS **********/ 
