@@ -1,44 +1,55 @@
-// --- Language switcher ---
-document.addEventListener('DOMContentLoaded', () => {
-  let currentLang = localStorage.getItem('lang') || 'ar';
-  let isArActive = currentLang === 'ar';
-
-  function showLang(lang) {
+// 1. Move showLang outside so app.js can "talk" to it
+function showLang(lang) {
+    const isAr = lang === 'ar';
+    
+    // Toggle visibility
     document.querySelectorAll('.lang-en, .lang-ar').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
+    document.querySelectorAll('.lang-' + lang).forEach(el => {
+        // Use block for divs/p, inline for spans
+        el.style.display = (el.tagName === 'SPAN') ? 'inline' : 'block';
+    });
+    
     document.documentElement.lang = lang;
 
-    // const footer = document.querySelector('.footer-content');
     const footer = document.querySelector('.footer-content');
+    const switcher = document.getElementById('period-switcher');
+    const listMain = document.querySelector('.list-main');
+    const nowPlaying = document.getElementById('nowPlaying'); 
+
     const enBtn = document.querySelector('.lang-switcher button[data-lang="en"]');
     const arBtn = document.querySelector('.lang-switcher button[data-lang="ar"]');
 
-    if (lang === 'en') {
-      enBtn.classList.add('active');
-      arBtn.classList.remove('active');
-      footer.classList.remove('flip');
-    } else {
-      console.log("ar detected")
-      arBtn.classList.add('active');
-      enBtn.classList.remove('active');
-      footer.classList.add('flip');
+    if (enBtn && arBtn) {
+        enBtn.classList.toggle('active', lang === 'en');
+        arBtn.classList.toggle('active', lang === 'ar');
     }
 
+    // Consolidate layout flips
+    if (footer) footer.classList.toggle('flip', isAr);
+    if (switcher) switcher.classList.toggle('flip', isAr);
+    if (listMain) listMain.classList.toggle('flip', isAr);
+    if (nowPlaying) nowPlaying.classList.toggle('flip', isAr); 
 
+}
 
-  }
+// 2. Main Event Listener
+document.addEventListener('DOMContentLoaded', () => {
+    let currentLang = localStorage.getItem('lang') || 'ar';
 
-  showLang(currentLang);
+    // Initial run
+    showLang(currentLang);
 
-  document.querySelectorAll('.lang-switcher button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      if ((lang === 'ar' && isArActive) || (lang === 'en' && !isArActive)) return; // already active
-      isArActive = lang === 'ar';
-      localStorage.setItem('lang', lang);
-      showLang(lang);
+    // Click listeners for the buttons
+    document.querySelectorAll('.lang-switcher button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const lang = btn.dataset.lang;
+            // Get current active state from the document
+            const activeLang = localStorage.getItem('lang') || 'ar';
+            
+            if (lang === activeLang) return; 
+
+            localStorage.setItem('lang', lang);
+            showLang(lang);
+        });
     });
-  });
 });
-
-

@@ -1,4 +1,3 @@
-// const CSV_FILE = "Year2025.csv";
 const MANIFEST_URL = "/archive/manifest.json";
 const CSV_BASE = "/archive/";
 
@@ -10,40 +9,25 @@ const els = {
   switcher: document.getElementById("period-switcher"),
 };
 
-let bgBackdrop = document.getElementById("bgBackdrop");
 let activeVideoId = null;
 let currentIndex = 0;
 let currentList = [];
 let ytPlayer = null;
 let isPlayerReady = false;
 
+// Helpers
+const getLang = () => localStorage.getItem('lang') || 'ar';
+const isAr = () => getLang() === 'ar';
+
 function onYouTubeIframeAPIReady() {
   ytPlayer = new YT.Player('player', {
-    height: '100%',
-    width: '100%',
-    videoId: '',
-    playerVars: {
-      'autoplay': 1,
-      'playsinline': 1,
-      'modestbranding': 1,
-      'rel': 0,
-      'controls': 0 
-
-    },
+    height: '100%', width: '100%', videoId: '',
+    playerVars: { 'autoplay': 1, 'playsinline': 1, 'modestbranding': 1, 'rel': 0, 'controls': 0 },
     events: {
-      'onStateChange': (e) => { 
-        if (e.data === YT.PlayerState.ENDED) playNext(); 
-      },
+      'onStateChange': (e) => { if (e.data === YT.PlayerState.ENDED) playNext(); },
       'onReady': () => {
         isPlayerReady = true;
-        setStatus("Ready");
-        if (currentList.length > 0 && !activeVideoId) {
-          playItem(currentList[0]);
-        }
-      },
-      'onError': (e) => {
-        console.error("YouTube Player Error:", e.data);
-        setStatus("Playback Error");
+        if (currentList.length > 0 && !activeVideoId) playItem(currentList[0]);
       }
     }
   });
@@ -51,331 +35,211 @@ function onYouTubeIframeAPIReady() {
 
 function playNext() {
   if (currentList.length === 0) return;
-  const next = (currentIndex + 1) % currentList.length;
-  playItem(currentList[next]);
+  playItem(currentList[(currentIndex + 1) % currentList.length]);
 }
 
 function playPrev() {
   if (currentList.length === 0) return;
-  const prev = (currentIndex - 1 + currentList.length) % currentList.length;
-  playItem(currentList[prev]);
-}
-
-function setStatus(msg) {
-  if (els.status) els.status.textContent = msg;
+  playItem(currentList[(currentIndex - 1 + currentList.length) % currentList.length]);
 }
 
 function escapeHtml(s) {
-  return String(s ?? "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#039;");
+  return String(s ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[c]));
 }
 
 function parseCSV(text) {
   const lines = text.trim().split(/\r?\n/);
   if (lines.length <= 1) return [];
-  
   const parseLine = (line) => {
     const out = []; let cur = ""; let inQuotes = false;
     for (let i = 0; i < line.length; i++) {
-      const ch = line[i];
-      if (ch === '"') {
-        if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; } 
+      if (line[i] === '"') {
+        if (inQuotes && line[i+1] === '"') { cur += '"'; i++; } 
         else inQuotes = !inQuotes;
-      } else if (ch === "," && !inQuotes) { out.push(cur); cur = ""; } 
-      else cur += ch;
+      } else if (line[i] === "," && !inQuotes) { out.push(cur); cur = ""; } 
+      else cur += line[i];
     }
     out.push(cur); return out;
   };
-
   const header = parseLine(lines[0]).map(h => h.trim());
   return lines.slice(1).map(line => {
     const vals = parseLine(line);
     const o = {};
-    header.forEach((h, idx) => { o[h] = vals[idx] ? vals[idx].trim() : ""; });
+    header.forEach((h, idx) => { o[h] = vals[idx]?.trim() ?? ""; });
     return o;
   });
 }
 
-// function formatMillions(val) {
-//   if (!val) return "";
-//   const num = Number(val.replace(/,/g, ''));
-//   if (isNaN(num)) return "";
-//   return (num / 1000000).toFixed(1) + "M";
-// }
-
-function parseCount(val) {
-  if (val == null) return NaN;
-  const s = String(val).trim();
-  if (!s) return NaN;
-
-  // supports raw numbers, "123,456", and optional suffix like "1.2M", "900K", "3B"
-  const m = s.match(/^([\d.,]+)\s*([KMB])?$/i);
-  if (!m) return NaN;
-
-  const n = Number(m[1].replace(/,/g, ""));
-  if (Number.isNaN(n)) return NaN;
-
-  const suf = (m[2] || "").toUpperCase();
-  const mult = suf === "K" ? 1e3 : suf === "M" ? 1e6 : suf === "B" ? 1e9 : 1;
-  return n * mult;
-}
-
 function formatKMB(val) {
-  const n = parseCount(val);
+  const n = parseFloat(String(val ?? "").replace(/,/g, ""));
   if (!Number.isFinite(n)) return "";
-
-  const abs = Math.abs(n);
-  const fmt = (x) => {
-    const out = (Math.round(x * 10) / 10).toFixed(1);
-    return out.endsWith(".0") ? out.slice(0, -2) : out;
-  };
-
-  if (abs >= 1e9) return `${fmt(n / 1e9)}B`;
-  if (abs >= 1e6) return `${fmt(n / 1e6)}M`;
-  if (abs >= 1e3) return `${fmt(n / 1e3)}K`;
-  return `${Math.round(n)}`;
+  if (n >= 1e6) return (n / 1e6).toFixed(1).replace(/\.0$/, "") + "M";
+  if (n >= 1e3) return (n / 1e3).toFixed(1).replace(/\.0$/, "") + "K";
+  return Math.round(n).toString();
 }
-
-
 
 function extractVideoId(val) {
   if (!val) return null;
-  if (val.includes("v=")) return val.split("v=")[1].split("&")[0];
-  if (val.includes("youtu.be/")) return val.split("youtu.be/")[1].split("?")[0];
-  return val;
+  const m = val.match(/(?:v=|youtu\.be\/)([^?&]+)/);
+  return m ? m[1] : val;
 }
 
 function playItem(item) {
   if (!item) return;
   const id = extractVideoId(item.VideoID);
   if (!id) return;
-  
   activeVideoId = id;
   currentIndex = currentList.findIndex(r => extractVideoId(r.VideoID) === id);
 
-  if (isPlayerReady && ytPlayer && typeof ytPlayer.loadVideoById === 'function') {
-    ytPlayer.loadVideoById(id);
-  }
+  if (isPlayerReady && ytPlayer?.loadVideoById) ytPlayer.loadVideoById(id);
+
+  const parts = item.Title.split(" | ");
+  const enT = parts[0];
+  const arT = parts[1] || parts[0];
+
+// Inside playItem(item)
+els.npTitle.innerHTML = `
+  <span>${item.Rank}</span>
+  <div class="lang-en" style="display: ${isAr() ? 'none' : 'block'}">${escapeHtml(enT)}</div>
+  <div class="lang-ar" style="display: ${isAr() ? 'block' : 'none'}">${escapeHtml(arT)}</div>
+`;
+
+// Inside initFromCsv loop
+card.innerHTML = `
+  <img src="${r.Thumbnail}" loading="lazy" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
+  <div class="cardBody">
+    <div class="cardRank">#${r.Rank || (idx + 1)} <span>• ${views}</span></div>
+    <div class="cardTitle">
+      <div class="lang-en" style="display: ${isAr() ? 'none' : 'block'}">${escapeHtml(enT)}</div>
+      <div class="lang-ar" style="display: ${isAr() ? 'block' : 'none'}">${escapeHtml(arT)}</div>
+    </div>
+  </div>`;
+
+// Inside renderSwitcher loop
+btn.innerHTML = `
+  <div class="lang-en" style="display: ${isAr() ? 'none' : 'block'}">${escapeHtml(titleEn)}</div>
+  <div class="lang-ar" style="display: ${isAr() ? 'block' : 'none'}">${escapeHtml(titleAr)}</div>
+`;
+
+// IMPORTANT: After every loop/render finishes, add this:
+if (typeof showLang === 'function') showLang(getLang());
+
+  const vShort = formatKMB(item.Views);
+  els.npMeta.innerHTML = `
+    <span class="lang-en" style="display: ${isAr() ? 'none' : 'inline'}">Views: ${vShort}</span>
+    <span class="lang-ar" style="display: ${isAr() ? 'inline' : 'none'}">المشاهدات: ${vShort}</span>
+  `;
+  els.npMeta.classList.remove('hidden');
   
-  // if (bgBackdrop && item.Thumbnail) {
-  //   bgBackdrop.style.backgroundImage = `url(${item.Thumbnail})`;
-  // }
-
-  // els.npTitle.innerHTML = `<span>${item.Rank}</span> ${escapeHtml(item.Title)}`;
-  //  line break 
-  const npTitleHtml = escapeHtml(item.Title).replaceAll(" | ", "<br>");
-  els.npTitle.innerHTML = `<span>${item.Rank}</span> ${npTitleHtml}`;
-
-
-  // EDITED LINES BELOW:
-  // const views = item.Views ? `Views المشاهدات: ${Number(item.Views.replace(/,/g, '')).toLocaleString()}` : "";
-
-  // const viewsShort = formatKMB(item.Views);
-  // const views = viewsShort ? `Views المشاهدات: ${viewsShort}` : "";
-  // const published = item.PublishDate ? `Published تاريخ النشر: ${item.PublishDate}` : "";
-  // els.npMeta.textContent = `${views}    •    ${published}`;
-
-  const viewsShort = formatKMB(item.Views);
-  const viewsLine = viewsShort ? `Views • <span dir="ltr">${viewsShort}</span> • المشاهدات` : "";
-  const pubLine = item.PublishDate ? `Published • <span dir="ltr">${item.PublishDate}</span> • تاريخ النشر` : "";
-  // els.npMeta.innerHTML = `${viewsLine}<br>${pubLine}`;
-  els.npMeta.innerHTML = `${viewsLine}`;
-
+  document.querySelectorAll('.card').forEach(c => c.classList.toggle('active', c.getAttribute('data-id') === id));
   
-  document.querySelectorAll('.card').forEach(c => {
-    c.classList.toggle('active', c.getAttribute('data-id') === id);
-  });
+  // Handshake with lang.js
+  if (typeof showLang === 'function') showLang(getLang());
 }
 
 async function initFromCsv(csvUrl) {
-  setStatus("Loading Data...");
   try {
     const res = await fetch(csvUrl, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Fetch failed: ${res.status}`);
     const text = await res.text();
-
     currentList = parseCSV(text)
-      .filter(r => r.VideoID && r.VideoID.length > 5)
+      .filter(r => r.VideoID?.length > 5)
       .sort((a, b) => (parseInt(a.Rank) || 999) - (parseInt(b.Rank) || 999));
 
-    if (currentList.length === 0) throw new Error("No videos found.");
-
     els.grid.innerHTML = "";
-
     currentList.forEach((r, idx) => {
       const id = extractVideoId(r.VideoID);
-      const viewCount = formatKMB(r.Views);
+      const views = formatKMB(r.Views);
+      const parts = r.Title.split(" | ");
+      const enT = parts[0];
+      const arT = parts[1] || parts[0];
 
       const card = document.createElement("div");
       card.className = "card";
       card.setAttribute("data-id", id);
       card.onclick = () => playItem(r);
-
       card.innerHTML = `
-        <img src="${r.Thumbnail}" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
+        <img src="${r.Thumbnail}" loading="lazy" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
         <div class="cardBody">
-          <div class="cardRank">#${r.Rank || (idx + 1)} <span>• ${viewCount}</span></div>
-          <div class="cardTitle">${escapeHtml(r.Title).replaceAll(" | ", "<br>")}</div>
+          <div class="cardRank">#${r.Rank || (idx + 1)} <span>• ${views}</span></div>
+          <div class="cardTitle">
+            <span class="lang-en" style="display: ${isAr() ? 'none' : 'inline'}">${escapeHtml(enT)}</span>
+            <span class="lang-ar" style="display: ${isAr() ? 'inline' : 'none'}">${escapeHtml(arT)}</span>
+          </div>
         </div>`;
       els.grid.appendChild(card);
     });
 
-    activeVideoId = null;
-    currentIndex = 0;
+    if (isPlayerReady && currentList.length > 0) playItem(currentList[0]);
+    
+    // Handshake with lang.js
+    if (typeof showLang === 'function') showLang(getLang());
 
-    if (isPlayerReady) playItem(currentList[0]);
-
-  } catch (err) {
-    console.error("Init Error:", err);
-    setStatus("Load Error");
-    els.grid.innerHTML = `<div style="padding:40px; color:#ff4444; text-align:center;">Error: ${err.message}</div>`;
-  }
+  } catch (err) { console.error(err); }
 }
+
+function renderSwitcher(manifest, activeItem) {
+  if (!els.switcher) return;
+  els.switcher.innerHTML = "";
+
+  manifest.filter(x => x.status === "ready" && x.featured).forEach(item => {
+    const btn = document.createElement("button");
+    btn.className = `period-btn ${item === activeItem ? 'active' : ''}`;
+    const titleEn = item.title || "";
+    const titleAr = item.title_ar || titleEn;
+
+    btn.innerHTML = `
+      <span class="lang-en" style="display: ${isAr() ? 'none' : 'inline'}">${escapeHtml(titleEn)}</span>
+      <span class="lang-ar" style="display: ${isAr() ? 'inline' : 'none'}">${escapeHtml(titleAr)}</span>
+    `;
+    btn.onclick = () => {
+      els.switcher.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      applyPeriod(item);
+    };
+    els.switcher.appendChild(btn);
+  });
+
+  const archiveBtn = document.createElement("a");
+  archiveBtn.href = "/archive/";
+  archiveBtn.className = "period-btn";
+  archiveBtn.innerHTML = `
+    <span class="lang-en" style="display: ${isAr() ? 'none' : 'inline'}">More Rankings</span>
+    <span class="lang-ar" style="display: ${isAr() ? 'inline' : 'none'}">المزيد من الترتيبات</span>
+  `;
+  els.switcher.appendChild(archiveBtn);
+
+  // Handshake with lang.js
+  if (typeof showLang === 'function') showLang(getLang());
+}
+
+async function applyPeriod(item) {
+  const cover = document.querySelector(".intro .cover");
+  if (cover && item.banner) cover.src = item.banner;
+  await initFromCsv(CSV_BASE + item.file);
+}
+
+async function init() {
+  try {
+    const res = await fetch(MANIFEST_URL, { cache: "no-store" });
+    const manifest = await res.json();
+    const item = manifest.find(x => x.status === "ready" && x.default) || manifest.find(x => x.status === "ready");
+    if (item) {
+      renderSwitcher(manifest, item);
+      await applyPeriod(item);
+    }
+  } catch (err) { console.error(err); }
+}
+
+// UI and Navigation
+document.getElementById('logo')?.addEventListener('click', () => {
+  if (window.innerWidth < 600) els.switcher?.classList.toggle('hidden');
+});
 
 window.addEventListener("keydown", (e) => {
   if (e.key === "ArrowRight") playNext();
   if (e.key === "ArrowLeft") playPrev();
 });
 
-async function applyPeriod(item) {
-  if (!item) return;
-
-  const cover = document.querySelector(".intro .cover");
-  if (cover && item.banner) cover.src = item.banner;
-
-  await initFromCsv(CSV_BASE + item.file);
-}
-
-function renderSwitcher(manifest, activeItem) {
-  if (!els.switcher) return;
-
-  els.switcher.innerHTML = "";
-
-  manifest
-    .filter(x => x.status === "ready" && x.featured)
-    .forEach(item => {
-      const btn = document.createElement("button");
-      btn.type = "button";
-      btn.className = "period-btn";
-      btn.textContent = item.title || "";
-      if (item === activeItem) btn.classList.add("active");
-      btn.onclick = async () => {
-        // update active state
-        els.switcher.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        await applyPeriod(item);
-      };
-      els.switcher.appendChild(btn);
-    });
-
-    // ADD THIS
-  const archiveBtn = document.createElement("a");
-  archiveBtn.href = "/archive/";
-  archiveBtn.className = "period-btn";
-  archiveBtn.textContent = "More Rankings";
-  els.switcher.appendChild(archiveBtn);
-}
-
-
-async function initFromManifestDefault() {
-  setStatus("Loading...");
-  try {
-    const res = await fetch(MANIFEST_URL, { cache: "no-store" });
-    if (!res.ok) throw new Error(`Manifest fetch failed: ${res.status}`);
-    const manifest = await res.json();
-
-    const item =
-      manifest.find(x => x.status === "ready" && x.default === true) ||
-      manifest.find(x => x.status === "ready") ||
-      null;
-
-    if (!item) throw new Error("No ready items in manifest.");
-
-    renderSwitcher(manifest, item);
-    await applyPeriod(item);
-
-  } catch (err) {
-    console.error("Manifest init error:", err);
-    setStatus("Load Error");
-  }
-}
-
-initFromManifestDefault();
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const closeBtn = document.getElementById('archive-close');
-  const bar = document.getElementById('archive-bar');
-
-  if (closeBtn && bar) {
-    closeBtn.onclick = () => {
-      bar.style.display = 'none';
-    };
-  }
-});
-
-
-const switcher = document.getElementById('period-switcher');
-const logo = document.getElementById('logo');
-let isSwitcherVisible = window.innerWidth >= 600; // initial state
-
-function updateSwitcherVisibility() {
-  if (!switcher) return;
-
-  if (window.innerWidth < 600) {
-    switcher.classList.add('hidden');
-    isSwitcherVisible = false;
-  } else {
-    switcher.classList.remove('hidden');
-    isSwitcherVisible = true;
-  }
-}
-
-updateSwitcherVisibility();
-window.addEventListener('resize', updateSwitcherVisibility);
-
-logo?.addEventListener('click', () => {
-  if (window.innerWidth < 600) {
-    if (isSwitcherVisible) {
-      switcher?.classList.add('hidden');
-      isSwitcherVisible = false;
-    } else {
-      switcher?.classList.remove('hidden');
-      isSwitcherVisible = true;
-    }
-  }
-});
-
-
-// --- Language switcher ---
-document.addEventListener('DOMContentLoaded', () => {
-  let currentLang = localStorage.getItem('lang') || 'ar';
-  let isArActive = currentLang === 'ar';
-
-  function showLang(lang) {
-    document.querySelectorAll('.lang-en, .lang-ar').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
-    document.documentElement.lang = lang;
-
-    // Update buttons' active state
-    const enBtn = document.querySelector('.lang-switcher button[data-lang="en"]');
-    const arBtn = document.querySelector('.lang-switcher button[data-lang="ar"]');
-    enBtn.classList.toggle('active', lang === 'en');
-    arBtn.classList.toggle('active', lang === 'ar');
-  }
-
-  showLang(currentLang);
-
-  document.querySelectorAll('.lang-switcher button').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const lang = btn.dataset.lang;
-      if ((lang === 'ar' && isArActive) || (lang === 'en' && !isArActive)) return; // already active
-      isArActive = lang === 'ar';
-      localStorage.setItem('lang', lang);
-      showLang(lang);
-    });
-  });
-});
-
-
+init();
