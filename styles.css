@@ -637,7 +637,9 @@ th {
     color: white;
     display: none ;
 }
-
+.flip { 
+    direction: rtl ;
+ }
 .hidden { 
     display: none !important; 
 } 
@@ -680,9 +682,7 @@ th {
 .lang-switcher button:hover { 
     box-shadow: var(--button-hover);
  }
-.flip { 
-    direction: rtl ;
- }
+
 
 /******* RESPONSIVE ELEMENTS **********/ 
 /* ipad  */
