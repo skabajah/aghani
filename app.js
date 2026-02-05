@@ -190,8 +190,8 @@ function renderSwitcher(manifest, activeItem) {
     const titleAr = item.title_ar || titleEn;
 
     btn.innerHTML = `
-      <span class="lang-en" style="display: ${isAr() ? 'none' : 'inline'}">${escapeHtml(titleEn)}</span>
-      <span class="lang-ar" style="display: ${isAr() ? 'inline' : 'none'}">${escapeHtml(titleAr)}</span>
+      <div class="lang-en " style="display: ${isAr() ? 'none' : 'inline'}">${escapeHtml(titleEn)}</div>
+      <div class="lang-ar " style="display: ${isAr() ? 'inline' : 'none'}">${escapeHtml(titleAr)}</div>
     `;
     btn.onclick = () => {
       els.switcher.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));

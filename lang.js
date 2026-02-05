@@ -11,6 +11,7 @@ function showLang(lang) {
     
     document.documentElement.lang = lang;
 
+    const topbar = document.querySelector('.topbar'); // Added this
     const footer = document.querySelector('.footer-content');
     const switcher = document.getElementById('period-switcher');
     const listMain = document.querySelector('.list-main');
@@ -25,6 +26,7 @@ function showLang(lang) {
     }
 
     // Consolidate layout flips
+    if (topbar) topbar.classList.toggle('flip', isAr); // Added this
     if (footer) footer.classList.toggle('flip', isAr);
     if (switcher) switcher.classList.toggle('flip', isAr);
     if (listMain) listMain.classList.toggle('flip', isAr);
