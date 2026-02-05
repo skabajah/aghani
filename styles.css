@@ -122,20 +122,20 @@ img.cover {
     margin: 1em auto;
 }
 .period-btn {
-    /*display: inline-flex;*/
-    border: var(--glass-border);
+/*    display: inline-flex;
+*/    border: var(--glass-border);
     color: #555;
     font-family: 'Cairo';
     font-size: 0.8em;
     border-radius: var(--radius);
     overflow: hidden;
     padding: 8px;
-    display: grid;
+    display: block;
     width: 170px;
     -webkit-appearance: none;
     background: #efefef;
     text-decoration: none;
-    text-align: center;
+    text-align: center !important;
 }
 .period-btn.active {
     background: var(--sk-yellow);
@@ -641,6 +641,9 @@ th {
 .hidden { 
     display: none !important; 
 } 
+.center {
+    text-align: center !important;
+}
 
 
 
