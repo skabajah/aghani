@@ -668,10 +668,13 @@ th {
     font-weight: 600;
     cursor: pointer;
     text-align: center;
-    transition: all 0.2s;
+    /*transition: all 0.2s;*/
     font-family: 'Cairo';
-    max-height: 3em;
+    /*max-height: 3em;*/
     max-width: 5em;
+    height: 40px;
+    line-height: 20px;
+
 }
 
 .lang-switcher button.active {
@@ -681,6 +684,7 @@ th {
 
 .lang-switcher button:hover { 
     box-shadow: var(--button-hover);
+    border: var(--glass-border);
  }
 
 
