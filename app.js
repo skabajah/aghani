@@ -243,3 +243,36 @@ window.addEventListener("keydown", (e) => {
 });
 
 init();
+
+
+
+const switcher = document.getElementById('period-switcher');
+const logo = document.getElementById('logo');
+let isSwitcherVisible = window.innerWidth >= 600; // initial state
+
+function updateSwitcherVisibility() {
+  if (!switcher) return;
+
+  if (window.innerWidth < 600) {
+    switcher.classList.add('hidden');
+    isSwitcherVisible = false;
+  } else {
+    switcher.classList.remove('hidden');
+    isSwitcherVisible = true;
+  }
+}
+
+updateSwitcherVisibility();
+window.addEventListener('resize', updateSwitcherVisibility);
+
+logo?.addEventListener('click', () => {
+  if (window.innerWidth < 600) {
+    if (isSwitcherVisible) {
+      switcher?.classList.add('hidden');
+      isSwitcherVisible = false;
+    } else {
+      switcher?.classList.remove('hidden');
+      isSwitcherVisible = true;
+    }
+  }
+});
