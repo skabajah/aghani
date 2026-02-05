@@ -2,9 +2,7 @@
   const root = document.getElementById("archiveRoot");
   if (!root) return;
 
-  // Render only these columns (order controlled here)
   const SHOW_COLS = ["Rank", "Thumbnail", "Title", "Views", "PublishDate"];
-
   const IMAGE_COL = "Thumbnail";
   const LINK_COL  = "Link";
 
@@ -13,21 +11,28 @@
       ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;" }[c])
     );
 
+  const syncFlipState = (target) => {
+    const footer = document.querySelector('.footer-content');
+    if (footer && footer.classList.contains('flip')) {
+      target.classList.add('flip');
+      target.style.direction = 'rtl';
+    } else {
+      target.classList.remove('flip');
+      target.style.direction = 'ltr';
+    }
+  };
+
   const splitCSV = (line) => {
     const out = [];
     let cur = "";
     let q = false;
-
     for (let i = 0; i < line.length; i++) {
       const ch = line[i];
-
       if (ch === '"' && line[i + 1] === '"') { cur += '"'; i++; continue; }
       if (ch === '"') { q = !q; continue; }
       if (ch === "," && !q) { out.push(cur); cur = ""; continue; }
-
       cur += ch;
     }
-
     out.push(cur);
     return out.map(s => s.trim());
   };
@@ -49,70 +54,65 @@
 
   const renderSnapshot = (item, headers, rows) => {
     const cols = SHOW_COLS.filter(c => headers.includes(c));
-
     const section = document.createElement("section");
+    
+    // Determine current language state immediately
+    const currentLang = localStorage.getItem("lang") || "ar";
+    const isArActive = currentLang === "ar";
+    
+    syncFlipState(section);
 
-    const snapshotDate = String(item.snapshot_date);  
-    // console.log("snapshotDate: ", snapshotDate);
-    const h5Date = `Released ${snapshotDate} نسخة`; // customize placement of “نسخة” or dashes
-    // console.log("h5Date: ", h5Date);
+    const snapshotDate = String(item.snapshot_date);
+    const yt_en = [], yt_ar = [];
 
+    if (item.playlist_url) {
+      yt_en.push(`<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a>`);
+      yt_ar.push(`<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">قائمة يوتيوب</a>`);
+    }
+    if (item.ranking_video_url) {
+      yt_en.push(`<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>`);
+      yt_ar.push(`<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">فيديو الترتيب</a>`);
+    }
 
-    // const links = [
-    //   item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a> قائمة يوتيوب` : "",
-    //   item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a> فيديو الترتيب` : "",
-    //   h5Date
-    // ].filter(Boolean).join(" | ");
-
-    const yt_links = [
-      item.playlist_url ? `<a href="${esc(item.playlist_url)}" target="_blank" rel="noopener">YouTube Playlist</a> قائمة يوتيوب` : "",
-      item.ranking_video_url ? `<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a> فيديو الترتيب` : ""
-    ].filter(Boolean).join(" | ");
-
-    const links = h5Date ? `${yt_links}<br>${h5Date}` : yt_links;
-
-
+    // Apply inline style based on isArActive to prevent showing both on load
+    const linksHtml = `
+      <div class="lang-en" style="display: ${isArActive ? 'none' : 'block'}">
+        ${yt_en.join(" | ")}<br>Released ${esc(snapshotDate)}
+      </div>
+      <div class="lang-ar" style="display: ${isArActive ? 'block' : 'none'}">
+        ${yt_ar.join(" | ")}<br>نسخة ${esc(snapshotDate)}
+      </div>
+    `;
 
     section.innerHTML = `
       <br><hr><h2>${esc(item.title)}</h2>
-      ${item.banner ? `<img class="cover" src="${esc(item.banner)}" >` : ""}
-      ${links ? `<h5 class="archive-links">${links}</h5>` : ""}
-
+      ${item.banner ? `<img class="cover" src="${esc(item.banner)}">` : ""}
+      <h5 class="archive-links">${linksHtml}</h5>
       <table>
-        <thead>
-          <tr>${cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr>
-        </thead>
+        <thead><tr>${cols.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead>
         <tbody>
-          ${rows.map(r => `
+          ${rows.map(row => `
             <tr>
               ${cols.map(c => {
                 const i = headers.indexOf(c);
-                const val = i > -1 ? (r[i] ?? "") : "";
-
+                const val = i > -1 ? (row[i] ?? "") : "";
                 if (c === IMAGE_COL && val) {
                   const linkIdx = headers.indexOf(LINK_COL);
-                  const href = linkIdx > -1 ? (r[linkIdx] ?? "#") : "#";
-                  return `
-                    <td>
-                      <a href="${esc(href)}" target="_blank" rel="noopener">
-                        <img src="${esc(val)}" style="width:70px;border-radius:6px;display:block">
-                      </a>
-                    </td>
-                  `;
+                  const href = linkIdx > -1 ? (row[linkIdx] ?? "#") : "#";
+                  return `<td><a href="${esc(href)}" target="_blank" rel="noopener"><img src="${esc(val)}" style="width:70px;border-radius:6px;display:block"></a></td>`;
                 }
-
                 if (c === "Title") {
                   const linkIdx = headers.indexOf(LINK_COL);
-                  const href = linkIdx > -1 ? (r[linkIdx] ?? "") : "";
-                  return href
-                    ? `<td class="song-title"><a href="${esc(href)}" target="_blank" rel="noopener">${esc(val)}</a></td>`
-                    : `<td class="song-title">${esc(val)}</td>`;
+                  const href = linkIdx > -1 ? (row[linkIdx] ?? "") : "";
+                  const enT = headers.includes("Title_EN") ? row[headers.indexOf("Title_EN")] : val.split(" | ")[0];
+                  const arT = headers.includes("Title_AR") ? row[headers.indexOf("Title_AR")] : val.split(" | ")[1] || val;
+                  
+                  const enH = enT ? `<span class="lang-en" style="display:${isArActive ? "none" : "inline"}">${esc(enT)}</span>` : "";
+                  const arH = arT ? `<span class="lang-ar" style="display:${isArActive ? "inline" : "none"}">${esc(arT)}</span>` : "";
+                  
+                  return `<td class="song-title">${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${enH}${arH}</a>` : `${enH}${arH}`}</td>`;
                 }
-
-                if (c === "Views") {
-                  return `<td>${formatMillions(val)}</td>`;
-                }
-
+                if (c === "Views") return `<td>${formatMillions(val)}</td>`;
                 return `<td>${esc(val)}</td>`;
               }).join("")}
             </tr>
@@ -122,40 +122,36 @@
     `;
 
     root.appendChild(section);
+    
+    // Final sync to ensure all CSS classes match
+    const btn = document.querySelector(`.lang-switcher button[data-lang="${currentLang}"]`);
+    if (btn) btn.click();
   };
 
   const load = async () => {
-    const manifest = await fetch("/archive/manifest.json", { cache: "no-store" })
-      .then(r => r.json());
-
-    // manifest.sort((a, b) => (b.month || "").localeCompare(a.month || ""));
+    const resM = await fetch("/archive/manifest.json", { cache: "no-store" });
+    const manifest = await resM.json();
     manifest.sort((a, b) => {
-      // newest year first
       if ((a.year ?? 0) !== (b.year ?? 0)) return (b.year ?? 0) - (a.year ?? 0);
-
-      // year summary before months
       if (a.period !== b.period) return a.period === "year" ? -1 : 1;
-
-      // months newest → oldest
-      if (a.period === "month") {
-        return (b.month || "").localeCompare(a.month || "");
-      }
-
-      return 0;
+      return (b.month || "").localeCompare(a.month || "");
     });
 
     for (const item of manifest) {
-      // Only render snapshots explicitly marked ready
       if (item.status !== "ready") continue;
-
-      const res = await fetch(`/archive/${item.file}`, { cache: "no-store" });
-      if (!res.ok) continue;
-
-      const csv = await res.text();
+      const resC = await fetch(`/archive/${item.file}`, { cache: "no-store" });
+      if (!resC.ok) continue;
+      const csv = await resC.text();
       const { headers, rows } = parseCSV(csv);
       renderSnapshot(item, headers, rows);
     }
   };
+
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('#archiveRoot section').forEach(syncFlipState);
+  });
+  const footer = document.querySelector('.footer-content');
+  if (footer) observer.observe(footer, { attributes: true, attributeFilter: ['class'] });
 
   load().catch(err => {
     root.innerHTML = `<p style="color:#b00020">Archive failed to load</p>`;
