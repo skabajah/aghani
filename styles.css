@@ -836,6 +836,13 @@ th {
         justify-items: start; 
         margin-left: 3em;
     }
+    .period-switcher.flip {
+        border: none;
+        margin: none;
+        border-right: 8px solid var(--sk-cyan);
+        padding: 0 12px;
+        margin-right: 3em;
+    } 
     .period-btn { 
         text-align: left; 
     }
