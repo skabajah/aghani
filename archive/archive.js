@@ -52,15 +52,18 @@
     return (n / 1e6).toFixed(1) + "M";
   };
 
-  const renderSnapshot = (item, headers, rows) => {
+ const renderSnapshot = (item, headers, rows) => {
     const cols = SHOW_COLS.filter(c => headers.includes(c));
     const section = document.createElement("section");
     
-    // Determine current language state immediately
     const currentLang = localStorage.getItem("lang") || "ar";
     const isArActive = currentLang === "ar";
     
     syncFlipState(section);
+
+    // Headers from JSON: 'title' for EN, 'title_ar' for AR
+    const headerEn = item.title || "Ranking";
+    const headerAr = item.title_ar || item.title || "الترتيب";
 
     const snapshotDate = String(item.snapshot_date);
     const yt_en = [], yt_ar = [];
@@ -74,7 +77,6 @@
       yt_ar.push(`<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">فيديو الترتيب</a>`);
     }
 
-    // Apply inline style based on isArActive to prevent showing both on load
     const linksHtml = `
       <div class="lang-en" style="display: ${isArActive ? 'none' : 'block'}">
         ${yt_en.join(" | ")}<br>Released ${esc(snapshotDate)}
@@ -85,7 +87,10 @@
     `;
 
     section.innerHTML = `
-      <br><hr><h2>${esc(item.title)}</h2>
+      <br><hr>
+      <h2 class="lang-en" style="display: ${isArActive ? 'none' : 'block'}">${esc(headerEn)}</h2>
+      <h2 class="lang-ar" style="display: ${isArActive ? 'block' : 'none'}">${esc(headerAr)}</h2>
+      
       ${item.banner ? `<img class="cover" src="${esc(item.banner)}">` : ""}
       <h5 class="archive-links">${linksHtml}</h5>
       <table>
@@ -106,10 +111,8 @@
                   const href = linkIdx > -1 ? (row[linkIdx] ?? "") : "";
                   const enT = headers.includes("Title_EN") ? row[headers.indexOf("Title_EN")] : val.split(" | ")[0];
                   const arT = headers.includes("Title_AR") ? row[headers.indexOf("Title_AR")] : val.split(" | ")[1] || val;
-                  
                   const enH = enT ? `<span class="lang-en" style="display:${isArActive ? "none" : "inline"}">${esc(enT)}</span>` : "";
                   const arH = arT ? `<span class="lang-ar" style="display:${isArActive ? "inline" : "none"}">${esc(arT)}</span>` : "";
-                  
                   return `<td class="song-title">${href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${enH}${arH}</a>` : `${enH}${arH}`}</td>`;
                 }
                 if (c === "Views") return `<td>${formatMillions(val)}</td>`;
@@ -122,8 +125,6 @@
     `;
 
     root.appendChild(section);
-    
-    // Final sync to ensure all CSS classes match
     const btn = document.querySelector(`.lang-switcher button[data-lang="${currentLang}"]`);
     if (btn) btn.click();
   };
