@@ -16,6 +16,8 @@ function showLang(lang) {
     const switcher = document.getElementById('period-switcher');
     const listMain = document.querySelector('.list-main');
     const nowPlaying = document.getElementById('nowPlaying'); 
+    const langSwitcher = document.querySelector('.lang-switcher');
+    const menuCloseButton = document.querySelector('.menu-close-btn');
 
     const enBtn = document.querySelector('.lang-switcher button[data-lang="en"]');
     const arBtn = document.querySelector('.lang-switcher button[data-lang="ar"]');
@@ -31,6 +33,8 @@ function showLang(lang) {
     if (switcher) switcher.classList.toggle('flip', isAr);
     if (listMain) listMain.classList.toggle('flip', isAr);
     if (nowPlaying) nowPlaying.classList.toggle('flip', isAr); 
+    if (langSwitcher) langSwitcher.classList.toggle('flip', isAr); 
+    if (menuCloseButton) menuCloseButton.classList.toggle('flip', isAr); 
 
 }
 

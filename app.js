@@ -1,5 +1,10 @@
 const MANIFEST_URL = "/archive/manifest.json";
 const CSV_BASE = "/archive/";
+const switcher = document.getElementById('period-switcher');
+const logo = document.getElementById('logo');
+let isSwitcherVisible = window.innerWidth >= 600; // initial state
+const menuCloseButton = document.querySelector('.menu-close-btn');
+
 
 const els = {
   grid: document.getElementById("grid"),
@@ -181,7 +186,9 @@ async function initFromCsv(csvUrl) {
 
 function renderSwitcher(manifest, activeItem) {
   if (!els.switcher) return;
-  els.switcher.innerHTML = "";
+  // els.switcher.innerHTML = "";
+  els.switcher.querySelectorAll(".period-btn, a.period-btn").forEach(b => b.remove());
+
 
   manifest.filter(x => x.status === "ready" && x.featured).forEach(item => {
     const btn = document.createElement("button");
@@ -197,6 +204,7 @@ function renderSwitcher(manifest, activeItem) {
       els.switcher.querySelectorAll(".period-btn").forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       applyPeriod(item);
+      closeSwitcher(); 
     };
     els.switcher.appendChild(btn);
   });
@@ -242,37 +250,63 @@ window.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft") playPrev();
 });
 
-init();
-
-
-
-const switcher = document.getElementById('period-switcher');
-const logo = document.getElementById('logo');
-let isSwitcherVisible = window.innerWidth >= 600; // initial state
-
+ 
 function updateSwitcherVisibility() {
   if (!switcher) return;
 
   if (window.innerWidth < 600) {
+    // Mobile: hide switcher and close button by default
     switcher.classList.add('hidden');
     isSwitcherVisible = false;
+    if (menuCloseButton) menuCloseButton.classList.add('hidden');
   } else {
+    // Desktop: show switcher, hide close button
     switcher.classList.remove('hidden');
     isSwitcherVisible = true;
+    if (menuCloseButton) menuCloseButton.classList.add('hidden');
   }
 }
 
-updateSwitcherVisibility();
-window.addEventListener('resize', updateSwitcherVisibility);
-
+// logo click opens menu on mobile only
 logo?.addEventListener('click', () => {
   if (window.innerWidth < 600) {
-    if (isSwitcherVisible) {
-      switcher?.classList.add('hidden');
-      isSwitcherVisible = false;
-    } else {
-      switcher?.classList.remove('hidden');
-      isSwitcherVisible = true;
-    }
+    switcher.classList.remove('hidden');
+    if (menuCloseButton) menuCloseButton.classList.remove('hidden'); 
   }
 });
+
+// close button hides menu
+function closeSwitcher() {
+  if (!switcher || !menuCloseButton) return;
+  switcher.classList.add('hidden');
+  isSwitcherVisible = false;
+  menuCloseButton.classList.add('hidden');
+}
+
+// Attach it to the button
+menuCloseButton?.addEventListener('click', closeSwitcher);
+
+
+// initialize
+init().then(() => {
+  updateSwitcherVisibility();
+});
+
+
+
+window.addEventListener("resize", () => {
+  if (!switcher) return;
+
+  if (window.innerWidth >= 600) {
+    // Desktop: show period switcher
+    switcher.classList.remove("hidden");
+    isSwitcherVisible = true;
+    if (menuCloseButton) menuCloseButton.classList.add("hidden"); // keep X hidden
+  } else {
+    // Mobile: hide period switcher
+    switcher.classList.add("hidden");
+    isSwitcherVisible = false;
+    if (menuCloseButton) menuCloseButton.classList.add("hidden"); // X hidden by default
+  }
+});
+

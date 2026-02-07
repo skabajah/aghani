@@ -834,39 +834,52 @@ th {
     }
 
     .period-switcher {
-        display: inline-grid;
         border-left: 8px solid var(--sk-cyan);
-        padding: 0 12px;
-        justify-items: start; 
-        margin-left: 3em;
+        padding: 8em 2em 0;
+        position: absolute;
+        z-index: 900;
+        width: 100vw;
+        min-height: 100vh;
+        display: block;
+        background: var(--sk-white);
+        top: 0;
+        left: 0;
+        margin: 0;
     }
     .period-switcher.flip {
         border: none;
-        margin: none;
         border-right: 8px solid var(--sk-cyan);
-        padding: 0 12px;
-        margin-right: 3em;
     } 
     .period-btn { 
-        text-align: left; 
+        margin: 24px auto;
+        width: 60vw;
     }
     .footer-links a ,  a.lang-ar {
         text-align: center;
         margin: 0 ;
     }
+
+
+    .menu-close-btn { 
+        position: fixed;
+        top: 24px;
+        left: 36px;
+        min-width: 56px;
+        min-height: 56px;
+        display: block;
+        border-radius: 50%;
+        font-size: 36px;
+        color: var(--sk-cyan);
+        border: var(--glass-border);
+        box-shadow: var(--sk-border-shadow);
+    }
+    .menu-close-btn.flip{ 
+        left: unset;
+        right: 40px;
+
+    }
+
+
 }     
 
-
  
-/* --- Extra Wide Screens (>= 1800px) --- */
-
-/*@media (min-width: 1800px) {
-    .docBody {
-        display: flex;
-        gap:  2em; 
-    }  
-    .side {
-        flex : 1; 
-        max-width: 50vw;
-          }
-} */
