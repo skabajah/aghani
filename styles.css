@@ -98,6 +98,7 @@ img.banner {
     width: auto;     /* scales proportionally */
     flex: 1;         /* takes remaining width */
     object-fit: contain;
+    display: none;
 }
 img.cover {
     /*background: var(--glass);*/
