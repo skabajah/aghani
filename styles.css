@@ -870,8 +870,8 @@ th {
         position: fixed;
         top: 24px;
         left: 36px;
-        min-width: 56px;
-        min-height: 56px;
+        width: 56px;
+        height: 56px;
         display: block;
         border-radius: 50%;
         font-size: 36px;
