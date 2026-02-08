@@ -3,6 +3,7 @@ const CSV_BASE = "/archive/";
 const switcher = document.getElementById('period-switcher');
 const logo = document.getElementById('logo');
 const menuCloseButton = document.querySelector('.menu-close-btn');
+const languageButtonApp = document.querySelectorAll('.lang-switcher button');
 
 const grid = document.getElementById("grid");
 const npTitle = document.getElementById("npTitle");
@@ -20,6 +21,9 @@ let isPlayerReady = false;
 const getLang = () => localStorage.getItem('lang') || 'ar';
 const isAr = () => getLang() === 'ar';
 
+let lastManifest = [];
+let lastActiveItem = null;
+let lastCsvUrl = ""; // To store the current CSV path
 
 // functions 
 function onYouTubeIframeAPIReady() {
@@ -161,8 +165,14 @@ function playItem(item) {
     ytPlayer.loadVideoById(id);
   }
    
-  const npTitleHtml = escapeHtml(item.Title).replaceAll(" | ", "<br>");
-   npTitle.innerHTML = `<span>${item.Rank}</span> ${npTitleHtml}`;
+  // const npTitleHtml = escapeHtml(item.Title).replaceAll(" | ", "<br>");
+  const [enT, arT] = escapeHtml(item.Title).split(" | ");
+  npTitle.innerHTML = `
+    <span>${item.Rank}</span>
+    <div class="lang-en" style="display: ${isAr() ? 'none' : 'block'}">${enT}</div>
+    <div class="lang-ar" style="display: ${isAr() ? 'block' : 'none'}">${arT}</div>
+  `;
+  // npTitle.innerHTML = `<span>${item.Rank}</span> ${npTitleHtml}`;
  
   const viewsShort = formatKMB(item.Views);
   const viewsLine = viewsShort ? `Views • <span dir="ltr">${viewsShort}</span> • المشاهدات` : "";
@@ -199,14 +209,29 @@ async function initFromCsv(csvUrl) {
       card.setAttribute("data-id", id);
       card.onclick = () => playItem(r);
 
-      card.innerHTML = `
+    //   card.innerHTML = `
+    //     <img src="${r.Thumbnail}" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
+    //     <div class="cardBody">
+    //       <div class="cardRank">#${r.Rank || (idx + 1)} <span>• ${viewCount}</span></div>
+    //       <div class="cardTitle">${escapeHtml(r.Title).replaceAll(" | ", "<br>")}</div>
+    //     </div>`;
+    //    grid.appendChild(card);
+    // });
+    const [en, ar] = escapeHtml(r.Title).split(" | ");
+    card.innerHTML = `
         <img src="${r.Thumbnail}" onerror="this.src='https://via.placeholder.com/320x180?text=No+Thumb'">
         <div class="cardBody">
           <div class="cardRank">#${r.Rank || (idx + 1)} <span>• ${viewCount}</span></div>
-          <div class="cardTitle">${escapeHtml(r.Title).replaceAll(" | ", "<br>")}</div>
+           <div class="cardTitle">
+            <div class="lang-en" style="display: ${isAr() ? 'none' : 'block'}">${en}</div>
+            <div class="lang-ar" style="display: ${isAr() ? 'block' : 'none'}">${ar}</div>
+          </div>
         </div>`;
        grid.appendChild(card);
     });
+
+
+
 
     activeVideoId = null;
     currentIndex = 0;
@@ -295,23 +320,13 @@ async function initFromManifestDefault() {
     console.error("Manifest init error:", err);
     setStatus("Load Error");
   }
+  lastManifest = manifest;
+  lastActiveItem = item;
 }
 
 initFromManifestDefault();
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const closeBtn = document.getElementById('archive-close');
-  const bar = document.getElementById('archive-bar');
-
-  if (closeBtn && bar) {
-    closeBtn.onclick = () => {
-      bar.style.display = 'none';
-    };
-  }
-});
-
+ 
 
 function updateScreenWidth() {
   if (!switcher) return;
@@ -334,7 +349,6 @@ function openMobileMenu() {
     menuCloseButton?.classList.remove('hidden');
   }
 }
-
 logo?.addEventListener('click', openMobileMenu);
 
 // close button hides menu
@@ -346,3 +360,18 @@ function closeMobileMenu() {
 }
 menuCloseButton?.addEventListener('click', closeMobileMenu);
  
+
+
+async function UpdateinnerHtmlLanguage() {
+  initFromManifestDefault(); 
+    // if (lastManifest && lastActiveItem) {
+    //     renderSwitcher(lastManifest, lastActiveItem);
+    //     await applyPeriod(lastActiveItem);
+    // }
+}
+
+languageButtonApp.forEach(button => {
+    button.addEventListener('click', () => {
+        UpdateinnerHtmlLanguage();
+    });
+});

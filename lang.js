@@ -1,62 +1,73 @@
-// 1. Move showLang outside so app.js can "talk" to it
-function showLang(lang) {
-    const isAr = lang === 'ar';
-    
-    // Toggle visibility
-    // Global Catch-all: Toggle visibility for all language elements at once
-    document.querySelectorAll('.lang-en').forEach(el => {
-        el.style.display = isAr ? 'none' : (el.tagName === 'SPAN' ? 'inline' : 'block');
-    });
-    document.querySelectorAll('.lang-ar').forEach(el => {
-        el.style.display = isAr ? (el.tagName === 'SPAN' ? 'inline' : 'block') : 'none';
-    });    
-    document.documentElement.lang = lang;
+const currentLanguage = localStorage.getItem('lang') || 'ar';
 
-    const topbar = document.querySelector('.topbar'); // Added this
-    const footer = document.querySelector('.footer-content');
-    const switcher = document.getElementById('period-switcher');
-    const listMain = document.querySelector('.list-main');
-    const nowPlaying = document.getElementById('nowPlaying'); 
-    const langSwitcher = document.querySelector('.lang-switcher');
-    const menuCloseButton = document.querySelector('.menu-close-btn');
+const languageButton = document.querySelectorAll('.lang-switcher button');
 
-    const enBtn = document.querySelector('.lang-switcher button[data-lang="en"]');
-    const arBtn = document.querySelector('.lang-switcher button[data-lang="ar"]');
+const englishElements = document.querySelectorAll('.lang-en');
+const arabicElements = document.querySelectorAll('.lang-ar');
 
-    if (enBtn && arBtn) {
-        enBtn.classList.toggle('active', lang === 'en');
-        arBtn.classList.toggle('active', lang === 'ar');
+const flippableElements = document.querySelectorAll(
+    '.topbar, ' +            // Class
+    '.footer-content, ' +    // Class
+    '#period-switcher, ' +   // ID
+    '.list-main, ' +         // Class
+    '#nowPlaying, ' +        // ID
+    '.lang-switcher, ' +     // Class
+    '.menu-close-btn'        // Class
+);
+
+function switchLanguage(language) {
+    if (language === 'ar') {
+        englishElements.forEach(element => {
+            element.classList.add('hidden');
+        });
+        arabicElements.forEach(element => {
+            element.classList.remove('hidden');
+        });
+        localStorage.setItem('lang', 'ar');
+    } else {
+        englishElements.forEach(element => {
+            element.classList.remove('hidden');
+        });
+        arabicElements.forEach(element => {
+            element.classList.add('hidden');
+        });
+        localStorage.setItem('lang', 'en');
     }
-
-    // Consolidate layout flips
-    if (topbar) topbar.classList.toggle('flip', isAr); // Added this
-    if (footer) footer.classList.toggle('flip', isAr);
-    if (switcher) switcher.classList.toggle('flip', isAr);
-    if (listMain) listMain.classList.toggle('flip', isAr);
-    if (nowPlaying) nowPlaying.classList.toggle('flip', isAr); 
-    if (langSwitcher) langSwitcher.classList.toggle('flip', isAr); 
-    if (menuCloseButton) menuCloseButton.classList.toggle('flip', isAr); 
-
 }
 
-// 2. Main Event Listener
-document.addEventListener('DOMContentLoaded', () => {
-    let currentLang = localStorage.getItem('lang') || 'ar';
-
-    // Initial run
-    showLang(currentLang);
-
-    // Click listeners for the buttons
-    document.querySelectorAll('.lang-switcher button').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const lang = btn.dataset.lang;
-            // Get current active state from the document
-            const activeLang = localStorage.getItem('lang') || 'ar';
-            
-            if (lang === activeLang) return; 
-
-            localStorage.setItem('lang', lang);
-            showLang(lang);
+function flipDirection(language) {
+    if (language === 'ar') {
+        flippableElements.forEach(element => {
+            element.classList.add('flip');
         });
+    } else {
+        flippableElements.forEach(element => {
+            element.classList.remove('flip');
+        });
+    }
+}
+
+function updateActiveButton(language) {
+    languageButton.forEach(button => {
+        if (button.dataset.lang === language) {
+            button.classList.add('active');
+        } else {
+            button.classList.remove('active');
+        }
+    });
+}
+
+// Initial Run: Set the page state based on stored or default language
+switchLanguage(currentLanguage);
+flipDirection(currentLanguage);
+updateActiveButton(currentLanguage);
+
+// Click Listeners
+languageButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const selectedLanguage = button.dataset.lang;
+        switchLanguage(selectedLanguage);
+        flipDirection(selectedLanguage);
+        updateActiveButton(selectedLanguage);
     });
 });
