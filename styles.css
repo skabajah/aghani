@@ -425,6 +425,7 @@ h3.lang-ar, a.lang-ar  {
     box-shadow: var(--sk-shadow); 
     margin: 2em auto;
     padding: 0;
+    border: var(--glass-border);
 } 
 
 
@@ -453,23 +454,18 @@ h3.lang-ar, a.lang-ar  {
 }
 
 .docBody h1 {
-    text-align: center !important;
-    font-weight: 600;
-    font-size: 1em;
-    display: none;
+     display: none;
 }
-.docBody h2 {
-    /*color: #ffffff;*/
+.docBody h2, #archiveRoot h2 {
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
     line-height: 2;
-    margin: 2em auto 1em;
+    margin: 0 -5%;
     background: #5e5e5e30;
-    width: 250px;
-    padding: 4px 25px;
+    width: 110%;
+    padding: 4px;
     text-align: center;
-    /*border-radius: var(--radius);*/
 }
 .docBody h3 {
     font-size: 16px;
@@ -576,19 +572,7 @@ textarea:focus {
 }
 
 /* archiev page */ 
-#archiveRoot 
- {
-    width: var(--list-width);
-    margin: 0 auto;
- }
- #archiveRoot section {
-    background: var(--sk-linear);
-    box-shadow: var(--sk-shadow);
-    margin: 2em auto;
-    padding: 0;
-    border-radius: var(--radius);
-}
-
+ 
  #archiveRoot .cover
  {
     width: 100%;
@@ -644,11 +628,16 @@ th {
 .flip { 
     direction: rtl ;
  }
+.center {
+    text-align: center !important;
+}
 .hidden { 
     display: none !important; 
 } 
-.center {
-    text-align: center !important;
+.slide { 
+    opacity: 0; 
+    transform: translateX(-100%); 
+    transition: opacity 0.2s ease, transform 0.8s ease; 
 }
 
 
@@ -824,9 +813,7 @@ th {
     } 
 
     /*archive table*/
-    #archiveRoot h2 {
-        margin: 1em auto;
-    }   
+ 
     .archive.docBody {
         padding: 10px;
     }

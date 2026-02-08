@@ -55,7 +55,8 @@
  const renderSnapshot = (item, headers, rows) => {
     const cols = SHOW_COLS.filter(c => headers.includes(c));
     const section = document.createElement("section");
-    
+    section.className = "list about";
+
     const currentLang = localStorage.getItem("lang") || "ar";
     const isArActive = currentLang === "ar";
     
@@ -87,7 +88,7 @@
     `;
 
     section.innerHTML = `
-      <br><hr>
+      
       <h2 class="lang-en" style="display: ${isArActive ? 'none' : 'block'}">${esc(headerEn)}</h2>
       <h2 class="lang-ar" style="display: ${isArActive ? 'block' : 'none'}">${esc(headerAr)}</h2>
       
