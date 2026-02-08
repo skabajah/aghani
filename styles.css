@@ -107,16 +107,10 @@ img.banner {
     display: none ;
 }
 img.cover {
-    /*background: var(--glass);*/
-    /*backdrop-filter: blur(20px);*/
-    /*-webkit-backdrop-filter: blur(20px);*/
-    /*border:  var(--glass-border);*/
     border: none;
-    /*border-radius: var(--radius);*/
     opacity: .9;
-    /*box-shadow: var(--player-shadow);*/
-    /*width: var(--list-width);*/
-    width: 100vw;
+    width: 100%;
+    object-fit: contain;
     margin: 0;
     padding: 0;
 } 
@@ -130,7 +124,7 @@ img.cover {
 }
 .period-btn {
 /*    display: inline-flex;
-*/    border: var(--glass-border);
+*/  border: var(--glass-border);
     color: #555;
     font-family: 'Cairo';
     font-size: 0.8em;
@@ -160,11 +154,11 @@ img.cover {
     z-index: -1;
     display: none;
 }
-h1, h2 {
+h2 {
     text-align: center;
     padding: 0;
     margin: 0;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     line-height: 1.25;
     color: #434343;
@@ -181,7 +175,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
     align-items: center;
 }
 .npTitle {
@@ -461,9 +455,9 @@ h3.lang-ar, a.lang-ar  {
     font-weight: 500;
     text-transform: uppercase;
     line-height: 2;
-    margin: 0 -5%;
-    background: #5e5e5e30;
-    width: 110%;
+    margin: 0 -20%;
+    background: #f1f1f1;
+    width: 140%;
     padding: 4px;
     text-align: center;
 }
@@ -573,26 +567,34 @@ textarea:focus {
 
 /* archiev page */ 
  
- #archiveRoot .cover
- {
-    width: 100%;
-    /*box-shadow: 20px -20px 20px 0px rgb(0 0 0 / 15%);*/
-    /*box-shadow: 0px -10px 15px -10px rgb(0 0 0 / 15%);*/
-    border: none;
- }
+ 
+a  {
+    text-decoration: none; 
+    color: #25a7a5;
+}
+.archive-links a , .archive-links > div > * {
+    text-decoration: none;
+    color: #25a7a5;
+    padding: 0 4px;
+}
 a:hover {
     background: var(--sk-yellow);
-    color: black;
+    color: black !important;
     text-decoration: none;
+    border-radius: var(--radius);
 }
-
- h5.archive-links {
+h5.archive-links {
     font-size: 15px;
     font-weight: 300;
     text-align: center;
     /*letter-spacing: 4px;*/
     color: black; 
     margin: 0 1em 1em;
+    display: flex;
+    justify-content: center;
+}
+.archive-links > div > span {
+    color: black;
 }
 table {
     font-size: 14px;
@@ -608,7 +610,9 @@ table {
 }
 table img {
     width: auto;
-    max-width: 70px 
+    max-width: 70px ;
+    border-radius: 8px;
+
 } 
 td {
     border-top: solid 2px #fff;
@@ -750,7 +754,7 @@ th {
         text-align: center;
         grid-template-columns: repeat(1, 1fr);
     }
-    h1, h2 {
+    h2 {
         font-size: 18px;
     }
     .titlebar {
@@ -761,7 +765,8 @@ th {
       
     } 
     img.cover {
-        margin: 16px 0 0;
+        margin: 8px 0 0;
+        object-fit: contain;
     }
     .layout {
         padding: 0 15px 40px;
@@ -774,7 +779,7 @@ th {
     }
     .playerFrameWrap {
         height: 25vh;
-        width: auto;
+        width: var(--list-width);
         margin: 0 auto;
     }
     .playerFrameWrap iframe, #player {
@@ -784,9 +789,7 @@ th {
         transform: translate(-15%, -15%);
     }   
     .list {
-        width: 100%;
         margin: 0 auto;
-        border:  none;
     }
     .npMeta {
         font-size: 13px;
@@ -819,6 +822,7 @@ th {
     }
     h5.archive-links { 
         font-size: 13px;
+        margin: 0 auto;
     }
     table {
         font-size: 12px;
@@ -831,29 +835,33 @@ th {
     }
 
     tr {
-        display: grid;
+        display: table-row;
         grid-template-rows: auto 1fr; /* two “rows”: title + rest */
         gap: 0.2rem;                  /* space between pseudo-rows */
         border-top: solid 2px white;
     }
 
     td.song-title {
-        grid-row: 2; /* appear in the first grid row */
-        grid-column: 2 / -4; /* span all columns */
-        display: block;
-        border:  none;
-        /*border-bottom: 2px solid white;*/
-        padding: 0 0 8px 0;
-        line-height: 1.1;
-        text-align: right;
+        /*appear in the first grid row */
+        /*grid-row: 2;  */
+        /* span all columns */
+        /*grid-column: 2 / -4; */
+        /*display: block;*/
+        /*border:  none;*/
+        /*padding: 0 0 8px 0;*/
+        /*line-height: 1.1;*/
+        /*text-align: right;*/
     }
 
     td:not(.song-title) {
-        padding: 8px 0 0 0;
-        grid-row: 1;
-        display: block;
-        border: none;
+        /*padding: 8px 0 0 0;*/
+        /*grid-row: 1;*/
+        /*display: block;*/
+        /*border: none;*/
         width: max-content;
+    }
+    table td:nth-child(5) {
+        display: none;
     }
 
     .intro { 

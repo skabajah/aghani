@@ -77,15 +77,21 @@
       yt_en.push(`<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">Ranking Video</a>`);
       yt_ar.push(`<a href="${esc(item.ranking_video_url)}" target="_blank" rel="noopener">فيديو الترتيب</a>`);
     }
+    if (item.snapshot_date) {
+      yt_en.push(`<span>Released ${esc(item.snapshot_date)}</span>`);
+      yt_ar.push(`<span>نسخة ${esc(item.snapshot_date)}</span>`);
+    }
+
 
     const linksHtml = `
       <div class="lang-en" style="display: ${isArActive ? 'none' : 'block'}">
-        ${yt_en.join(" | ")}<br>Released ${esc(snapshotDate)}
+        ${yt_en.join(" | ")}
       </div>
       <div class="lang-ar" style="display: ${isArActive ? 'block' : 'none'}">
-        ${yt_ar.join(" | ")}<br>نسخة ${esc(snapshotDate)}
+        ${yt_ar.join(" | ")}
       </div>
     `;
+
 
     section.innerHTML = `
       
@@ -105,7 +111,8 @@
                 if (c === IMAGE_COL && val) {
                   const linkIdx = headers.indexOf(LINK_COL);
                   const href = linkIdx > -1 ? (row[linkIdx] ?? "#") : "#";
-                  return `<td><a href="${esc(href)}" target="_blank" rel="noopener"><img src="${esc(val)}" style="width:70px;border-radius:6px;display:block"></a></td>`;
+                  return `<td><a href="${esc(href)}" target="_blank" rel="noopener"></a>
+                          <img src="${esc(val)}" style="display:block"></td>`;
                 }
                 if (c === "Title") {
                   const linkIdx = headers.indexOf(LINK_COL);
