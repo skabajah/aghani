@@ -251,6 +251,7 @@ h2 {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 1px solid transparent;
+    text-align: center !important;
 }
 .card:hover {
     /*background: rgba(255, 255, 255, 0.04);*/
@@ -705,6 +706,7 @@ th {
     -webkit-align-items: center;
     -webkit-justify-content: center;
     font-family: monospace;
+    z-index: 999;
 }
 .menu-close-btn.flip{ 
     left: unset;
@@ -769,7 +771,8 @@ th {
         object-fit: contain;
     }
     .layout {
-        padding: 0 15px 40px;
+        /*padding: 0 15px 40px;*/
+        gap: 15px;
     }
     .npTitle {
         font-size: 20px;

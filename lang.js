@@ -3,12 +3,13 @@ function showLang(lang) {
     const isAr = lang === 'ar';
     
     // Toggle visibility
-    document.querySelectorAll('.lang-en, .lang-ar').forEach(el => el.style.display = 'none');
-    document.querySelectorAll('.lang-' + lang).forEach(el => {
-        // Use block for divs/p, inline for spans
-        el.style.display = (el.tagName === 'SPAN') ? 'inline' : 'block';
+    // Global Catch-all: Toggle visibility for all language elements at once
+    document.querySelectorAll('.lang-en').forEach(el => {
+        el.style.display = isAr ? 'none' : (el.tagName === 'SPAN' ? 'inline' : 'block');
     });
-    
+    document.querySelectorAll('.lang-ar').forEach(el => {
+        el.style.display = isAr ? (el.tagName === 'SPAN' ? 'inline' : 'block') : 'none';
+    });    
     document.documentElement.lang = lang;
 
     const topbar = document.querySelector('.topbar'); // Added this
