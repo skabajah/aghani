@@ -698,6 +698,8 @@ th {
     left: 36px;
     width: 56px;
     height: 56px;
+    max-width: 56px;
+    max-height: 56px;
     border-radius: 50%;
     font-size: 30px;
     color: var(--sk-cyan);
@@ -822,6 +824,9 @@ th {
     } 
 
     /*archive table*/
+    #archiveRoot h2 {
+        margin: 1em auto;
+    }   
     .archive.docBody {
         padding: 10px;
     }
