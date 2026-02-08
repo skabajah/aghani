@@ -608,7 +608,7 @@ a:hover {
     text-align: center;
     /*letter-spacing: 4px;*/
     color: black; 
-    margin: 0 0 1em;
+    margin: 0 1em 1em;
 }
 table {
     font-size: 14px;
