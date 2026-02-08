@@ -660,12 +660,11 @@ th {
     gap: 12px;
     margin: 20px calc((100vw - var(--list-width))/2);
     background: #efefef66;
-    border-radius: 25px;
+    border-radius: var(--radius);
 }
 
 .lang-switcher button {
     flex: 1;                /* make buttons equal width */
-    padding: 8px 0;
     border-radius: var(--radius);
     border: none;
     background: #efefef;    /* inactive gray */
@@ -673,12 +672,13 @@ th {
     font-weight: 600;
     cursor: pointer;
     text-align: center;
-    /*transition: all 0.2s;*/
     font-family: 'Cairo';
-    /*max-height: 3em;*/
     max-width: 5em;
     height: 40px;
-    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -851,6 +851,8 @@ th {
         top: 0;
         left: 0;
         margin: 0;
+        transition: all 0.2s;
+
     }
     .period-switcher.flip {
         border: none;
@@ -872,12 +874,15 @@ th {
         left: 36px;
         width: 56px;
         height: 56px;
-        display: block;
         border-radius: 50%;
         font-size: 36px;
         color: var(--sk-cyan);
         border: var(--glass-border);
         box-shadow: var(--sk-border-shadow);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .menu-close-btn.flip{ 
         left: unset;
