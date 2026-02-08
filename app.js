@@ -277,6 +277,9 @@ logo?.addEventListener('click', () => {
 
 // close button hides menu
 function closeSwitcher() {
+  // skip on larger screens
+  if (window.innerWidth >= 600) return; 
+
   if (!switcher || !menuCloseButton) return;
   switcher.classList.add('hidden');
   isSwitcherVisible = false;
