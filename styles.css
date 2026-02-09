@@ -577,17 +577,19 @@ textarea:focus {
     box-shadow: var(--sk-shadow);
 }
 
-/* archiev page */ 
+/* ranking page */ 
  
  
 a  {
     text-decoration: none; 
     color: #25a7a5;
 }
-.archive-links a , .archive-links > div > * {
+.archive-links a , 
+.archive-links > div > * ,
+.archive-table > * > *> * > a {
     text-decoration: none;
     color: #25a7a5;
-    padding: 0 4px;
+    padding: 0 12px;
 }
 a:hover {
     background: var(--sk-yellow);
