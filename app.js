@@ -294,7 +294,7 @@ function renderSwitcher(manifest, activeItem) {
   archiveBtn.href = "/archive/";
   archiveBtn.className = "period-btn";
   // archiveBtn.textContent = "More Rankings";
-  archiveBtn.textContent = isAr() ? "الترتيبات السابقة" : "Previous Rankings";
+  archiveBtn.textContent = isAr() ? "الترتيبات الكاملة" : "Rankings";
   switcher.appendChild(archiveBtn);
 }
 
@@ -354,7 +354,7 @@ logo?.addEventListener('click', openMobileMenu);
 // close button hides menu
 function closeMobileMenu() {
   if (mobile_view) {
-    switcher?.classList.add('hidden');
+    // switcher?.classList.add('hidden');
     menuCloseButton?.classList.add('hidden');
   }
 }

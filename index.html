@@ -1,54 +1,50 @@
 <!doctype html>
 <html lang="ar">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>aghani | أغاني</title>
-
-  <meta name="description" content="Aghani (aghani.org) is an independent, non-editorial ranking project measuring Arabic music popularity using publicly available YouTube engagement data within defined regional and time-based windows.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>أغاني | Aghani</title>
+  <meta name="description" content="Interactive independent project ranking Arabic music by YouTube engagement.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://aghani.org/">
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="أفضل الأغاني العربية | aghani.org">
-  <meta property="og:description" content="تصنيف مستمر للأغاني العربية يعتمد على بيانات تفاعل يوتيوب ضمن نوافذ زمنية محددة، وبمنهجية غير تحريرية وقابلة للتحقق.">
+  <meta property="og:title" content="أغاني | Aghani">
+  <meta property="og:description" content="Interactive independent project ranking Arabic music by YouTube engagement.">
   <meta property="og:url" content="https://aghani.org/">
   <meta property="og:site_name" content="aghani.org">
 
   <link rel="manifest" href="/manifest.webmanifest">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#2db8b6">
 
-  <!-- icons -->
   <link rel="icon" href="/favicon.ico">
-  
-  <meta name="application-name" content="aghani">
-  <meta name="apple-mobile-web-app-title" content="aghani">
-  <meta name="title" content="aghani">
-  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg"  >
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-  <link rel="apple-touch-icon-precomposed" href="/icons/apple-touch-icon.png">
-
-
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" sizes="180x180">
+  <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2db8b6">
+ 
   <link rel="stylesheet" href="styles.css">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Fustat:wght@200..800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Fustat:wght@200..800&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-  <header class="topbar">
-    <img src="icons/icon-512.png" alt="aghani.org logo" id="logo" class="logo logo-click">
-    <h1>
-        <span class="lang-en" lang="en">aghani.org</span>  
-        <span class="lang-ar" lang="ar" dir="rtl">أغاني</span>
-    </h1>
-    <img src="media/banner.svg" alt="aghani.org banner" class="banner">
-</header>
+    <header>
+        <div class="topbar flip">
+            <a aria-label="Go to aghani.org homepage" class="topbar-hit" href="/">
+              <img alt="aghani.org logo" class="logo logo-click" src="../icons/icon-512.png">
+              <h1 class="lang-en hidden" lang="en">aghani.org</h1>
+              <h1 class="lang-ar" dir="rtl" lang="ar">أغاني</h1>
+            </a>
+        </div>
+        <div class="titlebar">
+          <h2 class="lang-en"  >Top 10 | January 2026</h2>
+          <h2 class="lang-ar" >أفضل 10 | يناير 2026</h2>
+        </div>
+    </header>
 
-
+ 
         <div class="lang-switcher">
             <button data-lang="en">En</button>
             <button data-lang="ar">ع</button>
@@ -56,9 +52,8 @@
 
 
 <main class="layout">
-  <button class="menu-close-btn hidden">×</button>
-  <div id="period-switcher" class="period-switcher">
-</div>
+  <!-- <button class="menu-close-btn hidden">×</button> -->
+  <!-- <div id="period-switcher" class="period-switcher">  </div>--> 
 
   <section class="intro">
     <img class="cover" src="media/banner_2025.png" alt="Most Watched Arabic Songs">
@@ -132,8 +127,8 @@
     <h3 class="lang-en">Archive</h3>
     <h3 class="lang-ar">الأرشيف</h3>
     <nav class="footer-links">
-      <a href="/archive/" class="lang-en">Previous Rankings</a>
-      <a href="/archive/" class="lang-ar">الترتيبات السابقة</a>
+      <a href="/ranking/" class="lang-en">Rankings</a>
+      <a href="/ranking/" class="lang-ar">الترتيبات</a>
     </nav>
   </section>
 

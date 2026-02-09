@@ -907,7 +907,7 @@ h5.archive-links {
     }
 
     .period-switcher {
-        border-top: 8px solid var(--sk-cyan);
+/*        border-top: 8px solid var(--sk-cyan);
         padding: 5em   calc((100vw - var(--list-width))/2);
         position: absolute;
         z-index: 900;
@@ -918,15 +918,17 @@ h5.archive-links {
         top: 0;
         left: 0;
         margin: 0;
-        transition: all 0.2s;
+        transition: all 0.2s;*/
 
     }
     .period-switcher.flip {
         
     } 
     .period-btn { 
-        margin: 24px auto;
-        width: 60vw;
+        /*margin: 24px auto;*/
+        /*width: 60vw;*/
+        margin: 0 auto;
+        width: fit-content; 
     }
     .footer-links a ,  a.lang-ar {
         text-align: center;

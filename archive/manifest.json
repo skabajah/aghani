@@ -5,13 +5,13 @@
     "month": "2026-01",
     "status": "ready",
     "default": true,
+    "featured": true,
     "title": "Top 10 | January 2026",
     "title_ar": "أفضل 10 | يناير 2026",
     "file": "2026-01.csv",
     "banner": "/media/banner_2026_01.png",
     "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZSrP6jjBrZYC2-NtZuFmf7X&si=0suuJgiaotzWmqj3",
     "ranking_video_url": "https://youtu.be/EmT8lUYFiT0",
-    "featured": true,
     "snapshot_date": "2026-02-01"
   },
   {
@@ -19,13 +19,13 @@
     "year": 2025,
     "status": "ready",
     "default": false,
+    "featured": false,
     "title": "Top 20 | Year 2025",
     "title_ar": "أفضل 20 | حصاد سنة 2025",
     "file": "2025-Year.csv",
     "banner": "/media/banner_2025.png",
     "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZQSZNb2AtpOj4a-eE93Up0T&si=gDpc6t6m7Fve51Eu",
     "ranking_video_url": "https://youtu.be/nh5Vb2jB6Ec?si=LpdbAUhT5-0xPmST",
-    "featured": true,
     "snapshot_date": "2026-01-01"
   },
   {
@@ -34,13 +34,13 @@
     "month": "2025-12",
     "status": "ready",
     "default": false,
+    "featured": false,
     "title": "Top 10 | December 2025",
     "title_ar": "أفضل 10 | ديسمبر 2025",
     "file": "2025-12.csv",
     "banner": "/media/banner_2025_12.png",
     "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZRpV7VTvlWjOZRGDeOdI-BT&si=zZzIPF2jdL29DLpn",
     "ranking_video_url": "https://youtu.be/pcEjJn8Oo5c",
-    "featured": true,
     "snapshot_date": "2026-01-01"
   }
 ]
