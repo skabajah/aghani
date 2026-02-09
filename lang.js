@@ -12,7 +12,8 @@ const flippableElements = document.querySelectorAll(
     '.list-main, ' +         // Class
     '#nowPlaying, ' +        // ID
     '.lang-switcher, ' +     // Class
-    '.menu-close-btn'        // Class
+    '.menu-close-btn, '   +     // Class
+    '.archive-table'        // Class
 );
 
 function switchLanguage(language) {
