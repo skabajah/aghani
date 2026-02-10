@@ -6,14 +6,18 @@ const englishElements = document.querySelectorAll('.lang-en');
 const arabicElements = document.querySelectorAll('.lang-ar');
 
 const flippableElements = document.querySelectorAll(
-    '.topbar, ' +            // Class
-    '.footer-content, ' +    // Class
-    '#period-switcher, ' +   // ID
-    '.list-main, ' +         // Class
-    '#nowPlaying, ' +        // ID
-    '.lang-switcher, ' +     // Class
-    '.menu-close-btn, '   +     // Class
-    '.archive-table'        // Class
+             '.topbar,' 
+            + '.topbar-hit,' 
+            + '#period-switcher,' 
+            + '.list-main,' 
+            + '#nowPlaying,' 
+            + '.lang-switcher,' 
+            + '.menu-close-btn,' 
+            + '.archive-table,' 
+            + '.mobile-nav,' 
+            + '.mobile-nav-content,' 
+            + 'nav.mobile-nav.open'
+
 );
 
 function switchLanguage(language) {
