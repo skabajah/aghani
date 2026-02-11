@@ -343,21 +343,24 @@ h2 {
 }
 .menu-btn {
     display: block;
-    font-size: 2rem;
+    font-size: 2em;
     background: none;
     border: 0;
     cursor: pointer;
     color: var(--sk-yellow);
+    padding: 0;
+    margin: 0;
 }
 .menu-close {
   align-self: flex-end;
   font-size: 1.5em;
   background: none;
   border: 0;
-  margin-bottom: 1rem;
   cursor: pointer;
   color: #222;
   opacity: 0.8;
+  margin: 0;
+  padding: 0;
   /*color: var(--sk-yellow);*/
 }
 nav.mobile-nav.flip {
@@ -691,40 +694,7 @@ h5.archive-links {
     box-shadow: var(--button-shadow);
     border: var(--glass-border);
  }
-
-.menu-close-btn { 
-    position: fixed;
-    top: 24px;
-    right: 36px;
-    width: 56px;
-    height: 56px;
-    max-width: 56px;
-    max-height: 56px;
-    border-radius: 50%;
-    font-size: 30px;
-    color: var(--sk-cyan);
-    border: var(--glass-border);
-    box-shadow: var(--sk-border-shadow);
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    font-family: monospace;
-    z-index: 999;
-}
-.menu-close-btn.flip{ 
-    right: unset;
-    left: 36px;
-
-}
-.menu-close-btn:hover { 
-    cursor: pointer;
-    box-shadow: var(--button-shadow);
-}
-
-
+  
 .titlebar {
     margin-top: 2em; 
     padding: 0   calc((100vw - var(--list-width))/2);
