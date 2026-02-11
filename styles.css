@@ -327,7 +327,7 @@ h2 {
     position: fixed;
     top: 0;
     left: -100%;
-    width: max(35vw,350px);
+    width: max(30vw,380px);
     height: 100vh;
     background: #f0f0f0;
     padding: 1.25rem;
@@ -360,7 +360,7 @@ h2 {
   border: 0;
   cursor: pointer;
   color: #222;
-  opacity: 0.8;
+  opacity: 0.7;
   margin: 0;
   padding: 0;
   /*color: var(--sk-yellow);*/
