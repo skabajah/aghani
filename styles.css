@@ -85,6 +85,7 @@ a.topbar-hit.flip {
     height: 6em;
     box-shadow: 0 50px 50px 0px rgb(219 219 219 / 40%);
     justify-content: space-between;
+    -webkit-justify-content: space-between; 
 } 
 a.topbar-hit:hover {
     background: none;
@@ -862,20 +863,14 @@ h5.archive-links {
     .archive-table thead {
         display: none; /* hide header */
     }
-
     .archive-table tr {
         display: table-row;
         grid-template-rows: auto 1fr; /* two “rows”: title + rest */
         gap: 0.2rem;                  /* space between pseudo-rows */
         border-top: solid 2px white;
     }
-
-    .archive-table td.song-title {
-        
-    }
-
-    .archive-table td:not(.song-title) {
-        
+    .archive-table td.song-title {}
+    .archive-table td:not(.song-title) {   
         width: max-content;
     }
     .archive-table td:nth-child(5) {
@@ -884,31 +879,20 @@ h5.archive-links {
     .archive-table td:nth-child(1) {
         font-size: 14px;
     }
-
     .intro { 
         text-align: unset; 
     }
-
-    .period-switcher {
- 
-
-    }
-    .period-switcher.flip {
-        
-    } 
-    .period-btn { 
-      
+    .period-switcher {}
+    .period-switcher.flip {} 
+    .period-btn {  
         margin: 0 auto;
         width: fit-content; 
     }
-
     .archive-links > div > * ,
     .archive-table > * > *> * > a
      {
         padding: 0 4px;
     }
-
-
 }      
 
  
