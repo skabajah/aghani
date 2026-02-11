@@ -776,6 +776,10 @@ h5.archive-links {
         text-align: center;
         grid-template-columns: repeat(1, 1fr);
     }
+    .mobile-nav-links a { 
+        line-height: 1;
+        padding: 3mm 1em; 
+     }
     h2 {
         font-size: 18px;
     }
@@ -903,6 +907,7 @@ h5.archive-links {
      {
         padding: 0 4px;
     }
+
 
 }      
 
