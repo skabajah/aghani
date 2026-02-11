@@ -94,8 +94,9 @@ a.topbar-hit:hover {
     width: auto;
     height: 100%;
     opacity: 1;
-    border-radius: 50%;  
- 
+    border-radius: 30%;  
+    border: solid var(--sk-yellow);
+    border-width: 0.5px;
 }
 .logo-click:hover {
     opacity: 1;
