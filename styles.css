@@ -324,7 +324,7 @@ h2 {
     position: fixed;
     top: 0;
     left: -100%;
-    width: max(30vw,300px);
+    width: max(35vw,350px);
     height: 100vh;
     background: #f0f0f0;
     padding: 1.25rem;
@@ -333,8 +333,8 @@ h2 {
     gap: 1rem;
     transition: all 0.3s ease;
     z-index: 2000;
-    overflow: auto;
-
+    overflow-x: scroll;
+    padding-bottom: 5%;
 }
   .mobile-nav.open {
     left: 0;
@@ -350,12 +350,14 @@ h2 {
 }
 .menu-close {
   align-self: flex-end;
-  font-size: 1.5rem;
+  font-size: 1.5em;
   background: none;
   border: 0;
   margin-bottom: 1rem;
   cursor: pointer;
-  color: var(--sk-yellow);
+  color: #222;
+  opacity: 0.8;
+  /*color: var(--sk-yellow);*/
 }
 nav.mobile-nav.flip {
     left: unset;
@@ -766,6 +768,9 @@ h5.archive-links {
     .main-footer {
         padding: 40px 15px 24px;
     }
+    .menu-close {
+        font-size: 2em;
+    } 
     .mobile-nav-content {
         gap: 20px;
         text-align: center;
