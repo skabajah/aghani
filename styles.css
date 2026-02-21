@@ -163,8 +163,10 @@ h2 {
 .layout {
     display: flex;
     flex-direction: column;
-    /*gap: 25px; */
     margin: 0 auto;
+}
+.layout.home { 
+    gap: 25px; 
 }
 .nowPlaying {
     display: flex;
@@ -509,10 +511,11 @@ hr {
 .docBody.feedback {
     padding: 0;
 }
-.form-intro > *> p {
+.form-intro>*>p,
+.email>div>p  {
     padding: 1em;
     margin: 1em auto;
-    text-align: center;
+    text-align: center !important;
     font-size: 18px;
     font-weight: 400;
     max-width: 80vw;
@@ -560,6 +563,10 @@ textarea:focus {
     outline: none;         
     border: 1px solid var(--sk-cyan);
     box-shadow: var(--sk-shadow);
+}
+
+section.list.about.email {
+    margin-top: 0;
 }
 
 /* ranking page */ 
@@ -768,7 +775,7 @@ h5.archive-links {
         width: 100% ;
         height: auto;
     }
-    .layout {
+    .layout.home {
         /*padding: 0 15px 40px;*/
         gap: 15px;
     }
@@ -795,6 +802,9 @@ h5.archive-links {
     .list {
         margin: 0 auto;
     }
+    .list-main {
+        margin-bottom: 2em;
+    }
     .cardTitle {
         height: 4em;
     }
@@ -811,7 +821,9 @@ h5.archive-links {
     .docBody {
         padding: 0em 1em;
     }
-    .docBody p,  .docBody li {
+    .docBody p,  
+    .docBody li ,
+    .email>div >p {
     font-size: 15px;
     line-height: 1.5;
     } 
