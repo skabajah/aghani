@@ -566,7 +566,10 @@ textarea:focus {
 }
 
 section.list.about.email {
-    margin-top: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom: none;
+    margin: 0 auto;
 }
 
 /* ranking page */ 
