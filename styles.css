@@ -429,6 +429,15 @@ h3.lang-ar, a.lang-ar  {
     box-shadow: var(--button-shadow);    
 } 
 
+.nav-icon { 
+    height: 30px;
+    width: 30px ; 
+}
+
+nav > a > span { 
+    align-content: center; 
+}
+
 
 
 /* Footer base */
