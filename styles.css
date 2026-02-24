@@ -894,6 +894,13 @@ footer.main-footer {
     flex-shrink: 0; /* prevent footer from shrinking */
 }
 
-.ramadan a {
+.ramadan a, 
+.ramadan .npTitle span , 
+.ramadan .card.active .cardRank, 
+.card.active .cardRank span {
     color: var(--sk-green);
+}
+
+.ramadan .archive-table td:nth-of-type(4) { 
+display: none; 
 }
