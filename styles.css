@@ -8,13 +8,15 @@
     --player-shadow:  0 50px 100px -20px rgba(0, 0, 0, 0.8) ;
     --sk-shadow: -2px -6px 20px 0px rgb(0 0 0 / 15%); 
     --sk-border-shadow : 0 0 10px 0px rgb(0 0 0 / 15%);
-    --sk-cyan: #2db8b6;
-    --sk-yellow: #f2c846;
-    --sk-white: #fbfbfc ;
+
     --sk-linear:  linear-gradient(to top, #eeeeee59 0%, #ffffff6b 70%, #ffffff59 100%);
     --list-width: min(85vw,1200px);
     --button-shadow: 5px 7px 10px 2px rgba(0, 0, 0, 0.3);
-
+    /*colors*/
+    --sk-cyan: #2db8b6;
+    --sk-yellow: #f2c846;
+    --sk-white: #fbfbfc ;
+    --sk-green: #79b161 ;
 }
 * {
     box-sizing: border-box;
@@ -890,4 +892,8 @@ main.layout {
 
 footer.main-footer {
     flex-shrink: 0; /* prevent footer from shrinking */
+}
+
+.ramadan a {
+    color: var(--sk-green);
 }
