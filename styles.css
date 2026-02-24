@@ -414,13 +414,17 @@ h3.lang-ar, a.lang-ar  {
     transition: opacity 0.3s;
     line-height: 1.3;
     padding: 1em;
+    
+    display: flex;
+    column-gap: 1em;
+
 }
 .mobile-nav-links a:hover {
     opacity: 1;
     color: black;
     background-color: var(--sk-yellow);
     border-radius: var(--radius);
-    display: inline;
+    /*display: inline;*/
     width: fit-content;
     box-shadow: var(--button-shadow);    
 } 
@@ -858,7 +862,9 @@ h5.archive-links {
         gap: 0.2rem;                  /* space between pseudo-rows */
         border-top: solid 2px white;
     }
-    .archive-table td.song-title {}
+    .archive-table td.song-title {
+        padding: 0;
+    }
     .archive-table td:not(.song-title) {   
         width: max-content;
     }
@@ -881,6 +887,10 @@ h5.archive-links {
     .archive-table > * > *> * > a
      {
         padding: 0 4px;
+    }
+    .archive-links a { 
+        padding: 0;
+        font-weight: normal;
     }
 }      
 
