@@ -1,20 +1,35 @@
 [
-    {
-    "period": "month",
+  {
+    "period": "special",
     "year": 2026,
     "month": "2026-02",
     "status": "ready",
     "default": true,
     "featured": true,
+    "title": "2026 Ramadan Commercials",
+    "title_ar": "إعلانات رمضان 2026",
+    "file": "2026-ramadan-commercials.csv",
+    "banner": "/media/banner_2026_ramadan.png",
+    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZTE5Axq8y2jJ-6Alqs4TqUo",
+    "ranking_video_url": "https://www.youtube.com/watch?v=JsX3uNy__qA",
+    "snapshot_date": "2026-02-21"
+},
+{
+    "period": "month",
+    "year": 2026,
+    "month": "2026-02",
+    "status": "ready",
+    "default": false,
+    "featured": false,
     "title": "Top 10 | February 2026",
     "title_ar": "أفضل 10 | فبراير 2026",
     "file": "2026-02.csv",
     "banner": "/media/banner_2026_02.png",
-    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZSCFOaGv8pl-WmR2XKhmhf4&si=4VCai3jvwSQWEf9f",
+    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZSCFOaGv8pl-WmR2XKhmhf4",
     "ranking_video_url": "https://youtu.be/NDfkyEHlUTM",
     "snapshot_date": "2026-02-20"
-  },
-  {
+},
+{
     "period": "month",
     "year": 2026,
     "month": "2026-01",
@@ -25,11 +40,11 @@
     "title_ar": "أفضل 10 | يناير 2026",
     "file": "2026-01.csv",
     "banner": "/media/banner_2026_01.png",
-    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZSrP6jjBrZYC2-NtZuFmf7X&si=0suuJgiaotzWmqj3",
+    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZSrP6jjBrZYC2-NtZuFmf7X",
     "ranking_video_url": "https://youtu.be/EmT8lUYFiT0",
     "snapshot_date": "2026-02-01"
-  },
-  {
+},
+{
     "period": "year",
     "year": 2025,
     "status": "ready",
@@ -39,11 +54,11 @@
     "title_ar": "أفضل 20 | حصاد سنة 2025",
     "file": "2025-Year.csv",
     "banner": "/media/banner_2025.png",
-    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZQSZNb2AtpOj4a-eE93Up0T&si=gDpc6t6m7Fve51Eu",
+    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZQSZNb2AtpOj4a-eE93Up0T",
     "ranking_video_url": "https://youtu.be/nh5Vb2jB6Ec?si=LpdbAUhT5-0xPmST",
     "snapshot_date": "2026-01-01"
-  },
-  {
+},
+{
     "period": "month",
     "year": 2025,
     "month": "2025-12",
@@ -54,7 +69,7 @@
     "title_ar": "أفضل 10 | ديسمبر 2025",
     "file": "2025-12.csv",
     "banner": "/media/banner_2025_12.png",
-    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZRpV7VTvlWjOZRGDeOdI-BT&si=zZzIPF2jdL29DLpn",
+    "playlist_url": "https://youtube.com/playlist?list=PLUUiKd9rZuZRpV7VTvlWjOZRGDeOdI-BT",
     "ranking_video_url": "https://youtu.be/pcEjJn8Oo5c",
     "snapshot_date": "2026-01-01"
   }
