@@ -41,10 +41,7 @@ body {
 main , header { 
     background: var(--sk-white);
 } 
-#mainBanner {
-    width: var(--list-width) !important;
-    border-radius: var(--radius);
-}
+
 img.cover {
     border: none;
     display: flex;
@@ -54,10 +51,12 @@ img.cover {
     margin: 0 auto; 
     padding: 0;
     /*width: var(--list-width) !important;*/
-    /*border-radius: var(--radius);*/
-;
-
+    width: 100%;
 } 
+#mainBanner {
+    width: var(--list-width) !important;
+    border-radius: var(--radius);
+}
 .intro {
     text-align: center;
     justify-items: center;
