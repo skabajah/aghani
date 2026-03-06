@@ -50,7 +50,7 @@ img.cover {
     object-fit: contain;
     margin: 0 auto; 
     padding: 0;
-    height: 16em;
+    /*height: 16em;*/
     width: var(--list-width) !important;;
     /*mask-image: radial-gradient(circle, #fbfbfc 50%, transparent 70%)*/
 ;
