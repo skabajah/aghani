@@ -350,7 +350,7 @@ h2 {
     position: fixed;
     top: 0;
     left: -100%;
-    width: max(30vw,380px);
+    width: max(35vw,380px);
     height: 100vh;
     background: #f0f0f0;
     padding: 1.25rem;
