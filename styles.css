@@ -41,7 +41,10 @@ body {
 main , header { 
     background: var(--sk-white);
 } 
-
+#mainBanner {
+    width: var(--list-width) !important;
+    border-radius: var(--radius);
+}
 img.cover {
     border: none;
     display: flex;
@@ -50,8 +53,8 @@ img.cover {
     object-fit: contain;
     margin: 0 auto; 
     padding: 0;
-    width: var(--list-width) !important;
-    border-radius: var(--radius);
+    /*width: var(--list-width) !important;*/
+    /*border-radius: var(--radius);*/
 ;
 
 } 
@@ -656,11 +659,9 @@ h5.archive-links {
     font-size: 14px;
     font-weight: 400;
     box-shadow: 0px 10px 15px -10px rgb(0 0 0 / 15%); 
-    border-radius:var(--radius) ; 
     width: 100%;
     padding: 1em;
     border: none ;
-    /*background: var(--sk-linear);*/
     background: linear-gradient(to bottom, #fff 0%, #f1f1f1 100%);
     border-collapse: collapse;
 }
