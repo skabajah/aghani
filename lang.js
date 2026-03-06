@@ -17,6 +17,7 @@ const flippableElements = document.querySelectorAll(
             + '.mobile-nav,' 
             + '.mobile-nav-content,' 
             + 'nav.mobile-nav.open'
+            + 'period-btn'
 
 );
 
