@@ -1,6 +1,6 @@
 :root {
     /*--glass: rgba(255, 255, 255, 0.03);*/
-    --glass: rgba(239 ,239, 239 , 29%);;
+    --glass: rgba(239 ,239, 239 , 29%);
     /*--glass-border: 1px solid #ffffff9e;*/
     --glass-border: 1px solid #f4f4f4;
 
@@ -20,6 +20,8 @@
     --sk-white: #fbfbfc ;
     --sk-green: #79b161 ;
     --sk-red:  #e06666;
+
+    --font: 'Cairo',Roboto, Helvetica, sans-serif; 
 }
 * {
     box-sizing: border-box;
@@ -28,7 +30,7 @@ html, body {
     margin: 0  ;
     padding: 0;
     background: var(--sk-white);
-    font-family: "Cairo", sans-serif;
+    font-family: var(--font) ;
     overflow-x: hidden;
     height: 100%;
     color: black;
@@ -129,7 +131,7 @@ header h1 {
 .period-btn {
     border: var(--glass-border);
     color: #555;
-    font-family: 'Cairo';
+    font-family: var(--font);
     font-size: 0.8em;
     border-radius: var(--radius);
     overflow: hidden;
@@ -573,7 +575,7 @@ hr {
 .feedback-form label {
     display: grid;
     font-size: 13px;
-    font-family: 'Cairo';
+    font-family: var(--font) ;
     text-align: center;
     margin: 2em auto;
 }
@@ -731,7 +733,7 @@ h5.archive-links {
     font-weight: 600;
     cursor: pointer;
     text-align: center;
-    font-family: 'Cairo';
+    font-family: var(--font) ;
     max-width: 5em;
     height: 40px;
 
