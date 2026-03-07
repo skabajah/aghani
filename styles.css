@@ -6,7 +6,8 @@
 
     --text: #ffffff;
     --muted: rgba(255, 255, 255, 0.4);
-    --radius: 4vw;
+    /*--radius: max(4vh,4vw);*/
+    --radius: 3vw;
     --player-shadow:  0 50px 100px -20px rgba(0, 0, 0, 0.8) ;
     --sk-shadow: -2px -6px 20px 0px rgb(0 0 0 / 15%); 
     --sk-border-shadow : 0 0 10px 0px rgb(0 0 0 / 15%);
@@ -58,6 +59,7 @@ img.cover {
 #mainBanner {
     width: var(--list-width) !important;
     border-radius: var(--radius);
+    border: var(--glass-border);
 }
 .intro {
     text-align: center;
@@ -438,9 +440,7 @@ h3.lang-ar, a.lang-ar  {
     line-height: 1;
     padding: 1vh 1vw ;  
     display: flex;
-    /*column-gap: 1em;*/
     border: solid 1px transparent;
-
 }
 .mobile-nav-links a:hover {
     opacity: 1;
@@ -451,6 +451,22 @@ h3.lang-ar, a.lang-ar  {
     box-shadow: var(--button-shadow);   
     border: var(--glass-border) ;
 } 
+a.nav-link.active { 
+   opacity: 1;
+    color: black;
+ }
+
+ a.nav-link.active::before {
+    content: " | ";
+    content: ">";
+    display: list-item;
+    align-content: center;
+    color: var(--sk-yellow);
+    list-style: none;
+    margin-inline-end: 8px;
+}
+
+
 
 .nav-icon { 
     height: 30px;
