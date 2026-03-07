@@ -454,6 +454,10 @@ h3.lang-ar, a.lang-ar  {
 a.nav-link.active { 
    opacity: 1;
     color: black;
+    background: #ffffffab;
+    border-radius: var(--radius);
+    width: fit-content;
+
  }
 
  a.nav-link.active::before {
