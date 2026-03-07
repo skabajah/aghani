@@ -115,11 +115,7 @@
   margin: 0;
 }
 
-.cardTitle .lang-en,
-.cardTitle .lang-ar {
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
+
 
 /* Card links/buttons */
 .cardLinks {
@@ -331,16 +327,18 @@
     font-size: 13px;
     min-height: 2.8em;
     line-height: 1.3;
+    height: 6vh;
+    display: inline-flex;
+
   }
   
   .cardLinks {
-    gap: 6px;
     flex-direction: column;
     display: flex;
   }
   
   .cardLinks a {
-    padding: 2px;
+    padding: 8px 0 ;
     font-size: 11px;
     border-radius: var(--radius-button-small);
     flex: 1;
