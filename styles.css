@@ -823,6 +823,10 @@ h5.archive-links {
 
 /* X-Small: under 600px */
 @media (max-width: 599px) {
+    :root {
+        --radius: 6vw; /* Smaller radius for phones */
+    }
+
     header h1{
         font-size: 22px;
     }
