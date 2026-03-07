@@ -633,7 +633,7 @@ a  {
 .archive-table > * > *> * > a {
     text-decoration: none;
     color: #25a7a5;
-    padding: 0 12px;
+    padding: 4px 12px;
 }
 .side>p>a:hover, 
 .email>div>p>a:hover,
@@ -649,7 +649,7 @@ h5.archive-links {
     text-align: center;
     /*letter-spacing: 4px;*/
     color: black; 
-    margin: 0 1em 1em;
+    margin: 1em 1em;
     display: flex;
     justify-content: center;
 }
@@ -682,6 +682,7 @@ h5.archive-links {
 
 .archive-table td.song-title {
    text-align: start; 
+   padding: 4px 12px !important;
 }
 
 .archive-table td:not(.song-title) {
@@ -760,6 +761,21 @@ h5.archive-links {
 .titlebar >h2 {
     text-align: center !important;
 }
+
+
+/******/
+  .song-title br {
+    display: none;
+  }
+  
+  .song-title span span {
+    display: inline;
+  }
+  
+  .song-title span span:first-child::after {
+    content: " | ";
+    white-space: pre;
+  }
 
 
 /******* RESPONSIVE ELEMENTS **********/ 
@@ -895,7 +911,7 @@ h5.archive-links {
     }
     h5.archive-links { 
         font-size: 13px;
-        margin: 0 auto;
+        /*margin: 0 auto;*/
     }
     .archive-table {
         font-size: 12px;
@@ -913,9 +929,25 @@ h5.archive-links {
         gap: 0.2rem;                  /* space between pseudo-rows */
         border-top: solid 2px white;
     }
-    .archive-table td.song-title {
-        padding: 0;
+    .archive-table td.song-title { 
+        display: flex;
+     }
+    .song-title br { 
+        display: flex;
+     }
+    .song-title {
+        font-size: 14px;
+        line-height: 1;
+        padding: 4px 12px !important;
     }
+    .song-title span span { 
+        float: inline-start; 
+    }
+    .song-title span span:first-child::after { 
+        content:"";
+     }
+
+
     .archive-table td:not(.song-title) {   
         width: max-content;
     }
@@ -937,10 +969,10 @@ h5.archive-links {
     .archive-links > div > * ,
     .archive-table > * > *> * > a
      {
-        padding: 0 4px;
+        /*padding: 0 4px;*/
     }
     .archive-links a { 
-        padding: 0;
+        padding: 2px 2px;
         font-weight: normal;
     }
 }      
