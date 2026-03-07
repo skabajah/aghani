@@ -1001,6 +1001,7 @@ main.layout {
 
 footer.main-footer {
     flex-shrink: 0; /* prevent footer from shrinking */
+    z-index: 200;
 }
 
 .ramadan a, 
