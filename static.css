@@ -319,7 +319,7 @@
   }
   
   .card img {
-    border-radius: var(--radius-image-small);
+    /*border-radius: var(--radius-image-small);*/
     margin-bottom: 10px;
   }
   
