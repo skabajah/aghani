@@ -285,9 +285,8 @@ h2 {
 }
 .card img {
     width: 100%;
-    /*aspect-ratio: 16/9;*/
-    object-fit: /*cover*/;
-    border-radius: var(--radius);
+    /*border-radius: var(--radius);*/
+    border-radius: 0;
     border-width: 1;
     filter: grayscale(80%);
 }

@@ -86,10 +86,10 @@
 .card img {
   width: 100%;
   aspect-ratio: 1/1;
-  border-radius: var(--radius-image);
+  /*border-radius: var(--radius-image);*/
   object-fit: cover;
   margin-bottom: 14px;
-  box-shadow: var(--shadow-image);
+  /*box-shadow: var(--shadow-image);*/
   /*transition: var(--transition-image);*/
 }
 
