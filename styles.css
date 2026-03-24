@@ -288,7 +288,7 @@ h2 {
     /*border-radius: var(--radius);*/
     border-radius: 0;
     border-width: 1;
-    filter: grayscale(80%);
+    filter: grayscale(20%);
 }
 .card.active img {
     filter: grayscale(0);

@@ -21,7 +21,7 @@
 
 
   --color-artist: #efefef;
-  --color-artist-dark: #9b59b6;
+  --color-artist-dark: #8d7cc2;
   
   /* UI colors */
   --color-text-primary: #1a1a1a;
@@ -199,6 +199,14 @@
   /*box-shadow: 0 8px 15px color-mix(in srgb, var(--color-year) 30%, transparent); */
 }
 
+.card.artist .video-link { 
+  background: var(--color-artist); 
+}
+.card.artist .video-link:hover { 
+  background: var(--color-artist-dark); 
+}
+
+
 .card.shorts .video-link,
 .card.shorts .playlist-link { 
   background: var(--color-shorts); 
@@ -307,7 +315,7 @@
 
 @media (max-width: 599px) {
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: var(--spacing-lg);
     padding: var(--spacing-md) 0;
   }
@@ -328,7 +336,7 @@
     min-height: 2.8em;
     line-height: 1.3;
     height: 6vh;
-    display: inline-flex;
+    /*display: inline-flex;*/
 
   }
   
