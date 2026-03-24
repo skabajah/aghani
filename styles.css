@@ -21,6 +21,7 @@
     --sk-white: #fbfbfc ;
     --sk-green: #79b161 ;
     --sk-red:  #e06666;
+    --sk-purple:  #8d7cc2;
 
     --font: 'Cairo',Roboto, Helvetica, sans-serif; 
 }
@@ -1016,6 +1017,12 @@ footer.main-footer {
 .ramadan .card.active .cardRank, 
 .card.active .cardRank span {
     color: var(--sk-green);
+}
+
+.artist a, 
+.artist .npTitle span , 
+.artist .card.active .cardRank {
+    color: var(--sk-purple);
 }
 
 /*.ramadan .archive-table td:nth-of-type(4), */ 
