@@ -39,16 +39,16 @@
 }
 
 .alert-link {
-    color: #e6a017;
-    /*text-decoration: underline;*/
+    color: white;
     border-radius: var(--radius);
-    background: white;
+    background: #e6a017;
     padding: 4px 12px;
 }
 
 .alert-link:hover {
-    color: #c4850e;
-    text-decoration: none;
+    text-decoration: underline;
+    background: #4dc0bd;
+    color: white !important;
 }
 
 /* Icon styling */
