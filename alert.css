@@ -42,7 +42,7 @@
     color: white;
     border-radius: var(--radius);
     background: #e6a017;
-    padding: 4px 12px;
+    padding: 2px 10px;
 }
 
 .alert-link:hover {
